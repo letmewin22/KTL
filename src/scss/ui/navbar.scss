@@ -34,8 +34,12 @@
 }
 .navbar__list-item {
   margin-right: 45px;
+  transition: color .5s cubic-bezier(0.16, 1, 0.3, 1);
   &:last-child {
     margin-right: 0px;
+  }
+  &.hovered {
+    color: $accent;
   }
 }
 .navbar__link {

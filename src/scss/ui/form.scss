@@ -1,0 +1,117 @@
+.form {
+  overflow-x: hidden;
+  padding-top: 20px;
+  .btn {
+    float: right;
+    margin-top: size(112, 60);
+  }
+}
+
+// .v-list-section__item {
+//   width: calc((100% / 2) - (120px / 2));
+//   margin-right: 120px;
+//   margin-bottom: 116px;
+//   &:nth-child(2n) {
+//     margin-right: 0;
+//   }
+//   &:last-child {
+//     margin-right: 0;
+//     margin-bottom: 0;
+//   }
+// }
+
+.form__inputs {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form__input-wrapper {
+  width: calc((100% / 2) - (6.4vw / 2));
+  margin-right: 6.4vw;
+  margin-bottom: size(97, 60);
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+  &:nth-child(3), &:nth-child(4) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+.form__input-wrapper input {
+  outline: none;
+  border: 0;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background: transparent;
+  color: $black;
+}
+
+.form__input-wrapper input:focus {
+  border: none;
+  color: $dg;
+}
+
+
+.form__input-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__input-wrapper label {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid $accent;
+}
+
+
+.form__label-content {
+  position: absolute;
+  font-size: size(24, 18);
+  color: $dg;
+  bottom: 15px;
+  left: 0;
+  opacity: 0.6;
+  transition: all 0.45s cubic-bezier(.4,0,0,1);
+}
+
+.focus+.form__label .form__label-content {
+  transform: translateY(-25px);
+  font-size: size(16, 14);
+  opacity: 1;
+  color: $accent;
+}
+
+.focus+.form__label:after {
+  transform: translateX(0%);
+}
+
+.form__validate-text {
+  position: absolute;
+  font-size: 14px;
+  color: red;
+  bottom: -25px;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: $black;
+  -webkit-box-shadow: 0 0 0px 1000px $lg inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

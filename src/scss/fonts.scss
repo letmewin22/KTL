@@ -19,10 +19,12 @@ h1 {
 
 .h2__line--before {
   margin-bottom: 72px;
+  width: 0;
 }
 
 .h2__line--after {
   margin-top: 72px;
+  width: 0;
 }
 
 .section__text {
@@ -44,6 +46,7 @@ h1 {
   @include medium;
   font-size: size(24, 16);
   width: size(394, 335);
+  // position: absolute;
 }
 
 .h4 {

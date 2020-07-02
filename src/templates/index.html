@@ -29,13 +29,13 @@
   <main>
     <section class="section default-section">
       <div class="container section__container default-section__container">
-        {{mixins.h2('Мы перевозим любые грузы ЖД-транспортом', 'default-section__h2')}}
+        {{mixins.h2('Мы перевозим любые грузы ЖД-транспортом', 'half-size-h2')}}
         <div class="container__cols">
-          <div class="container__l-col">{{mixins.btn('Больше о компании')}}</div>
+          <div class="container__l-col">{{mixins.btn('Больше о компании', '', 'a-sticky')}}</div>
           <div class="container__r-col">
-            <p class="section__text">КАРГОТРАНСЛОДЖИСТИК — компания-экспедитор в сфере грузовых железнодорожных перевозок. Предоставляем комплекс услуг: от организации перевозок и подготовки документации до экспедирования грузов и ремонта вагонов.</p>
-            <p class="section__text">Помогаем компаниям быстро, надёжно и без проблем доставить груз из точки А в точку Б. Сопровождаем любой процесс, связанный с грузовыми ЖД-перевозками.</p>
-            <div class="section__after-line"></div>
+            <p class="section__text a-p">КАРГОТРАНСЛОДЖИСТИК — компания-экспедитор в сфере грузовых железнодорожных перевозок. Предоставляем комплекс услуг: от организации перевозок и подготовки документации до экспедирования грузов и ремонта вагонов.</p>
+            <p class="section__text a-p">Помогаем компаниям быстро, надёжно и без проблем доставить груз из точки А в точку Б. Сопровождаем любой процесс, связанный с грузовыми ЖД-перевозками.</p>
+            <div class="section__after-line a-line"></div>
           </div>
         </div>
       </div>
@@ -47,10 +47,10 @@
     </div>
     <section class="section list-section">
       <div class="container section__container list-section__container">
-        <h2 class="h2">Услуги</h2>
+        <h2 class="h2 a-h2">Услуги</h2>
         <div class="list-section__list-items">
           {% for item in items.services %}
-            <a href="#" class="list-section__list-item">
+            <a href="#" class="list-section__list-item a-item">
               <div class="list-section__line"></div>
               <div class="list-section__overlay"></div>
               <div class="list-section__list-item-content">
@@ -60,7 +60,7 @@
                   </div>
                   <div class="list-section__text">
                     <h3 class="h3 list-section__h">{{item.heading}}</h3>
-                    <p class="list-section__d">{{item.desc}}</p>
+                    <p class="list-section__d a-p">{{item.desc}}</p>
                   </div>
                 </div>
                 <div class="list-section__right">{% include "partials/svg/_arrow.html" %}</div>
@@ -81,7 +81,8 @@
         {{mixins.h2('Преимущества', 'v-list-section__h2')}}
         <div class="container__cols">
           <div class="container__l-col">
-            <p class="section__bold-text">Мы берём на себя ответственность доставить ваш груз точно в срок. Работаем круглосуточно, 365 дней в году.</p>
+            <p class="section__bold-text a-p a-sticky">Мы берём на себя ответственность доставить ваш груз точно в срок. Работаем круглосуточно, 365 дней в году.</p>
+            <div class="sticky-rel"></div>
           </div>
           <div class="container__r-col">
             <div class="v-list-section__items">
@@ -89,7 +90,7 @@
                 <div class="v-list-section__item">
                   <h4 class="h4 v-list-section__h">{{item.heading}}</h4>
                   <div class="v-list-section__line"></div>
-                  <p class="v-list-section__text">{{item.desc}}</p>
+                  <p class="v-list-section__text a-p">{{item.desc}}</p>
                 </div>
               {% endfor %}
             </div>
@@ -97,6 +98,39 @@
         </div>
       </div>
     </section>
-    <section class="test-section"></section>
+    <section class="section default-section review-section">
+      <div class="container section__container">
+        {{mixins.h2('Наши партнёры — промышленные предприятия, торговые компании и другие виды бизнеса.')}}
+        <div class="container__cols">
+          <div class="container__l-col">
+            <p class="section__bold-text a-p a-sticky">Мы берём на себя ответственность доставить ваш груз точно в срок. Работаем круглосуточно, 365 дней в году.</p>
+            <div class="sticky-rel"></div>
+          </div>
+          <div class="container__r-col">
+            <a href="#" class="default-section__review review">
+            <div class="review__overlay"></div>
+              <div class="review__top">
+                <div class="review__left">
+                  <div class="review__logo a-p">
+                    <img src="./img/clients/1.png" alt="clients__logo">
+                  </div>
+                  <div class="review__info">
+                    <h3 class="h3 review__name a-p">Ринат Ахметов</h3>
+                    <div class="review__company a-p">ООО МЕТИНВЕСТ</div>
+                  </div>
+                </div>
+                <div class="review__right">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+              <div class="review__bottom">
+                <div class="review__quote a-p">«Перевозка грузов железнодорожным транспортом — это один из наиболее эффективных, безопасных и экономически выгодных видов перевозок грузов для сухопутного сообщения».</div>
+              </div>
+            </a>
+            <div class="section__after-line a-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% include "partials/components/_form.html" %}
   </main>
+  {% include "partials/components/_footer.html" %}
 {% endblock %}

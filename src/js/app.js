@@ -4,6 +4,9 @@ import '@/libs/smoothscroll'
 import cssWebP from '@/libs/testWebP'
 import {Home} from './renderers'
 import repeatedText from './repeatedText'
+import FormSubmit from './form/FormSubmit.js'
+import { cntBtn, footer, blackBg, linesSize, sticky } from './ui'
+import ScrollAnimations from './scroll/ScrollAnimations'
 
 new Highway.Core()
 
@@ -22,26 +25,20 @@ const H = new Highway.Core({
 repeatedText('btn', 'btn__text-wrapper', 8)
 repeatedText('transition-rails', 'transition-rails__items', 20)
 
-const linesSize = () => {
-  document.querySelector('.main-header__line-wrapper').style.height = document.querySelector('.main-header__content').getBoundingClientRect().height + 'px'
-  document.querySelector('.main-header__line-wrapper').style.width = document.querySelector('.main-header__content').getBoundingClientRect().width + 'px'
-}
 
-window.addEventListener('load', linesSize)
+window.addEventListener('load', () => {
+
+  linesSize()
+  new FormSubmit()
+  footer()
+  blackBg()
+  cntBtn()
+  new ScrollAnimations()
+  // sticky(document.querySelector('.v-list-section .section__bold-text'), document.querySelector('.v-list-section__items'))
+})
+
 window.addEventListener('resize', linesSize)
+window.addEventListener('resize', footer)
 
 
-const blackBg = () => {
-  const item = document.querySelector('.dark-section')
 
-  if(item.getBoundingClientRect().top <= window.innerHeight * 0.9 && -item.getBoundingClientRect().top <= item.getBoundingClientRect().height / 2) {
-    document.body.classList.add('black')
-  } else {
-    document.body.classList.remove('black')
-  }
-
-  window.requestAnimationFrame(blackBg)
-
-}
-
-blackBg()

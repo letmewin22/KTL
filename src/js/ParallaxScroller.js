@@ -7,9 +7,12 @@ export default class ParallaxScroller {
 
     this.newPixel = window.pageYOffset
 
+    this.percent = this.newPixel / ((document.body.getBoundingClientRect().height - window.innerHeight) + document.querySelector('footer').getBoundingClientRect().height) * 100
+    
     if (screen.width > 1024) {
       this.looper()
-      this.scroller()
+      this.scroller('.full-screen-img__img-wrapper')
+      this.footerScroller('.footer')
       window.requestAnimationFrame(() => new ParallaxScroller(selector, speedIndex))
     }
 
@@ -30,10 +33,18 @@ export default class ParallaxScroller {
 
   }
 
-  scroller() {
-    if (document.querySelector('.full-screen-img__img-wrapper')) {
+  scroller(selector) {
+    if (document.querySelector(selector)) {
       if (this.newPixel > 0) {
-        document.querySelector('.full-screen-img__img-wrapper').style.transform = `translateY(${-300 + this.newPixel*0.15}px) scale(${1 + this.newPixel*0.00007})`
+        document.querySelector(selector).style.transform = `translateY(${-300 + this.newPixel*0.15}px) scale(${1 + this.newPixel*0.00007})`
+      }
+    }
+  }
+
+  footerScroller(selector) {
+    if (document.querySelector(selector)) {
+      if (this.newPixel > 0) {
+        document.querySelector(selector).style.transform = `translateY(${100 - this.percent}%)`
       }
     }
   }

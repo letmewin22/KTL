@@ -1,0 +1,27 @@
+.a-h2 {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.a-p {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.a-line {
+  width: 0;
+}
+
+.a-btn {
+  opacity: 0;
+}
+
+.a-item {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.a-sticky {
+  position: sticky;
+  top: 50px;
+}
