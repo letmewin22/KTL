@@ -4,14 +4,21 @@
   position: fixed;
   bottom: 0;
   z-index: -1;
+  width: 100%;
 }
 .footer__container {
   padding-top: size(153, 52);
   padding-bottom: 30px;
   .container__cols {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    padding-top: size(72, 24);
+    padding-bottom: size(72, 24);
     align-items: center;
+    @include media('<=1160px') {
+      flex-direction: column;
+      .container__l-col, .container__r-col {
+        width: 100%;
+      }
+    }
   }
 }
 .footer__line {
@@ -22,34 +29,60 @@
 
 .footer__nav {
   width: 100%;
+  @include media('<=960px') {
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
 }
 .footer__nav-items {
   display: flex;
   width: 100%;
   justify-content: space-between;
   flex-wrap: wrap;
+  @include media('<=960px') {
+    flex-wrap: nowrap;
+  }
 }
 .footer__nav-item {
-  width: calc((100% / 3) - (17vw / 3));
-  margin-right: 8.5vw;
-  margin-bottom: 40px;
-  &:nth-child(3n) {
-    margin-right: 0;
+  width: auto;
+  white-space: nowrap;
+  margin-right: size(60, 29);
+  @include media('>=960px') {
+    width: calc((100% / 3) - (17vw / 3));
+    margin-right: 8.5vw;
+    margin-bottom: 40px;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+      margin-bottom: 0;
+    }
   }
-  &:nth-child(4), &:nth-child(5), &:nth-child(6) {
-    margin-bottom: 0;
+
+}
+
+.footer__nav-link {
+  &.hovered {
+    color: $accent;
   }
 }
+
 .footer__bottom {
   margin-top: size(117, 36);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include media('<=460px') {
+    flex-direction: column-reverse;
+  }
 }
 .footer__copyright {
   font-size: size(16, 14);
   color: $dg;
   line-height: 1em;
+  @include media('<=460px') {
+    margin-top: 18px;
+  }
 }
 .footer__e {
   display: flex;
@@ -73,5 +106,26 @@
         transform: scale(0.95);
       }
     }
+  }
+}
+
+.footer__h2 {
+  @include media('<=1160px') {
+    display: none;
+  }
+}
+
+.footer__line--after {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.footer__scrollthumb {
+  @include media('<=960px') {
+    height: 4px;
+    width: 37px;
+    background: $accent;
+    position: absolute;
   }
 }

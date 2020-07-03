@@ -1,12 +1,10 @@
 import FormInputs from './FormInputs.js'
 import serialize from './formSend.js'
-import pseudoPrototype from './pseudo.prototype.js'
 
 export default class FormSubmit extends FormInputs {
 
   constructor() {
     super()
-    pseudoPrototype()
   
     this.form.onsubmit = (e) => this.submit(e)
 
@@ -17,9 +15,9 @@ export default class FormSubmit extends FormInputs {
     this.validateText.querySelector('.koef-inp').innerHTML = this.koef
     this.validateText.querySelector('.koef-outp').innerHTML = this.koef - this.phone.value.trim('').length
     this.validateText.style.opacity = '1'
+    this.label.classList.add('red')
 
     this.phone.focus()
-    this.label.pseudoStyle('after', 'border-color', '#F44336!important')
   }
 
   requestLoad() {

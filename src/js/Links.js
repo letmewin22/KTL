@@ -30,15 +30,17 @@ export default class Links {
     tl.set(el.querySelectorAll('.js-lines__js-line'), {left: 0, right: 'auto'})
     tl.to(el.querySelectorAll('.js-lines__js-line'), {duration: 0.5, width: '100%', ease: 'expo.out', stagger: 0.1}
     )
+    
     el.classList.add('hovered')
-    // tl.to(el, {color: '#F7A707', ease: 'expo.out'}, 0)
+
   }
 
   mouseleave(el) {
     const tl = gsap.timeline()
     tl.set(el.querySelectorAll('.js-lines__js-line'), {left: 'auto', right: 0})
     tl.to(el.querySelectorAll('.js-lines__js-line'), {duration: 0.5, width: '0%', ease: 'expo.out', stagger: 0.1})
-    // tl.to(el, {color: '#242424', ease: 'expo.out'}, 0)
+     
+
     el.classList.remove('hovered')
   }
 }

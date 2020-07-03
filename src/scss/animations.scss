@@ -1,6 +1,6 @@
 .a-h2 {
   opacity: 0;
-  transform: translateX(10px);
+  transform: translateY(10px);
 }
 
 .a-p {
@@ -18,10 +18,11 @@
 
 .a-item {
   opacity: 0;
-  transform: translateX(10px);
+  transform: translateY(10px);
 }
 
 .a-sticky {
   position: sticky;
-  top: 50px;
+  transition: top .3s ease;
+  top: 80px;
 }

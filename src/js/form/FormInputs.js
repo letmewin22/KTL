@@ -7,7 +7,7 @@ export default class FormInputs {
     this.phone = document.getElementById('phone')
     this.validateText = document.querySelector('.form__validate-text')
     this.formButton = document.querySelector('.form .btn')
-    this.label = document.querySelectorAll('label')[2]
+    this.label = document.querySelectorAll('label')[3]
 
     this.koef = +this.validateText.getAttribute('data-value')
 
@@ -25,7 +25,7 @@ export default class FormInputs {
       this.validation()
     } else {
       this.validateText.style.opacity = '0'
-      this.label.pseudoStyle().classList = 'form__label'
+      this.label.classList.remove('red')
     }
   }
 
@@ -64,12 +64,12 @@ export default class FormInputs {
     document.body.onclick = () => {
       this.validateText.style.opacity = '0'
       this.label.classList = 'form__label'
+      this.label.classList.remove('red')
     }
 
     this.phone.oninput = () => {
       this.validateText.style.opacity = '0'
-      this.label.pseudoStyle().classList = 'form__label'
-
+      this.label.classList.remove('red')
     }
   }
 

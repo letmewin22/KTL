@@ -11,7 +11,7 @@
       <div class="main-header__content">
         <div class="main-header__top">
           <span class="main-header__scroller">Kargo</span>
-          <div class="main-header__h1">Грузовые ЖД-перевозки. Быстро. Надёжно. Без сложностей.</div>
+          <div data-move="main-header__m-h1-wrapper,1,560" class="main-header__h1">Грузовые ЖД-перевозки. Быстро. Надёжно. Без сложностей.</div>
         </div>
         <div class="main-header__bottom">
           <span class="main-header__scroller">TransLogistic</span></div>
@@ -24,14 +24,16 @@
         <div class="main-header__line"></div>
         <div class="main-header__line"></div>
       </div>
+      <div class="main-header__m-h1-wrapper"></div>
     </div>
+    <div class="main-header__arrow">{% include "partials/svg/_down-arrow.html" %}</div>
   </header>
   <main>
     <section class="section default-section">
       <div class="container section__container default-section__container">
         {{mixins.h2('Мы перевозим любые грузы ЖД-транспортом', 'half-size-h2')}}
         <div class="container__cols">
-          <div class="container__l-col">{{mixins.btn('Больше о компании', '', 'a-sticky')}}</div>
+          <div class="container__l-col">{{mixins.btn('Больше о компании', '', 'a-sticky default-section__btn')}}</div>
           <div class="container__r-col">
             <p class="section__text a-p">КАРГОТРАНСЛОДЖИСТИК — компания-экспедитор в сфере грузовых железнодорожных перевозок. Предоставляем комплекс услуг: от организации перевозок и подготовки документации до экспедирования грузов и ремонта вагонов.</p>
             <p class="section__text a-p">Помогаем компаниям быстро, надёжно и без проблем доставить груз из точки А в точку Б. Сопровождаем любой процесс, связанный с грузовыми ЖД-перевозками.</p>

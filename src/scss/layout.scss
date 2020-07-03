@@ -11,15 +11,32 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-top: size(72, 40)
+  padding-top: size(72, 40);
+  @include media('<=960px') {
+    flex-direction: column;
+  }
 }
 
 .container__l-col {
-  width: 41.5%
+  width: 41.5%;
+  @include media('<=1160px') {
+    width: 55.5%;
+  }
+  @include media('<=960px') {
+    width: 100%;
+  }
 }
 
 .container__r-col {
-  width: 58.5%
+  width: 58.5%;
+  @include media('<=1160px') {
+    padding-left: 25px;
+    width: 55.5%;
+  }
+  @include media('<=960px') {
+    padding-left: 0px;
+    width: 100%;
+  }
 }
 
 .section__container {
