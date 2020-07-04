@@ -103,12 +103,16 @@ body {
   color: $dg;
   display: block;
   transition: color 0.3s ease;
+  font-size: size(18, 16);
   @include medium;
-  &:hover {
-    color: $accent;
-  }
   + .form-section__contact-link {
     margin-top: size(10, 8);
+  }
+}
+
+a.form-section__contact-link {
+  &:hover {
+    color: $accent;
   }
 }
 
@@ -131,4 +135,8 @@ main {
   background-color: white;
   position: relative;
   z-index: 1;
+}
+
+.sticky-wrapper {
+  position: relative;
 }

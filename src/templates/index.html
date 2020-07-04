@@ -83,13 +83,13 @@
         {{mixins.h2('Преимущества', 'v-list-section__h2')}}
         <div class="container__cols">
           <div class="container__l-col">
-            <p class="section__bold-text a-p a-sticky">Мы берём на себя ответственность доставить ваш груз точно в срок. Работаем круглосуточно, 365 дней в году.</p>
+              <p class="section__bold-text a-p a-sticky">Мы берём на себя ответственность доставить ваш груз точно в срок. Работаем круглосуточно, 365 дней в году.</p>
             <div class="sticky-rel"></div>
           </div>
           <div class="container__r-col">
             <div class="v-list-section__items">
               {% for item in items.advantages %}
-                <div class="v-list-section__item">
+                <div class="v-list-section__item a-item">
                   <h4 class="h4 v-list-section__h">{{item.heading}}</h4>
                   <div class="v-list-section__line"></div>
                   <p class="v-list-section__text a-p">{{item.desc}}</p>
@@ -110,7 +110,7 @@
           </div>
           <div class="container__r-col">
             <a href="#" class="default-section__review review">
-            <div class="review__overlay"></div>
+              <div class="review__overlay"></div>
               <div class="review__top">
                 <div class="review__left">
                   <div class="review__logo a-p">

@@ -8,6 +8,7 @@ import repeatedText from './repeatedText'
 import FormSubmit from './form/FormSubmit.js'
 import { cntBtn, footer, blackBg, linesSize, Dropdown, navbarPos } from './ui'
 import ScrollAnimations from './scroll/ScrollAnimations'
+import sticky from './sticky'
 
 
 new Highway.Core()
@@ -47,6 +48,8 @@ window.addEventListener('load', () => {
   navbarPos()
   winH()
   moveEl()
+
+  document.querySelectorAll('.a-sticky').sticky(960, 60)
 })
 
 window.addEventListener('resize', linesSize)
