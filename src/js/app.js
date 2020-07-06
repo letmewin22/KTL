@@ -6,9 +6,10 @@ import moveEl from '@/libs/moveEl'
 import { Home } from './renderers'
 import repeatedText from './repeatedText'
 import FormSubmit from './form/FormSubmit.js'
-import { cntBtn, footer, blackBg, linesSize, Dropdown, navbarPos } from './ui'
+import { cntBtn, footer, blackBg, linesSize, Dropdown, navbarPos, Nav } from './ui'
 import ScrollAnimations from './scroll/ScrollAnimations'
-import sticky from './sticky'
+import Sticky from './sticky'
+import ScrollBar from './Scrollbar'
 
 
 new Highway.Core()
@@ -41,20 +42,25 @@ window.addEventListener('load', () => {
   blackBg()
   cntBtn()
   new ScrollAnimations()
+  new Nav()
+  new ScrollBar()
 
   const dropdown = new Dropdown({ btn: '.dropdown__btn', items: '.dropdown__content', parent: '.dropdown' })
   dropdown.init()
 
   navbarPos()
-  winH()
+  // winH()
   moveEl()
-
-  document.querySelectorAll('.a-sticky').sticky(960, 60)
+  
+  document.querySelectorAll('.a-sticky').forEach(el => {
+    const sticky = new Sticky(el, {breakpoint: 960, offset: 60})
+    sticky.init()
+  })
 })
 
 window.addEventListener('resize', linesSize)
 window.addEventListener('resize', footer)
-window.addEventListener('resize', winH)
+// window.addEventListener('resize', winH)
 
 
 

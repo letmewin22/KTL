@@ -1,6 +1,5 @@
-const scrollbar = () => {
+const footerScrollbar = () => {
   const thumb =  document.querySelector('.footer__scrollthumb')
-  const wrapper = document.querySelector('.footer__line--after')
   const item =  document.querySelector('.footer__nav')
 
   const scrollPos = item.scrollLeft
@@ -9,7 +8,7 @@ const scrollbar = () => {
   thumb.style.left = percent + '%'
   thumb.style.transform = `translateX(-${percent}%)`
 
-  window.requestAnimationFrame(scrollbar)
+  window.requestAnimationFrame(footerScrollbar)
 }
 
-export default scrollbar
+export default footerScrollbar

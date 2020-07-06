@@ -2,7 +2,7 @@ import Highway from '@dogstudio/highway'
 import ParallaxScroller from '@/ParallaxScroller'
 import MouseParallax from '@/MouseParallax'
 import Links from '@/Links'
-import { scrollbar } from '@/ui'
+import { footerScrollbar } from '@/ui'
 // import scrollScale from '@/scrollScale'
 
 
@@ -18,9 +18,9 @@ class Home extends Highway.Renderer {
 
     new Links(document.querySelectorAll('.navbar__link'))
     new Links(document.querySelectorAll('.footer__nav-link'))
+    new Links(document.querySelectorAll('.menu__link'))
     
-    scrollbar()
-    // scrollScale()
+    footerScrollbar()
 
   }
 }

@@ -5,28 +5,36 @@
   }
 }
 
-@include media('>=1024px') {
-/* width */
-::-webkit-scrollbar {
-  width: 6px;
-}
+// @include media('>=1024px') {
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 6px;
+// }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: rgba(white, 0.1);
-}
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   background: rgba(white, 0.1);
+// }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: $accent;
-}
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: $accent;
+// }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: darken($color: $accent, $amount: 10%);
-}
-}
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: darken($color: $accent, $amount: 10%);
+// }
+// }
 
+.custom {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
 
 body {
   @include reg;
@@ -49,14 +57,26 @@ body {
         background: white;
       }
     }
+    .menu {
+      color: $black;
+    }
+    .menu-items__wrapper {
+      background: $lg;
+      svg {
+        stroke: $black;
+      }
+    }
   }
   &.nav-hidden {
     .navbar {
       opacity: 0;
       visibility: hidden;
     }
-    .a-sticky {
-      top: 50px;
+  }
+  &.e-fixed {
+    overflow: hidden;
+    .scrollbar {
+      display: none;
     }
   }
 }
@@ -87,10 +107,8 @@ body {
   }
 }
 .form-section__contacts-wrapper {
-  padding-top: size(136, 50);
-  position: sticky;
-  top: -40px;
-  padding-bottom: size(76, 0);
+  margin-top: size(136, 50);
+  margin-bottom: size(76, 0);
 }
 .form-section__contact {
   max-width: 247px;
@@ -140,3 +158,4 @@ main {
 .sticky-wrapper {
   position: relative;
 }
+

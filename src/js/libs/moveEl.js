@@ -47,7 +47,7 @@ export default function moveEl() {
     }
   }
   //Основная функция
-  function dynamicAdapt(e) {
+  function dynamicAdapt() {
     for (let index = 0; index < daElementsArray.length; index++) {
       const el = daElementsArray[index]
       const daElement = el.element

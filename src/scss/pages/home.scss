@@ -1,8 +1,14 @@
 .main-header {
-  height: calc( var(--vh, 1vh) * 100);
+  // height: calc( var(--vh, 1vh) * 100);
+  height: 100vh;
+  margin: 0;
   width: 100%;
   background: white;
   position: relative;
+  @include media('<=460px') {
+    min-height: -webkit-fill-available;
+    height: auto;
+  }
 }
 
 .main-header__container {
@@ -11,6 +17,10 @@
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  @include media('<=460px') {
+    min-height: -webkit-fill-available;
+    height: auto;
+  }
 }
 
 .main-header__content {
@@ -113,6 +123,18 @@
     }
   }
 }
+.default-section {
+  .container__r-col {
+    > p {
+      &:first-child {
+        &::first-line {
+          text-indent: size(100, 0)
+        } 
+      }
+    }
+  }
+}
+
 
 .default-section__btn {
   @include media('<=960px') {

@@ -7,7 +7,7 @@
 {% endmacro %}
 
 {% macro btn(text, type, class) %}
-  <button {% if type %}type="{{ type }}"{% endif %} class="btn a-btn {{class}}">
+  <button {% if type %}type="{{ type }}"{% endif %} class="btn {{class}}">
     <div class="btn__text-wrapper">
       {% for i in range(0, 4) -%}
         <span class="btn__text">{{text}}</span>

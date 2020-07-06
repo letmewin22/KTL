@@ -1,46 +1,62 @@
-const sticky = (el, mq, offset) => {
+export default class Sticky {
+  constructor(el, options) {
 
-  const wrapper = document.createElement('div')
-  wrapper.classList.add('sticky-wrapper')
+    this.el = el
+    this.options = options
 
-  el.parentNode.insertBefore(wrapper, el)
-  // move el into wrapper
-  wrapper.appendChild(el)
+    this.state = false
+    this.mql = window.matchMedia(`(max-width: ${this.options.breakpoint}px)`)
+  }
 
-  let state = false
-  const handler = () => {
-    // document.documentElement.scrollTop >= rel.getBoundingClientRect().top - window.innerHeight
-    if (screen.width >= mq) {
-      if (el.parentNode.getBoundingClientRect().y <= offset) {
-        if (el.parentNode.parentNode.getBoundingClientRect().bottom - (el.scrollHeight + offset) <= 0) {
-          if (!state) {
-            el.style.position = 'relative'
-            el.style.top = (-el.parentNode.getBoundingClientRect().top + offset) + 'px'
-            state = true
-          }
+  init() {
+    this.createWrapper()
+    this.mql.addListener(this.handler.bind(this))
+    this.handler()
+  }
+
+  createWrapper() {
+
+    const wrapper = document.createElement('div')
+    wrapper.classList.add('sticky-wrapper')
+
+    this.el.parentNode.insertBefore(wrapper, this.el)
+    wrapper.appendChild(this.el)
+  }
+
+  addSticky() {
+    this.el.style.position = 'fixed'
+    this.el.style.top = this.options.offset + 'px'
+    this.state = false
+  }
+
+  outerWrapperSticky() {
+    this.el.style.position = 'relative'
+    this.el.style.top = (-this.el.parentNode.getBoundingClientRect().top + this.options.offset) + 'px'
+    this.state = true
+  }
+
+  removeSticky() {
+    this.el.style.position = ''
+    this.el.style.top = 0
+  }
+
+  handler() {
+    if (!this.mql.matches) {
+      if (this.el.parentNode.getBoundingClientRect().y <= this.options.offset) {
+        if (this.el.parentNode.parentNode.getBoundingClientRect().bottom - (this.el.scrollHeight + this.options.offset) <= 0) {
+          !this.state && this.outerWrapperSticky()
         } else {
-          el.style.position = 'fixed'
-          el.style.top = offset + 'px'
-          state = false
+          this.addSticky()
         }
       }
       else {
-        el.style.position = ''
-        el.style.top = 0
+        this.removeSticky()
       }
+      this.raf = window.requestAnimationFrame(() => this.handler())
     } else {
-      el.style.position = ''
-      el.style.top = 0
+      this.removeSticky()
+      cancelAnimationFrame(this.raf)
     }
-    window.requestAnimationFrame(() => handler())
   }
-
-  handler()
-
 }
 
-NodeList.prototype.sticky = function(mq, offset) {
-  this.forEach(el => sticky(el, mq, offset))
-}
-
-export default sticky
