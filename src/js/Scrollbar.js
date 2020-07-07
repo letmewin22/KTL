@@ -1,12 +1,16 @@
 import gsap from 'gsap'
 
 export default class ScrollBar {
-  constructor() {
+  constructor(el) {
+
+    this.el = el || document.documentElement
+    this.scrollElem = el || window
+    this.wrapper = el || document.body
+
     this.scrollbar = document.createElement('aside')
-    this.scrollbar.classList.add('scrollbar')
+    el ? this.scrollbar.classList.add('scrollbar', 'block-scrollbar') : this.scrollbar.classList.add('scrollbar')
 
     this.scrollbar.innerHTML = '<span class="scrollbar__thumb"></span>'
-    this.scrolling = false
 
     this.inactiveDelay = 2
     this.timer = 0
@@ -25,22 +29,21 @@ export default class ScrollBar {
   }
 
   init() {
-    this.mql.addListener(this.media.bind(this))
     this.media()
+    this.mql.addListener(this.media.bind(this))
   }
 
   setHeight() {
-    if(document.documentElement.scrollHeight === window.innerHeight) this.height = 0
-    this.height = window.innerHeight * (window.innerHeight / document.documentElement.scrollHeight)
+    if (this.el.scrollHeight === window.innerHeight) this.height = 0
+    this.height = window.innerHeight * (window.innerHeight / this.el.scrollHeight)
 
     this.thumb.style.height = this.height + 'px'
   }
 
   scrollPos() {
-
     this.thumb.classList.add('scrolling')
-    const scrollPos = document.documentElement.scrollTop
-    const percent = 100 * scrollPos / (document.documentElement.scrollHeight - document.documentElement.clientHeight)
+    const scrollPos = this.el.scrollTop
+    const percent = 100 * scrollPos / (this.el.scrollHeight - document.documentElement.clientHeight)
 
     this.thumb.style.top = percent + '%'
     this.thumb.style.transform = `translateY(-${percent}%)`
@@ -54,27 +57,26 @@ export default class ScrollBar {
     const progressUpdate = (event) => {
       const h = this.scrollbar.offsetHeight
       const o = event.clientY
-      gsap.to(document.documentElement, { duration: 0.3, scrollTop: document.documentElement.scrollHeight * (o / h), ease: 'none' })
+      gsap.to(this.el, { duration: 0.3, scrollTop: this.el.scrollHeight * (o / h), ease: 'none' })
     }
 
     const mousedown = () => {
-      document.body.addEventListener('mousemove', progressUpdate)
+      this.wrapper.addEventListener('mousemove', progressUpdate)
     }
 
     this.scrollbar.addEventListener('mousedown', mousedown)
 
     const mouseUp = () => {
-      document.body.removeEventListener('mousemove', progressUpdate)
-      console.log('mouseUp')
+      this.wrapper.removeEventListener('mousemove', progressUpdate)
 
     }
 
-    document.body.addEventListener('mouseup', mouseUp)
-    document.body.addEventListener('mouseleave', mouseUp)
+    this.wrapper.addEventListener('mouseup', mouseUp)
+    this.wrapper.addEventListener('mouseleave', mouseUp)
 
-    // this.scrollbar.addEventListener('click', progressUpdate)
+    this.scrollbar.addEventListener('click', progressUpdate)
 
-    window.addEventListener('scroll', this.scroll)
+    this.scrollElem.addEventListener('scroll', this.scroll)
   }
 
   controlsEvent() {
@@ -101,8 +103,9 @@ export default class ScrollBar {
         return false
       }
 
-      document.body.appendChild(this.scrollbar)
-      this.thumb = document.querySelector('.scrollbar__thumb')
+      this.wrapper.appendChild(this.scrollbar)
+      this.scrollbar.classList.remove('hidden')
+      this.thumb = this.scrollbar.querySelector('.scrollbar__thumb')
       this.setHeight()
       window.addEventListener('resize', this.setHeight.bind(this))
 
@@ -110,7 +113,12 @@ export default class ScrollBar {
       this.detectInactivity()
       this.events()
     } else {
-      document.querySelector('.scrollbar') && document.body.removeChild(document.querySelector('.scrollbar'))
+      document.querySelectorAll('.scrollbar').length > 0 && 
+      document.querySelectorAll('.scrollbar').forEach(el => {
+        el.classList.add('hidden')
+        el.parentNode.removeChild(el)
+      })
+        
       window.removeEventListener('scroll', this.scroll)
     }
   }

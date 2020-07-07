@@ -1,7 +1,9 @@
 {% include "../partials/_media-tags.html" %}
-{% import "partials/_mixins.html" as mixins %}
+{% import "../partials/_mixins.html" as mixins %}
 <body>
+  {% include "../partials/components/_loader.html" %}
   {% include "../partials/components/_navbar.html" %}
+  {% include "../partials/components/_menu.html" %}
   <!-- BEGIN content -->
   <div class="site-wrapper" data-router-wrapper>
     <div data-router-view="{% if route %}{{ route }}{% else %}Template{% endif %}">
@@ -10,6 +12,8 @@
     </div>
   </div>
   {% include "../partials/svg/_cnt-btn.html" %}
+  {% include "../partials/components/_contacts-popup.html" %}
+  <div class="transitions-overlay"></div>
   <!-- BEGIN scripts -->
   <script src="./js/app.js"></script>
   <!-- END scripts -->

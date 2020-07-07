@@ -1,0 +1,77 @@
+.contacts-pop-up-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  margin-top: 0px;
+  padding-top: 0px;
+  height: calc(var(--vh) * 100);
+  background: $black;
+  visibility: hidden;
+  color: white;
+  .form__input-wrapper input {
+    color: white;
+  }
+  .form__label-content {
+    color: $lg;
+  }
+}
+
+.contacts-pop-up-section__container {
+  height: 100%;
+  overflow: auto;
+}
+
+.contacts-pop-up-section__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 3.7vh;
+}
+
+.contacts-pop-up-section__header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: size(196, 40);
+  padding-left: size(196, 40);
+  @include media('<=960px') {
+    padding-right: size(146, 20);
+    padding-left: size(146, 20);
+  }
+}
+
+.contacts-pop-up-section__line {
+  height: 1px;
+  width: 100%;
+  background: $accent;
+  margin-top: 3.7vh;
+}
+
+.contacts-pop-up-section__close {
+  cursor: pointer;
+  width: size(32, 25);
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: stroke .3s ease;
+  }
+  &:hover {
+    svg {
+      stroke: $accent !important;
+    }
+  }
+}
+
+.contacts-pop-up-section__contacts-wrapper {
+  padding-top: 7vh;
+}
+
+.contacts-pop-up-section__right-content {
+  margin-top: 7vh;
+  @include media('<=960px') {
+    margin-top: 0px;
+  }
+}

@@ -20,3 +20,13 @@
   opacity: 0;
   transform: translateY(10px);
 }
+
+.word {
+  display:flex;
+  line-height: 1em;
+  overflow: hidden;
+}
+
+.char {
+  display: inline-block;
+}

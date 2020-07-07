@@ -1,9 +1,9 @@
-const projectName = ''
+const projectName = 'KTL'
 
 const foldersName = {
-  projectFolder: 'build',
+  // projectFolder: 'build',
   // projectFolder: 'C:/MAMP/htdocs/' + projectName + '/wp-content/themes/' + projectName,
-  // projectFolder: require('path').basename(__dirname)
+  projectFolder: require('path').basename(__dirname),
   sourceFolder: 'src'
 }
 

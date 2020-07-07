@@ -11,15 +11,21 @@
     .scrollbar__thumb {
       width: 10px;
       opacity: .7;
-      border-radius: 15%;
+      border-radius: 10px;
       background-color: $accent;
     }
+  }
+  &.hidden {
+    display: none;
+  }
+  @include media('<=1024px') {
+    display: none;
   }
 }
 
 .scrollbar__thumb {
   width: 6px;
-  border-radius: 20%;
+  border-radius: 7px;
   pointer-events: none;
   height: 100px;
   background: $dg;

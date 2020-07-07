@@ -3,8 +3,8 @@ import serialize from './formSend.js'
 
 export default class FormSubmit extends FormInputs {
 
-  constructor() {
-    super()
+  constructor(form) {
+    super(form)
   
     this.form.onsubmit = (e) => this.submit(e)
 
@@ -57,10 +57,9 @@ export default class FormSubmit extends FormInputs {
 
 
   submit(e) {
-
+    e.preventDefault()
     if (this.phone.value.trim('').length < this.koef) {
       this.validation()
-      e.preventDefault()
     } else {
       this.requestSend()
     }

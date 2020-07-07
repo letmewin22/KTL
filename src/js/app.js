@@ -1,15 +1,18 @@
 import Highway from '@dogstudio/highway'
 import '@/libs/smoothscroll'
 
+
 import cssWebP from '@/libs/testWebP'
 import moveEl from '@/libs/moveEl'
-import { Home } from './renderers'
-import repeatedText from './repeatedText'
-import FormSubmit from './form/FormSubmit.js'
-import { cntBtn, footer, blackBg, linesSize, Dropdown, navbarPos, Nav } from './ui'
-import ScrollAnimations from './scroll/ScrollAnimations'
-import Sticky from './sticky'
-import ScrollBar from './Scrollbar'
+import { Home } from '@/renderers'
+import repeatedText from '@/repeatedText'
+import FormSubmit from '@/form/FormSubmit.js'
+import { cntBtn, footer, blackBg, linesSize, Dropdown, navbarPos, Nav } from '@/ui'
+import ScrollAnimations from '@/scroll/ScrollAnimations'
+import Sticky from '@/sticky'
+import ScrollBar from '@/Scrollbar'
+import CntPopup from '@/ui/CntPopup'
+import Loader from '@/loader'
 
 
 new Highway.Core()
@@ -34,10 +37,19 @@ const winH = () => {
   document.body.style.setProperty('--vh', `${vh}px`)
 }
 
-window.addEventListener('load', () => {
+// 
+// linesSize(document.querySelector('.loader__trains-wrapper'))
+window.addEventListener('beforeunload', () => {
+  document.body.style.opacity = 0
+  document.body.style.position ='fixed'
+  document.body.scrollTop = 0
+  document.documentElement.scrollTop = 0
+})
 
-  linesSize()
-  new FormSubmit()
+window.addEventListener('load', () => {
+  new Loader()
+  linesSize(document.querySelector('.main-header__line-wrapper'))
+  document.querySelectorAll('.form').forEach(el => new FormSubmit(el))
   footer()
   blackBg()
   cntBtn()
@@ -45,22 +57,32 @@ window.addEventListener('load', () => {
   new Nav()
   new ScrollBar()
 
+  document.querySelectorAll('.custom:not(html)').forEach(el => {
+    new ScrollBar(el)
+  })
+
+  new CntPopup()
+
   const dropdown = new Dropdown({ btn: '.dropdown__btn', items: '.dropdown__content', parent: '.dropdown' })
   dropdown.init()
 
   navbarPos()
-  // winH()
+  winH()
   moveEl()
-  
+
   document.querySelectorAll('.a-sticky').forEach(el => {
-    const sticky = new Sticky(el, {breakpoint: 960, offset: 60})
+    const sticky = new Sticky(el, { breakpoint: 960, offset: 60 })
     sticky.init()
   })
 })
 
-window.addEventListener('resize', linesSize)
+window.addEventListener('resize', () => {
+  linesSize(document.querySelector('.loader__line-wrapper'))
+  linesSize(document.querySelector('.loader__trains-wrapper'))
+  linesSize(document.querySelector('.main-header__line-wrapper'))
+})
 window.addEventListener('resize', footer)
-// window.addEventListener('resize', winH)
+window.addEventListener('resize', winH)
 
 
 
@@ -71,4 +93,18 @@ H.on('NAVIGATE_END', () => {
   const dropdown = new Dropdown({ btn: '.dropdown__btn', items: '.dropdown__content', parent: '.dropdown' })
   dropdown.init()
 })
+
+H.on('NAVIGATE_IN', () => {
+
+  new ScrollBar()
+
+  document.querySelectorAll('.custom:not(html)').forEach(el => {
+    new ScrollBar(el)
+  })
+  document.querySelectorAll('.form').forEach(el => new FormSubmit(el))
+})
+
+
+
+
 

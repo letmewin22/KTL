@@ -6,7 +6,7 @@
   margin-top: 0;
   color: white;
   overflow-y: auto;
-  height: 100vh;
+  height: calc(var(--vh) * 100);
   width: 100%;
   display: none;
   overflow: hidden;
