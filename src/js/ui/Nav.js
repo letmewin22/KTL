@@ -1,4 +1,5 @@
 import gsap from 'gsap'
+import swipedetect from '@/libs/swipe'
 
 export default class Nav {
   constructor() {
@@ -19,6 +20,13 @@ export default class Nav {
     this.openBtn.addEventListener('click', this.open.bind(this))
     this.closeBtn.addEventListener('click', this.close.bind(this))
     this.overlay.addEventListener('click', this.close.bind(this))
+
+    swipedetect(this.nav, 50, (swipedir) => {
+      swipedir === 'right' && this.close()
+    })
+    swipedetect(document.body, 150, (swipedir) => {
+      swipedir === 'left' && this.open()
+    })
   }
 
   open() {

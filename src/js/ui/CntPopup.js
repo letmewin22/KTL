@@ -1,4 +1,5 @@
 import gsap from 'gsap'
+import swipedetect from '@/libs/swipe'
 
 export default class CntPopup {
   constructor() {
@@ -19,6 +20,11 @@ export default class CntPopup {
 
     this.openBtn.addEventListener('click', this.open.bind(this))
     this.closeBtn.addEventListener('click', this.close.bind(this))
+
+    swipedetect(this.popup, 50, (swipedir) => {
+      if(swipedir === 'right')
+        this.close()
+    })
   }
 
   open() {

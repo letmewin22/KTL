@@ -58,10 +58,21 @@ export default class ScrollBar {
       const h = this.scrollbar.offsetHeight
       const o = event.clientY
       gsap.to(this.el, { duration: 0.3, scrollTop: this.el.scrollHeight * (o / h), ease: 'none' })
+
+      if ('ontouchstart' in document.documentElement || window.DocumentTouch && document instanceof DocumentTouch) {
+        const h = this.scrollbar.offsetHeight
+        const o = event.targetTouches[0].pageY - event.target.getBoundingClientRect().top
+
+        gsap.to(this.el, { duration: 0.3, scrollTop: this.el.scrollHeight * (o / h), ease: 'none' })
+      }
     }
 
     const mousedown = () => {
       this.wrapper.addEventListener('mousemove', progressUpdate)
+    }
+
+    const touchstart = () => {
+      this.wrapper.addEventListener('touchmove', progressUpdate)
     }
 
     this.scrollbar.addEventListener('mousedown', mousedown)
@@ -71,8 +82,16 @@ export default class ScrollBar {
 
     }
 
+    const touchend = () => {
+      this.wrapper.removeEventListener('touchmove', progressUpdate, {passive: false})
+    }
+    
+
     this.wrapper.addEventListener('mouseup', mouseUp)
     this.wrapper.addEventListener('mouseleave', mouseUp)
+
+    this.scrollbar.addEventListener('touchstart', touchstart, {passive: false})
+    this.wrapper.addEventListener('touchend', touchend, {passive: false})
 
     this.scrollbar.addEventListener('click', progressUpdate)
 

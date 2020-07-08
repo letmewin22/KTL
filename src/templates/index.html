@@ -35,7 +35,7 @@
         <div class="container__cols">
           <div class="container__l-col">{{mixins.btn('Больше о компании', '', 'a-btn a-sticky default-section__btn')}}</div>
           <div class="container__r-col">
-            <p class="section__text a-p">КАРГОТРАНСЛОДЖИСТИК — компания-экспедитор в сфере грузовых железнодорожных перевозок. Предоставляем комплекс услуг: от организации перевозок и подготовки документации до экспедирования грузов и ремонта вагонов.</p>
+            <p class="section__text a-p">КАРГОТРАНСЛОДЖИСТИК — компания-экспедитор в сфере грузовых железнодорожных перевозок. Предоставляем полный комплекс услуг с информационным сопровождением: от организации перевозок до ремонта и продажи вагонов.</p>
             <p class="section__text a-p">Помогаем компаниям быстро, надёжно и без проблем доставить груз из точки А в точку Б. Сопровождаем любой процесс, связанный с грузовыми ЖД-перевозками.</p>
             <div class="section__after-line a-line"></div>
           </div>
@@ -44,7 +44,7 @@
     </section>
     <div class="full-screen-img">
       <div class="full-screen-img__img-wrapper">
-        <div class="full-screen-img__img pli" style="background-image: url('./img/1.jpg')"></div>
+        <div class="full-screen-img__img pli" data-bg="./img/1.jpg"></div>
       </div>
     </div>
     <section class="section list-section">
@@ -58,7 +58,7 @@
               <div class="list-section__list-item-content">
                 <div class="list-section__left">
                   <div class="list-section__img">
-                    <div class="list-section__img-pic pli" style="background-image: url({{item.img}})"></div>
+                    <div class="list-section__img-pic pli" data-bg="{{item.img}}"></div>
                   </div>
                   <div class="list-section__text">
                     <h3 class="h3 list-section__h">{{item.heading}}</h3>
@@ -104,7 +104,7 @@
         {{mixins.h2('Наши партнёры — промышленные предприятия, торговые компании и другие виды бизнеса.')}}
         <div class="container__cols">
           <div class="container__l-col">
-            <p class="section__bold-text a-p a-sticky">Мы берём на себя ответственность доставить ваш груз точно в срок. Работаем круглосуточно, 365 дней в году.</p>
+            <p class="section__bold-text a-p a-sticky">Гарантия вывоза груза — залог успеха долгосрочных партнерских отношений.</p>
           </div>
           <div class="container__r-col">
             <a href="#" class="default-section__review review">
@@ -133,5 +133,4 @@
     {% include "partials/components/_form.html" %}
   </main>
   {% include "partials/components/_footer.html" %}
-
 {% endblock %}

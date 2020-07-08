@@ -5,7 +5,9 @@ export default class FormInputs {
     this.form = form
     this.input = this.form.querySelectorAll('.form__input-wrapper input')
     this.phone = this.form.querySelector('[type=tel]')
+    
     this.validateText = this.form.querySelector('.form__validate-text')
+    
     this.formButton = this.form.querySelector('.btn')
     this.label = this.form.querySelector('.required')
 
@@ -60,12 +62,11 @@ export default class FormInputs {
   }
 
   reset() {
-
-    document.body.onclick = () => {
+    document.body.addEventListener('click', () => {
       this.validateText.style.opacity = '0'
       this.label.classList = 'form__label-content'
       this.label.classList.remove('red')
-    }
+    })
 
     this.phone.oninput = () => {
       this.validateText.style.opacity = '0'

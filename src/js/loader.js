@@ -25,6 +25,9 @@ export default class Loader {
     this.lineWrapper = this.loader.querySelector('.loader__line-wrapper')
     this.lines = this.loader.querySelectorAll('.loader__line')
 
+    this.num = { num: 0 }
+    this.state = false
+
     this.init()
   }
 
@@ -34,42 +37,74 @@ export default class Loader {
     this.imgLoad = imagesLoaded(document.querySelectorAll('.pli'), { background: true })
 
     this.imgLoad.on('progress', (instance, image) => this.onProgress(image))
+    this.imgLoad.on('fail', () => {
+      setTimeout(() => {
+        this.counter(100)
+      }, 650)
 
-    this.imgLoad.on('always', () => this.afterLoad())
+    })
   }
 
   afterLoad() {
+    if (!this.state) {
 
-    Splitting({ target: this.percentHTML, by: 'chars' })
+      this.state = true
+      this.clone = this.percentHTML.cloneNode(true)
 
-    this.animation()
+      this.percentHTML.parentNode.insertBefore(this.clone, this.percentHTML)
+      this.percentHTML.parentNode.removeChild(this.percentHTML)
+
+      Splitting({ target: this.clone, by: 'chars' })
+      this.animation()
+    }
+  }
+
+  counter(count) {
+
+    return new Promise(resolve => {
+
+      gsap.to(this.num, {
+        duration: 0.3, num: count, ease: 'power1.out', onUpdate: () => {
+          this.percentHTML.innerHTML = this.num.num.toFixed(0) + '%'
+          this.progressHTML.style.width = this.num.num.toFixed(0) + '%'
+        },
+        onComplete: () => {
+          resolve()
+          this.num.num === 100 && this.afterLoad()
+        }
+      })
+    })
   }
 
   onProgress(image) {
+
     if (image.isLoaded) {
+
       image.element ? image.element.classList.add('loaded') : image.img.classList.add('loaded')
       const countLoadedImages = document.querySelectorAll('.pli.loaded').length
-      let width = new Number(100 * (countLoadedImages / this.countImages))
-      width = width.toFixed(0) + '%'
 
-      this.progressHTML.style.width = width
-      this.percentHTML.innerHTML = width
+      this.width = new Number(100 * (countLoadedImages / this.countImages))
+      
+      this.counter(this.width).then(() => {
+        this.counter(this.width)
+      })
     }
   }
 
   animation() {
-    
-    const tl = gsap.timeline({onComplete: () => {
-      this.loader.style.display = 'none'
-      document.body.classList.remove('e-fixed')
-    }})
 
-    tl.set(this.h1, {opacity: 0})
-    tl.set(this.bigText, {opacity: 0, y: '100%'})
-    tl.set(this.train, {opacity: 0})
-    tl.set(this.navbar, {opacity: 0})
+    const tl = gsap.timeline({
+      onComplete: () => {
+        this.loader.parentNode.removeChild(this.loader)
+        document.body.classList.remove('e-fixed')
+      }
+    })
 
-    tl.to([...this.percentHTML.querySelectorAll('.char')].reverse(),
+    tl.set(this.h1, { opacity: 0 })
+    tl.set(this.bigText, { opacity: 0, y: '100%' })
+    tl.set(this.train, { opacity: 0 })
+
+    tl.to([...this.clone.querySelectorAll('.char')].reverse(),
       {
         duration: 0.7,
         y: '100%',
@@ -109,6 +144,5 @@ export default class Loader {
     tl.to(this.bigText, { duration: 1, y: '0%', opacity: 1, ease: 'power4.out', stagger: 0.15 }, 2.7)
     tl.to(this.train, { duration: 1, opacity: 1, ease: 'power2.out' }, 2.7)
     tl.to(this.h1, { duration: 1, opacity: 1, ease: 'power2.out' }, 2.7)
-    tl.to(this.navbar, { duration: 1, opacity: 1, ease: 'power2.out' }, 2.7)
   }
 }

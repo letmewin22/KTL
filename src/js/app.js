@@ -3,6 +3,7 @@ import '@/libs/smoothscroll'
 
 
 import cssWebP from '@/libs/testWebP'
+import bgWebP from '@/bgWebP'
 import moveEl from '@/libs/moveEl'
 import { Home } from '@/renderers'
 import repeatedText from '@/repeatedText'
@@ -13,6 +14,7 @@ import Sticky from '@/sticky'
 import ScrollBar from '@/Scrollbar'
 import CntPopup from '@/ui/CntPopup'
 import Loader from '@/loader'
+
 
 
 new Highway.Core()
@@ -38,7 +40,6 @@ const winH = () => {
 }
 
 // 
-// linesSize(document.querySelector('.loader__trains-wrapper'))
 window.addEventListener('beforeunload', () => {
   document.body.style.opacity = 0
   document.body.style.position ='fixed'
@@ -47,6 +48,7 @@ window.addEventListener('beforeunload', () => {
 })
 
 window.addEventListener('load', () => {
+  bgWebP() 
   new Loader()
   linesSize(document.querySelector('.main-header__line-wrapper'))
   document.querySelectorAll('.form').forEach(el => new FormSubmit(el))
@@ -77,8 +79,6 @@ window.addEventListener('load', () => {
 })
 
 window.addEventListener('resize', () => {
-  linesSize(document.querySelector('.loader__line-wrapper'))
-  linesSize(document.querySelector('.loader__trains-wrapper'))
   linesSize(document.querySelector('.main-header__line-wrapper'))
 })
 window.addEventListener('resize', footer)
@@ -103,8 +103,3 @@ H.on('NAVIGATE_IN', () => {
   })
   document.querySelectorAll('.form').forEach(el => new FormSubmit(el))
 })
-
-
-
-
-

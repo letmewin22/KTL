@@ -14,9 +14,9 @@ function createConfig(env) {
   isProduction = env === 'production'
 
   webpackConfig = {
-    entry: {
-      app: ['@babel/polyfill', './src/js/app.js']
-    }, //If you need support IE11
+    // entry: {
+    //   app: ['@babel/polyfill', './src/js/app.js']
+    // }, //If you need support IE11
     output: {
       filename: 'app.js'
     },
