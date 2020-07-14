@@ -4,7 +4,18 @@
     <div class="menu-items__wrapper">
       <div class="menu__header">
         <div class="menu__header-content">
-          <h3 class="h3 menu__h3">Меню</h3>
+          <div class="menu__header-content-left">
+            <h3 class="h3 menu__h3">Меню</h3>
+            <div class="lang menu__lang">
+              <div class="menu__lang-list dropdown">
+                <a href="#" class="menu__link dropdown__btn">Ru {% include "partials/svg/_dropdown.html" %}</a>
+                <div class="dropdown__content menu__dropdown-content">
+                  <a href="#" class="menu__link dropdown__link">Ua</a>
+                  <a href="#" class="menu__link dropdown__link">En</a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="menu__close">{% include "partials/svg/_close.html" %}</div>
         </div>
         <div class="menu__line"></div>
@@ -12,7 +23,7 @@
       <div class="menu__v-line"></div>
       <ul class="menu__items">
         <li class="menu__item">
-          <a href="#" class="menu__link">Услуги</a>
+          <a href="service.html" class="menu__link">Услуги</a>
         </li>
         <li class="menu__item">
           <a href="#" class="menu__link">О нас</a>

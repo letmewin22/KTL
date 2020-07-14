@@ -10,25 +10,26 @@
     <div class="container main-header__container">
       <div class="main-header__content">
         <div class="main-header__top">
-          <span class="main-header__scroller"><span>Kargo</span></span>
-          <div data-move="main-header__m-h1-wrapper,1,560" class="main-header__h1">Грузовые ЖД-перевозки. Быстро. Надёжно. Без сложностей.</div>
+          <span class="main-header__scroller"><span class='transition-span'>Kargo</span></span>
+          <h1 data-move="main-header__m-h1-wrapper,1,560" class="main-header__h1 scroller-parallax transition-text">Грузовые ЖД-перевозки. Быстро. Надёжно. Без сложностей.</h1>
         </div>
         <div class="main-header__bottom">
-          <span class="main-header__scroller"><span>TransLogistic</span></span></div>
+          <span class="main-header__scroller"><span class='transition-span'>TransLogistic</span></span></div>
       </div>
       <div class="main-header__line-wrapper">
-        <div class="main-header__train">
+        <div class="main-header__train transition-other">
           {% include "partials/svg/_train.html" %}
         </div>
-        <div class="main-header__line"></div>
-        <div class="main-header__line"></div>
-        <div class="main-header__line"></div>
+        <div class="main-header__line transition-line"></div>
+        <div class="main-header__line transition-line"></div>
+        <div class="main-header__line transition-line"></div>
       </div>
       <div class="main-header__m-h1-wrapper"></div>
     </div>
     <div class="main-header__arrow">{% include "partials/svg/_down-arrow.html" %}</div>
   </header>
   <main>
+
     <section class="section default-section">
       <div class="container section__container default-section__container">
         {{mixins.h2('Мы перевозим любые грузы ЖД-транспортом', 'half-size-h2')}}
@@ -52,7 +53,7 @@
         <h2 class="h2 a-h2">Услуги</h2>
         <div class="list-section__list-items">
           {% for item in items.services %}
-            <a href="#" class="list-section__list-item a-item">
+            <a href="service.html" class="list-section__list-item a-item">
               <div class="list-section__line"></div>
               <div class="list-section__overlay"></div>
               <div class="list-section__list-item-content">
@@ -72,7 +73,7 @@
         </div>
       </div>
     </section>
-    <div class="transition-rails dark-section-transition-rails">
+    <div class="transition-rails">
       <div class="transition-rails__items">
         <div class="transition-rails__item">&nbsp;— KargoTransLogistic — KargoTransLogistic&nbsp;</div>
         <div class="transition-rails__item">&nbsp;— KargoTransLogistic — KargoTransLogistic&nbsp;</div>

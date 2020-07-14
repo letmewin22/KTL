@@ -16,7 +16,7 @@ export default class FormSubmit extends FormInputs {
     this.validateText.querySelector('.koef-outp').innerHTML = this.koef - this.phone.value.trim('').length
     this.validateText.style.opacity = '1'
     this.label.classList.add('red')
-
+    this.formButton.classList.add('red')
     this.phone.focus()
   }
 

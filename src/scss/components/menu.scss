@@ -58,6 +58,10 @@
   &.hovered {
     color: $accent;
   }
+  &.is-current {
+    color: $accent;
+    pointer-events: none;
+  }
 }
 
 .menu__v-line {
@@ -77,8 +81,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding-top: 3.7vh;
-  
+  padding-top: 3.7vh; 
 }
 
 .menu__header-content {
@@ -87,6 +90,24 @@
   align-items: center;
   padding-right: size(100, 40);
   padding-left: size(100, 40);
+}
+
+.menu__header-content-left {
+  display: flex;
+  align-items: center;
+  svg {
+    fill: white;
+  }
+}
+
+.menu__dropdown-content {
+  background: $lg;
+  color: $black;
+}
+
+.menu__lang {
+  margin-left: 30px;
+  padding-top: size(10, 0);
 }
 
 .menu__line {

@@ -1,13 +1,29 @@
 import Highway from '@dogstudio/highway'
-import ParallaxScroller from '@/ParallaxScroller'
-import MouseParallax from '@/MouseParallax'
-import Links from '@/Links'
-import { footerScrollbar } from '@/ui'
-// import scrollScale from '@/scrollScale'
+import Loader from '@/loaders/Loader'
 
+import { linesSize, blackBg, footerScrollbar, scrollTo } from '@/ui'
+import { repeatedText, ParallaxScroller, MouseParallax } from '@/components'
+import transitionLoader from '@/loaders/transitionLoader'
 
 class Home extends Highway.Renderer {
+  
+  onEnter() {
+
+    linesSize(document.querySelector('.main-header__line-wrapper'))
+
+    this.resizeHandler = () => {
+      linesSize(document.querySelector('.main-header__line-wrapper'))
+    }
+
+    window.addEventListener('resize', this.resizeHandler)
+  }
   onEnterCompleted() {
+
+    window.addEventListener('load', () => new Loader(transitionLoader))
+
+    blackBg()
+
+    repeatedText('transition-rails', 'transition-rails__items', 20)
 
     new ParallaxScroller('.main-header__scroller')
 
@@ -16,12 +32,12 @@ class Home extends Highway.Renderer {
       parent: document.querySelector('.main-header')
     })
 
-    new Links(document.querySelectorAll('.navbar__link'))
-    new Links(document.querySelectorAll('.footer__nav-link'))
-    new Links(document.querySelectorAll('.menu__link'))
-    
     footerScrollbar()
-
+    scrollTo(document.querySelector('.main-header__arrow'))
+  }
+  
+  onLeave() {
+    window.removeEventListener('resize', this.resizeHandler)
   }
 }
 // Don`t forget to export your renderer

@@ -3,11 +3,11 @@ import gsap from 'gsap'
 export default class ScrollBar {
   constructor(el) {
 
-    this.el = el || document.documentElement
-    this.scrollElem = el || window
+    this.el = el || document.getElementById('scroll-container')
+    this.scrollElem = el || document.getElementById('scroll-container')
     this.wrapper = el || document.body
 
-    this.scrollbar = document.createElement('aside')
+    this.scrollbar = document.createElement('div')
     el ? this.scrollbar.classList.add('scrollbar', 'block-scrollbar') : this.scrollbar.classList.add('scrollbar')
 
     this.scrollbar.innerHTML = '<span class="scrollbar__thumb"></span>'
@@ -122,7 +122,7 @@ export default class ScrollBar {
         return false
       }
 
-      this.wrapper.appendChild(this.scrollbar)
+      !this.wrapper.querySelector('.scrollbar') && this.wrapper.appendChild(this.scrollbar)
       this.scrollbar.classList.remove('hidden')
       this.thumb = this.scrollbar.querySelector('.scrollbar__thumb')
       this.setHeight()

@@ -25,6 +25,11 @@ export default class CntPopup {
       if(swipedir === 'right')
         this.close()
     })
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape')
+        this.close()
+    })
   }
 
   open() {

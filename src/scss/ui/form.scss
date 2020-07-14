@@ -1,9 +1,16 @@
+$red: #e53935;
+
 .form {
   overflow-x: hidden;
   padding-top: 20px;
   .btn {
     float: right;
     margin-top: size(112, 40);
+    &.red {
+      .btn__overlay {
+        background-color: $red;
+      }
+    }
   }
 }
 
@@ -79,7 +86,7 @@
   border-bottom: 1px solid $accent;
   &.red {
     span {
-      color: red !important;
+      color: $red !important;
     }
   }
 }
@@ -109,8 +116,8 @@
 .form__validate-text {
   position: absolute;
   font-size: size(14, 11);
-  color: red;
-  bottom: -25px;
+  color: $red;
+  bottom: -35px;
   opacity: 0;
   transition: opacity .3s ease;
 }

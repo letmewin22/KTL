@@ -1,31 +1,9 @@
 * {
   &::selection {
     color: white;
-    background: $accent;
+    background-color: $accent;
   }
 }
-
-// @include media('>=1024px') {
-// /* width */
-// ::-webkit-scrollbar {
-//   width: 6px;
-// }
-
-// /* Track */
-// ::-webkit-scrollbar-track {
-//   background: rgba(white, 0.1);
-// }
-
-// /* Handle */
-// ::-webkit-scrollbar-thumb {
-//   background: $accent;
-// }
-
-// /* Handle on hover */
-// ::-webkit-scrollbar-thumb:hover {
-//   background: darken($color: $accent, $amount: 10%);
-// }
-// }
 
 .custom {
   scrollbar-width: none;
@@ -38,16 +16,28 @@
 
 html {
   &.loading {
-    background: $black;
+    background-color: $black;
     body {
       opacity: 0;
     }
   }
 }
+* {
+  touch-action: pan-y pan-x;
+}
+
+#scroll-container {
+  height: calc( var(--vh, 1vh) * 100);
+  overflow: auto;
+  width: 100vw;
+}
 
 body {
   @include reg;
   color: $black;
+  position: fixed;
+  overflow: hidden !important;
+  height: calc( var(--vh, 1vh) * 100);
   line-height: 1.5em;
   font-size: size(20, 16);
   transition: color 0.7s ease;
@@ -58,22 +48,34 @@ body {
     }
     .navbar {
       color: white;
-      background: $black;
+      background-color: $black;
       svg {
         fill: white;
       }
       .navbar__burger-line {
-        background: white;
+        background-color: white;
+      }
+      .navbar__logo {
+        #main {
+          fill: white
+        }
       }
     }
     .menu {
       color: $black;
     }
     .menu-items__wrapper {
-      background: $lg;
+      background-color: $lg;
       svg {
         stroke: $black;
       }
+    }
+    .menu__dropdown-content {
+      background-color: $black;
+      color: white;
+    }
+    .v-list-section__h {
+      color: #C4C4C4;
     }
   }
   &.nav-hidden {
@@ -88,11 +90,15 @@ body {
     .scrollbar:not(.block-scrollbar) {
       display: none;
     }
+    #scroll-container {
+      overflow: hidden;
+      overflow-x: auto;
+    }
   }
 }
 
 .form-section {
-  background: $lg;
+  background-color: $lg;
   margin-top: size(200, 100);
 }
 
@@ -112,7 +118,7 @@ body {
   @include media('>=960px') {
     width: 1px;
     height: 100%;
-    background: $accent;
+    background-color: $accent;
     margin-right: 50px;
   }
 }
@@ -176,8 +182,38 @@ main {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: white;
+  background-color: white;
   opacity: 0;
   visibility: hidden;
   z-index: 100;
+}
+
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.page-transition__item {
+  width: 100%;
+  height: calc(100vh / 4);
+  background-color: $black;
+  transform: translateX(-100%);
+}
+
+[data-bg] {
+  background-color: $dg;
+}
+
+header, main {
+  position: relative;
+  z-index: 1;
 }

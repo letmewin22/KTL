@@ -19,6 +19,8 @@ export default class FormInputs {
 
     this.phone.oninput = () => this.onInput()
 
+    this.form.classList.add('activated')
+
   }
 
   onInput() {
@@ -28,6 +30,7 @@ export default class FormInputs {
     } else {
       this.validateText.style.opacity = '0'
       this.label.classList.remove('red')
+      this.formButton.classList.remove('red')
     }
   }
 
@@ -66,12 +69,18 @@ export default class FormInputs {
       this.validateText.style.opacity = '0'
       this.label.classList = 'form__label-content'
       this.label.classList.remove('red')
+      this.formButton.classList.remove('red')
     })
 
     this.phone.oninput = () => {
       this.validateText.style.opacity = '0'
       this.label.classList.remove('red')
+      this.formButton.classList.remove('red')
     }
+
+    this.formButton.addEventListener('mouseleave', () => {
+      this.formButton.classList.remove('red')
+    })
   }
 
 }

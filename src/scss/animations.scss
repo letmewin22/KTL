@@ -21,6 +21,21 @@
   transform: translateY(10px);
 }
 
+.transition-span {
+  display: inline-block;
+  line-height: 1em;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.transition-text {
+  opacity: 0;
+}
+
+.transition-other {
+  opacity: 0;
+}
+
 .word {
   display:flex;
   line-height: 1em;

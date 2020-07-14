@@ -2,6 +2,7 @@ import gsap from 'gsap'
 import swipedetect from '@/libs/swipe'
 
 export default class Nav {
+
   constructor() {
 
     this.nav = document.querySelector('.menu')
@@ -20,12 +21,19 @@ export default class Nav {
     this.openBtn.addEventListener('click', this.open.bind(this))
     this.closeBtn.addEventListener('click', this.close.bind(this))
     this.overlay.addEventListener('click', this.close.bind(this))
+    this.items.forEach(el => el.addEventListener('click', this.close.bind(this)))
+    
 
     swipedetect(this.nav, 50, (swipedir) => {
       swipedir === 'right' && this.close()
     })
-    swipedetect(document.body, 150, (swipedir) => {
+    swipedetect(document.body, window.innerWidth * 0.7, (swipedir) => {
       swipedir === 'left' && this.open()
+    })
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape')
+        this.close()
     })
   }
 

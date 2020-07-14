@@ -1,0 +1,145 @@
+{% set title = "Service" %}
+{% set route = "service" %}
+
+{% extends "layouts/_layout.html" %}
+{% import "data/data.html" as items %}
+
+{% block content %}
+
+  <header class="service-header">
+    <div class="container service-header__container">
+      <div class="service-header__content">
+        <div class="service-header__top">
+          <div class="service-header__line transition-line"></div>
+          <div class="service-header__line-after transition-other">
+            <span class="service-header__line-after-content">быстро</span>
+            <span class="service-header__line-after-content">надёжно</span>
+            <span class="service-header__line-after-content">
+              <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.58826 9.95291L5.58826 0.0705566L4.41179 0.0705566L4.41179 9.95291H5.58826Z" fill="#7B7B7B"/>
+                <path d="M10 5.9294L5 11.9294L4.17647 10.9412L9.17647 4.94116L10 5.9294Z" fill="#7B7B7B"/>
+                <path d="M0.823548 4.94116L5.82355 10.9412L5.00002 11.9294L1.90735e-05 5.9294L0.823548 4.94116Z" fill="#7B7B7B"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div class="service-header__medium">
+          <h1 class="h1 service-header__h1">
+            <span class="service-header__h1-text service-header__scroller">
+              <span class='transition-span'>Организация</span>
+            </span>
+            <span class="service-header__h1-text service-header__h1-text--second service-header__scroller">
+              <span class='transition-span'>перевозок</span>
+            </span>
+          </h1>
+          <p class="service-header__desc scroller-parallax transition-text">Перевозим грузы железнодорожным транспортом по всей Украине</p>
+        </div>
+        <div class="service-header__bottom">
+          <div class="service-header__line transition-line"></div>
+        </div>
+      </div>
+      <div class="service-header__arrow">{% include "partials/svg/_down-arrow.html" %}</div>
+    </header>
+    <main>
+      <section class="section default-section">
+        <div class="container section__container">
+          {{mixins.h2('Можно не зависеть от экспедиторов, если у вас стабильный объём перевозок')}}
+          <div class="container__cols">
+            <div class="container__l-col"></div>
+            <div class="container__r-col">
+              <p class="section__text a-p">Аренда вагонов — это популярная услуга для производственного бизнеса, у которого стабильно большой объём перевозок. Получая вагоны в пользование, вы становитесь независимым в перевозке своих грузов.</p>
+              <div class="section__after-line a-line"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="full-screen-img">
+        <div class="full-screen-img__img-wrapper">
+          <div class="full-screen-img__img pli" data-bg="./img/services/1-big.jpg"></div>
+        </div>
+      </div>
+      <div class="transition-rails">
+        <div class="transition-rails__items">
+          <div class="transition-rails__item">&nbsp;— Организация перевозок&nbsp;</div>
+          <div class="transition-rails__item">&nbsp;— Организация перевозок&nbsp;</div>
+        </div>
+      </div>
+      <section class="section list-section">
+        <div class="container section__container list-section__container">
+          <h2 class="h2 a-h2">Услуги</h2>
+          <div class="list-section__list-items">
+            {% for item in items.services %}
+              <a href="#" class="list-section__list-item a-item">
+                <div class="list-section__line"></div>
+                <div class="list-section__overlay"></div>
+                <div class="list-section__list-item-content">
+                  <div class="list-section__left">
+                    <div class="list-section__img">
+                      <div class="list-section__img-pic pli" data-bg="{{item.img}}"></div>
+                    </div>
+                    <div class="list-section__text">
+                      <h3 class="h3 list-section__h">{{item.heading}}</h3>
+                      <p class="list-section__d a-p">{{item.desc}}</p>
+                    </div>
+                  </div>
+                  <div class="list-section__right">{% include "partials/svg/_arrow.html" %}</div>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      <section class="section v-list-section ">
+        <div class="container section__container v-list-section__container">
+          {{mixins.h2('Особенности перевозок', 'v-list-section__h2 half-size-h2')}}
+          <div class="container__cols">
+            <div class="container__l-col"></div>
+            <div class="container__r-col">
+              <div class="v-list-section__items">
+                {% for item in items.serviceItems %}
+                  <div class="v-list-section__item a-item">
+                    <h4 class="h4 v-list-section__h">{{item.heading}}</h4>
+                    <div class="v-list-section__line"></div>
+                    <p class="v-list-section__text a-p">{{item.desc}}</p>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section default-section review-section">
+        <div class="container section__container">
+          {{mixins.h2('Наши партнёры — промышленные предприятия, торговые компании и другие виды бизнеса.')}}
+          <div class="container__cols">
+            <div class="container__l-col">
+              <p class="section__bold-text a-p a-sticky">Гарантия вывоза груза — залог успеха долгосрочных партнерских отношений.</p>
+            </div>
+            <div class="container__r-col">
+              <a href="#" class="default-section__review review">
+                <div class="review__overlay"></div>
+                <div class="review__top">
+                  <div class="review__left">
+                    <div class="review__logo a-p">
+                      <img class="pli" src="./img/clients/1.png" alt="clients__logo">
+                    </div>
+                    <div class="review__info">
+                      <h3 class="h3 review__name a-p">Ринат Ахметов</h3>
+                      <div class="review__company a-p">ООО МЕТИНВЕСТ</div>
+                    </div>
+                  </div>
+                  <div class="review__right">{% include "partials/svg/_arrow.html" %}</div>
+                </div>
+                <div class="review__bottom">
+                  <div class="review__quote a-p">«Перевозка грузов железнодорожным транспортом — это один из наиболее эффективных, безопасных и экономически выгодных видов перевозок грузов для сухопутного сообщения».</div>
+                </div>
+              </a>
+              <div class="section__after-line a-line"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {% include "partials/components/_form.html" %}
+    </main>
+    {% include "partials/components/_footer.html" %}
+  {% endblock %}
