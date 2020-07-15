@@ -119,6 +119,11 @@ H.on('NAVIGATE_END', () => {
   btnSound()
   repeatedText('btn:not(.repeat-activated)', 'btn__text-wrapper', 8)
 
+  document.querySelectorAll('.a-sticky').forEach(el => {
+    const sticky = new Sticky(el, { breakpoint: 960, offset: 60 })
+    sticky.init()
+  })
+
 })
 
 

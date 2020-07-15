@@ -30,11 +30,17 @@ html {
   height: calc( var(--vh, 1vh) * 100);
   overflow: auto;
   width: 100vw;
+  overscroll-behavior-y: none;
+}
+
+#scroller {
+  overscroll-behavior-y: none;
 }
 
 body {
   @include reg;
   color: $black;
+  overscroll-behavior-y: none;
   position: fixed;
   overflow: hidden !important;
   height: calc( var(--vh, 1vh) * 100);
@@ -76,6 +82,17 @@ body {
     }
     .v-list-section__h {
       color: #C4C4C4;
+    }
+    .accordeon-section__arrow {
+      svg {
+        path {
+          fill: white
+        }
+      }
+    }
+    .btn {
+      color: $black;
+      background: #f2f2f2;
     }
   }
   &.nav-hidden {

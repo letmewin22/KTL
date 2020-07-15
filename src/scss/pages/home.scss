@@ -298,7 +298,7 @@
 .v-list-section {
   margin-top: size(100, 50);
   @include media('>=960px') {
-    .h2-wrapper {
+    .v-list-section__h2-arrow {
       background-image: url('../img/arrow.svg');
       background-repeat: no-repeat;
       background-position: right;
@@ -311,7 +311,7 @@
   padding-top: size(148, 52);
   padding-bottom: size(50, 25);
   .container__cols {
-    margin-top: size(148, 00);
+    margin-top: size(108, 00);
   }
 }
 
