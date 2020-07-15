@@ -30,65 +30,76 @@
                 (094) 926 37 65 (тел./факс)
                 </a>
               </div>
-                <div class="form-section__contact">
-                  <h4 class="h4 form-section__contact-h">E-mail</h4>
-                  <a href="" class="form-section__contact-link">
+              <div class="form-section__contact">
+                <h4 class="h4 form-section__contact-h">E-mail</h4>
+                <a href="" class="form-section__contact-link">
                 ktl.disp@gmail.com
               </a>
-                  <a href="" class="form-section__contact-link">
+                <a href="" class="form-section__contact-link">
                 ktl.kovalenko.inna@gmail.com
               </a>
-                </div>
               </div>
             </div>
           </div>
-
         </div>
-        <div class="container__r-col">
-          <div class="form-section__right">
-            <div class="form-section__v-line"></div>
-            <div class="form-section__right-content">
-              <h2 class="h2 form-section__h2">Мы просчитаем стоимость и сроки перевозки вашего груза.</h2>
-              <div class="form-section__form-wrapper">
-                <form class="form" name="form" novalidate>
-                  <!-- Hidden Required Fields -->
-                  <input type="hidden" name="project_name" value="KTL">
-                  <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
-                  <input type="hidden" name="form_subject" value="Заявка с сайта">
-                  <!-- END Hidden Required Fields -->
-                  <div class="form__inputs">
-                    <div class="form__input-wrapper">
-                      <input type="text" class="form__text-field" maxlength="256" name="name" id="name">
-                      <label for="name" class="form__label">
-                        <span class="form__label-content">Имя</span>
-                      </label>
-                    </div>
-                    <div class="form__input-wrapper">
-                      <input type="text" class="form__text-field" maxlength="256" name="company" id="company">
-                      <label for="company" class="form__label">
-                        <span class="form__label-content">Компания</span>
-                      </label>
-                    </div>
-                    <div class="form__input-wrapper">
-                      <input type="email" class="form__text-field" maxlength="256" name="email" id="email">
-                      <label for="email" class="form__label">
-                        <span class="form__label-content">E-mail</span>
-                      </label>
-                    </div>
-                    <div class="form__input-wrapper">
-                      <input type="tel" class="form__text-field" maxlength="256" name="phone" id="phone">
-                      <label for="phone" class="form__label">
-                        <span class="form__label-content required">Телефон *</span>
-                      </label>
-                      <span data-value="3" class="form__validate-text">минимум <span class="koef-inp"></span> цифры. Осталось: <span class="koef-outp"></span></span>
-                    </div>
+
+      </div>
+      <div class="container__r-col">
+        <div class="form-section__right">
+          <div class="form-section__v-line"></div>
+          <div class="form-section__right-content">
+            <h2 class="h2 form-section__h2">Мы просчитаем стоимость и сроки перевозки вашего груза.</h2>
+            <div class="form-section__form-wrapper">
+              <form class="form" name="form" novalidate>
+                <div class="form__rewealers">
+                  <div class="form__rewealer"></div>
+                  <div class="form__rewealer"></div>
+                  <div class="form__rewealer"></div>
+                  <div class="form__rewealer"></div>
+                  <div class="form__thankyou">
+                    <div class="form__thankyou-line"></div>
+                    <h5 class="h5 form__thankyou-h5">Ваша заявка успешно отправлена!</h5>
+                    <div class="form__thankyou-line"></div>
                   </div>
-                  {{mixins.btn('Отправить заявку', 'submit')}}
-                </form>
-              </div>
+                </div>
+                <!-- Hidden Required Fields -->
+                <input type="hidden" name="project_name" value="KTL">
+                <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
+                <input type="hidden" name="form_subject" value="Заявка с сайта">
+                <!-- END Hidden Required Fields -->
+                <div class="form__inputs">
+                  <div class="form__input-wrapper">
+                    <input type="text" class="form__text-field" maxlength="256" name="name" id="name">
+                    <label for="name" class="form__label">
+                      <span class="form__label-content">Имя</span>
+                    </label>
+                  </div>
+                  <div class="form__input-wrapper">
+                    <input type="text" class="form__text-field" maxlength="256" name="company" id="company">
+                    <label for="company" class="form__label">
+                      <span class="form__label-content">Компания</span>
+                    </label>
+                  </div>
+                  <div class="form__input-wrapper">
+                    <input type="email" class="form__text-field" maxlength="256" name="email" id="email">
+                    <label for="email" class="form__label">
+                      <span class="form__label-content">E-mail</span>
+                    </label>
+                  </div>
+                  <div class="form__input-wrapper">
+                    <input type="tel" class="form__text-field" maxlength="256" name="phone" id="phone">
+                    <label for="phone" class="form__label">
+                      <span class="form__label-content required">Телефон *</span>
+                    </label>
+                    <span data-value="3" class="form__validate-text">минимум <span class="koef-inp"></span> цифры. Осталось: <span class="koef-outp"></span></span>
+                  </div>
+                </div>
+                {{mixins.btn('Отправить заявку', 'submit')}}
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

@@ -58,3 +58,8 @@ h1 {
   @include medium;
   font-size: size(30, 24);
 }
+
+.h5 {
+  @include reg;
+  font-size: size(24, 18);
+}
