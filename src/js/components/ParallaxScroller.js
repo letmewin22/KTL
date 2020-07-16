@@ -7,6 +7,7 @@ export default class ParallaxScroller {
     this.looperState = false
     this.scrollerState = false
     this.footerState = false
+    this.raf = null
 
     cancelAnimationFrame(this.raf)
 
@@ -16,9 +17,7 @@ export default class ParallaxScroller {
 
       this.newPixel = document.getElementById('scroll-container').scrollTop
 
-      this.callbacks.map(el => {
-        el()
-      })
+      this.callbacks.map(el => el())
 
       this.raf = window.requestAnimationFrame(this.rafhandler.bind(this))
     }
@@ -26,13 +25,13 @@ export default class ParallaxScroller {
     this.rafhandler()
   }
 
-  looper(selector) {
+  looper(selector, mini) {
 
     this.layer = document.querySelectorAll(selector)
 
     if (this.newPixel > 0) {
 
-      if (document.querySelector('.scroller-parallax')) document.querySelector('.scroller-parallax').style.transform = `matrix3d(1,0,0.00,0,0.00,1,0.00,0,0,0,1,0,0,-${this.newPixel * 0.011 * this.speed[0]},0,1)`
+      if (mini && document.querySelector('.scroller-parallax')) document.querySelector('.scroller-parallax').style.transform = `matrix3d(1,0,0.00,0,0.00,1,0.00,0,0,0,1,0,0,-${this.newPixel * 0.011 * this.speed[0]},0,1)`
 
       for (let i = 0; i < this.layer.length; i++) {
 
@@ -53,7 +52,7 @@ export default class ParallaxScroller {
       }
     }
 
-    !this.looperState && this.callbacks.push(this.looper.bind(this, selector))
+    !this.looperState && this.callbacks.push(this.looper.bind(this, selector, mini))
     this.looperState = true
   }
 

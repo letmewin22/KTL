@@ -42,12 +42,14 @@ export default class Nav {
     if(this.animate) return
 
     this.animate = true
+    this.items.forEach(el => el.style.pointerEvents = 'none')
     document.body.classList.add('e-fixed')
 
     this.nav.style.display = 'block'
 
     const tl = gsap.timeline({onComplete: () => {
       this.animate = false
+      this.items.forEach(el => el.style.pointerEvents = 'auto')
     }})
 
     tl.set(this.overlay, {opacity: 0})
@@ -83,8 +85,5 @@ export default class Nav {
     tl.to(this.itemsWrapper, { duration: 1, x: '100%', opacity: 1, borderRadius: '5%', ease: 'power4.out' }, 0.4)
     tl.to(this.overlay, { duration: 0.5, opacity: 0, ease: 'power2.out' }, 0.5)
 
-    
-    
-    
   }
 }

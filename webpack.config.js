@@ -71,17 +71,17 @@ function createConfig(env) {
   if (isProduction) {
     webpackConfig.plugins.push(
       new webpackReal.LoaderOptionsPlugin({
-        minimize: true,
+        minimize: true
       })
     )
-    webpackConfig.plugins.push(
+    // webpackConfig.plugins.push(
 
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'server',
-        analyzerPort: 5500,
-        openAnalyzer: false
-      })
-    )
+    //   new BundleAnalyzerPlugin({
+    //     analyzerMode: 'server',
+    //     analyzerPort: 5500,
+    //     openAnalyzer: false
+    //   })
+    // )
   }
 
   return webpackConfig

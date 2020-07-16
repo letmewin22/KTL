@@ -14,7 +14,7 @@ class Service extends Highway.Renderer {
 
     const parralax = new ParallaxScroller()
 
-    parralax.looper('.service-header__scroller')
+    parralax.looper('.service-header__scroller', true)
     screen.width > 1024 && parralax.scroller('.full-screen-img__img-wrapper')
 
     repeatedText('transition-rails', 'transition-rails__items', 20)

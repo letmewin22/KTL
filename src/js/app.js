@@ -98,11 +98,10 @@ window.addEventListener('resize', winH)
 H.on('NAVIGATE_IN', () => {
   moveEl()
   activeLink()
+  bgWebP()
 })
 
 H.on('NAVIGATE_END', () => {
-
-  bgWebP()
 
   const navbarPos = new NavbarPos()
   navbarPos.destroy()
