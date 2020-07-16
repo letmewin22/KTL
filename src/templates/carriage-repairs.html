@@ -1,0 +1,174 @@
+{% set title = "Service" %}
+{% set route = "service" %}
+
+{% extends "layouts/_layout.html" %}
+{% import "data/data.html" as items %}
+
+{% block content %}
+
+  <header class="service-header">
+    <div class="container service-header__container">
+      <div class="service-header__content">
+        <div class="service-header__top">
+          <div class="service-header__line transition-line"></div>
+          <div class="service-header__line-after transition-other">
+            <span class="service-header__line-after-content">быстро</span>
+            <span class="service-header__line-after-content">надёжно</span>
+            <span class="service-header__line-after-content">
+              <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.58826 9.95291L5.58826 0.0705566L4.41179 0.0705566L4.41179 9.95291H5.58826Z" fill="#7B7B7B"/>
+                <path d="M10 5.9294L5 11.9294L4.17647 10.9412L9.17647 4.94116L10 5.9294Z" fill="#7B7B7B"/>
+                <path d="M0.823548 4.94116L5.82355 10.9412L5.00002 11.9294L1.90735e-05 5.9294L0.823548 4.94116Z" fill="#7B7B7B"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div class="service-header__medium">
+          <h1 class="h1 service-header__h1">
+            <span class="service-header__h1-text service-header__scroller">
+              <span class='transition-span'>Ремонт</span>
+            </span>
+            <span class="service-header__h1-text service-header__h1-text--second service-header__scroller">
+              <span class='transition-span'>вагонов</span>
+            </span>
+          </h1>
+          <p class="service-header__desc scroller-parallax transition-text">Ремонтируем вагоны и продаём запасные части</p>
+        </div>
+        <div class="service-header__bottom">
+          <div class="service-header__line transition-line"></div>
+        </div>
+      </div>
+      <div class="service-header__arrow">{% include "partials/svg/_down-arrow.html" %}</div>
+    </header>
+    <main>
+      <section class="section default-section">
+        <div class="container section__container">
+          {{mixins.h2('Проведём плановое обслуживание и восстановим рабочее состояние вагонов')}}
+          <div class="container__cols">
+            <div class="container__l-col"></div>
+            <div class="container__r-col">
+              <p class="section__text a-p">У нас налажена работа с сетью депо, в которых мы ремонтируем свой подвижной состав, а также организовываем ремонт вагонов наших клиентов. Также продаём запчасти в нужном для клиента количестве. </p>
+              <div class="section__after-line a-line"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="full-screen-img">
+        <div class="full-screen-img__img-wrapper">
+          <div class="full-screen-img__img pli" data-bg="./img/services/3-big.jpg"></div>
+        </div>
+      </div>
+      <section class="section steps-section">
+        <div class="container section__container">
+          {{mixins.h2('Как заказать ремонт вагонов?')}}
+          <p class="section__bold-text a-p steps-section__bold-text">Мы организуем ремонт ваших вагонов с гарантией на предоставленные услуги. </p>
+          <div class="steps-section__draggable">
+            <div class="steps-section__items">
+              <div class="steps-section__item a-item">
+                <h4 class="h4 steps-section__h">Шаг №1</h4>
+                <div class="steps-section__line"></div>
+                <p class="steps-section__text">Оставьте заявку в форме обратной связи. С вами свяжется менеджер по организации ремонтов и продаже запчастей.</p>
+              </div>
+              <div class="steps-section__item a-item">
+                <h4 class="h4 steps-section__h">Шаг №2</h4>
+                <div class="steps-section__line"></div>
+                <p class="steps-section__text">Укажите свою задачу: отремонтировать вагоны или купить запасные части для них.</p>
+              </div>
+              <div class="steps-section__item a-item">
+                <h4 class="h4 steps-section__h">Шаг №3</h4>
+                <div class="steps-section__line"></div>
+                <p class="steps-section__text">Менеджер уточнит детали и расскажет,  куда и когда можно пригнать вагоны для ремонта. </p>
+              </div>
+              <div class="steps-section__item a-item">
+                <h4 class="h4 steps-section__h">Шаг №4</h4>
+                <div class="steps-section__line"></div>
+                <p class="steps-section__text">После согласования условий и подписания договора мы ремонтируем ваши вагоны или поставляем запасные части.</p>
+              </div>
+            </div>
+          </div>
+          <div class="steps-section__big-line a-line">
+            <div class="steps-section__rail">
+              <div class="steps-section__scrollthumb"></div>
+            </div>
+          </div>
+          <div class="container__cols steps-section__cols">
+            <div class="container__l-col">
+              <p class="section__bold-text a-p steps-section__med-text">Благодаря партнёрству с сетью ремонтных депо, мы проводим ремонт вагонов быстро и качественно.</p>
+            </div>
+            <div class="container__r-col">{{mixins.btn('Заказать ремонт', '', 'default-section__btn c-btn a-btn')}}</div>
+          </div>
+          <div class="steps-section__after-line a-line"></div>
+        </div>
+      </section>
+      <div class="transition-rails">
+        <div class="transition-rails__items">
+          <div class="transition-rails__item">&nbsp;— Ремонт вагонов&nbsp;</div>
+          <div class="transition-rails__item">&nbsp;— Ремонт вагонов&nbsp;</div>
+        </div>
+      </div>
+      <section class="section v-list-section">
+        <div class="container section__container v-list-section__container">
+          {{mixins.h2('Особенности ремонта вагонов', 'v-list-section__h2 half-size-h2')}}
+          <div class="container__cols">
+            <div class="container__l-col"></div>
+            <div class="container__r-col">
+              <div class="v-list-section__items">
+                <div class="v-list-section__item a-item">
+                  <h4 class="h4 v-list-section__h">01</h4>
+                  <div class="v-list-section__line"></div>
+                  <p class="v-list-section__text a-p">Мы продаём запасные части для своих клиентов дешевле, чем у поставщика, потому что закупаем большой разовый объем. </p>
+                </div>
+                <div class="v-list-section__item a-item">
+                  <h4 class="h4 v-list-section__h">02</h4>
+                  <div class="v-list-section__line"></div>
+                  <p class="v-list-section__text a-p">Помогаем поддерживать ваш подвижной состав в рабочем состоянии: проводим регулярное обслуживание и вовремя устраняем неисправности. </p>
+                </div>
+                <div class="v-list-section__item a-item">
+                  <h4 class="h4 v-list-section__h">03</h4>
+                  <div class="v-list-section__line"></div>
+                  <p class="v-list-section__text a-p">Организовываем ремонт вагонов любых видов: полувагонов, крытых вагонов, хопперов, платформ и цистерн.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section default-section relative-section">
+        <div class="container section__container">
+          {{mixins.h2('Другие услуги')}}
+          <div class="container__cols relative-section__cols">
+            <div class="container__l-col">
+              <p class="section__bold-text a-p a-sticky">Предоставляем комплекс услуг по транспортировке грузов и обслуживанию подвижного состава</p>
+            </div>
+            <div class="container__r-col">
+              <div class="relative-section__items">
+                <a href="./organization-of-transportation.html" class="relative-section__item">
+                  <div class="relative-section__line a-line"></div>
+                  <div class="relative-section__overlay"></div>
+                  <div class="relative-section__content a-item">
+                    <h4 class="h4">Организация перевозок </h4>
+                    <div class="relative-section__arrow">
+                      {% include "partials/svg/_arrow.html" %}
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="relative-section__item">
+                  <div class="relative-section__line a-line"></div>
+                  <div class="relative-section__overlay"></div>
+                  <div class="relative-section__content a-item">
+                    <h4 class="h4">Аренда вагонов</h4>
+                    <div class="relative-section__arrow">
+                      {% include "partials/svg/_arrow.html" %}
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="section__after-line relative-section__after-line a-line"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {% include "partials/components/_form.html" %}
+    </main>
+    {% include "partials/components/_footer.html" %}
+  {% endblock %}

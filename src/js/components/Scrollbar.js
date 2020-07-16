@@ -1,4 +1,5 @@
 import gsap from 'gsap'
+import mutationObserver from '../mutationObserver'
 
 export default class ScrollBar {
   constructor(el) {
@@ -127,7 +128,9 @@ export default class ScrollBar {
       this.thumb = this.scrollbar.querySelector('.scrollbar__thumb')
       this.setHeight()
       window.addEventListener('resize', this.setHeight.bind(this))
+      document.getElementById('scroller').addEventListener('resize', this.setHeight.bind(this))
 
+      mutationObserver(document.getElementById('scroll-container'), this.setHeight.bind(this))
 
       this.detectInactivity()
       this.events()

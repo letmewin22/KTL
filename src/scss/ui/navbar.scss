@@ -84,15 +84,15 @@
       transform: rotate(-180deg);
     }
   }
-  &.is-current {
-    color: $accent;
-    pointer-events: none;
-    svg {
-      fill: $accent;
-      transform: rotate(-180deg);
+    &.is-current {
+      color: $accent;
+      svg {
+        fill: $accent;
+      }
+      &:not(.dropdown__btn) {
+        pointer-events: none;
+      }
     }
-  }
-
 }
 
 .navbar__burger {

@@ -43,11 +43,11 @@
     <main>
       <section class="section default-section">
         <div class="container section__container">
-          {{mixins.h2('Можно не зависеть от экспедиторов, если у вас стабильный объём перевозок')}}
+          {{mixins.h2('В Украине нет альтернативы ЖД-транспорту, если нужно перевезти большое количество груза.')}}
           <div class="container__cols">
             <div class="container__l-col"></div>
             <div class="container__r-col">
-              <p class="section__text a-p">Аренда вагонов — это популярная услуга для производственного бизнеса, у которого стабильно большой объём перевозок. Получая вагоны в пользование, вы становитесь независимым в перевозке своих грузов.</p>
+              <p class="section__text a-p">Перевозка грузов железнодорожным транспортом — эффективный, безопасный и экономически выгодный вид сухопутной транспортировки. Мы перевозим любое количество груза, избегая перегрузок в пути следования.</p>
               <div class="section__after-line a-line"></div>
             </div>
           </div>
@@ -64,13 +64,21 @@
           <p class="section__bold-text a-p steps-section__bold-text">Мы перевозим строительные материалы, металлы, насыпные и пищевые грузы.</p>
           <div class="steps-section__draggable">
             <div class="steps-section__items">
-              {% for i in range(0, 4) -%}
-                <div class="steps-section__item a-item">
-                  <h4 class="h4 steps-section__h">Шаг №1</h4>
-                  <div class="steps-section__line"></div>
-                  <p class="steps-section__text">Оставьте заявку в форме обратной связи. С вами свяжется наш экспедитор, чтобы сформировать заявку. </p>
-                </div>
-              {% endfor %}
+              <div class="steps-section__item a-item">
+                <h4 class="h4 steps-section__h">Шаг №1</h4>
+                <div class="steps-section__line"></div>
+                <p class="steps-section__text">Вы оставляете заявку, где указываете вид груза, сроки перевозки, а также станции отправления-назначения.</p>
+              </div>
+              <div class="steps-section__item a-item">
+                <h4 class="h4 steps-section__h">Шаг №2</h4>
+                <div class="steps-section__line"></div>
+                <p class="steps-section__text">Заключаем договор: согласно утверждённого графика предоставляем вагоны для вывоза груза.</p>
+              </div>
+              <div class="steps-section__item a-item">
+                <h4 class="h4 steps-section__h">Шаг №3</h4>
+                <div class="steps-section__line"></div>
+                <p class="steps-section__text">Отправляем вагоны на станцию назначения и через программное обеспечение отслеживаем их в пути следования.</p>
+              </div>
             </div>
           </div>
           <div class="steps-section__big-line a-line">
@@ -82,7 +90,7 @@
             <div class="container__l-col">
               <p class="section__bold-text a-p steps-section__med-text">В договоре мы закрепляем свои обязанности обеспечить вас подвижным составом согласно предоставленной заявки. </p>
             </div>
-            <div class="container__r-col">{{mixins.btn('Заявка на перевозку', '', 'default-section__btn a-btn')}}</div>
+            <div class="container__r-col">{{mixins.btn('Заявка на перевозку', '', 'default-section__btn c-btn a-btn')}}</div>
           </div>
           <div class="steps-section__after-line a-line"></div>
         </div>
@@ -221,7 +229,7 @@
                     </div>
                   </div>
                 </a>
-                <a href="#" class="relative-section__item">
+                <a href="./carriage-repairs.html" class="relative-section__item">
                   <div class="relative-section__line a-line"></div>
                   <div class="relative-section__overlay"></div>
                   <div class="relative-section__content a-item">

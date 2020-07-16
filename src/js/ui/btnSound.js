@@ -1,5 +1,5 @@
 const btnSound = () => {
-  const audio = new Audio('/audio/btn.mp3')
+  const audio = new Audio('./audio/btn.mp3')
 
   const btn = [...document.querySelectorAll('.btn:not(.activated)')]
 

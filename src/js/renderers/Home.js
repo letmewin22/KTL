@@ -25,7 +25,9 @@ class Home extends Highway.Renderer {
 
     repeatedText('transition-rails', 'transition-rails__items', 20)
 
-    new ParallaxScroller('.main-header__scroller')
+    const parralax = new ParallaxScroller()
+    parralax.looper('.main-header__scroller')
+    screen.width > 1024 && parralax.scroller('.full-screen-img__img-wrapper')
 
     new MouseParallax({
       el: document.querySelector('.main-header__train'),

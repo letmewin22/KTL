@@ -1,0 +1,40 @@
+{% set title = "Services" %}
+{% set route = "services" %}
+
+{% extends "layouts/_layout.html" %}
+{% import "data/data.html" as items %}
+
+{% block content %}
+  <main class="services">
+    <section class="section list-section">
+      <div class="container section__container list-section__container">
+        <div class="h2-wrapper">
+          <div class="h2__line services-h2__line transition-line"></div>
+          <h2 class="h2 services-h2"><span class="transition-span">Услуги</span></h2>
+          <div class="h2__line services-h2__line transition-line"></div>
+        </div>
+        <div class="list-section__list-items services__list-items transition-other">
+          {% for item in items.services %}
+            <a href="{{item.link}}" class="list-section__list-item">
+              <div class="list-section__line"></div>
+              <div class="list-section__overlay"></div>
+              <div class="list-section__list-item-content">
+                <div class="list-section__left">
+                  <div class="list-section__img">
+                    <div class="list-section__img-pic pli" data-bg="{{item.img}}"></div>
+                  </div>
+                  <div class="list-section__text">
+                    <h3 class="h3 list-section__h">{{item.heading}}</h3>
+                    <p class="list-section__d">{{item.desc}}</p>
+                  </div>
+                </div>
+                <div class="list-section__right">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </main>
+  {% include "partials/components/_footer.html" %}
+{% endblock %}

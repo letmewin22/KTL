@@ -1,11 +1,12 @@
 import FormInputs from './FormInputs.js'
 import serialize from './formSend.js'
+import animation from './animation.js'
 
 export default class FormSubmit extends FormInputs {
 
   constructor(form) {
     super(form)
-  
+
     this.form.onsubmit = (e) => this.submit(e)
 
   }
@@ -27,6 +28,7 @@ export default class FormSubmit extends FormInputs {
     for (let input of this.input) {
       input.classList.remove('focus')
     }
+    animation(this.formButton)
 
     // dataLayer.push({ 'event': 'otpravka_form' })
   }
@@ -35,18 +37,36 @@ export default class FormSubmit extends FormInputs {
   async requestSend() {
 
     const URL = this.form.getAttribute('data-url')
+    const tURL = './telegram.php'
 
     try {
-
-      await fetch(URL, {
-        method: 'POST',
-        body: serialize(this.form),
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
-      })
-        .then(response => response.status >= 200 && response.status < 400 ?
-          this.requestLoad() : alert('При отправке произошла ошибка:('))
+      await Promise.all([
+        fetch(URL, {
+          method: 'POST',
+          body: serialize(this.form),
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+          }
+        }),
+        fetch(tURL, {
+          method: 'POST',
+          body: serialize(this.form),
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+          }
+        })
+      ])
+        .then(responses => {
+          if(responses[0].status >= 200 && responses[0].status < 400) {
+            this.requestLoad()
+            return
+          } else if (responses[1].status >= 200 && responses[1].status < 400) {
+            this.requestLoad()
+            return
+          } else {
+            alert('При отправке произошла ошибка:(')
+          }
+        })
       // this.requestLoad() : this.requestLoad())
 
     } catch (e) {

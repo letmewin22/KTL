@@ -1,8 +1,8 @@
 {% macro h2(text, selector) %}
   <div class="h2-wrapper">
-    <div class="h2__line h2__line--before a-line"></div>
+    <div class="h2__line h2__line--before {% if selector !== 'a-cancel' %}a-line{% endif %}"></div>
     <h2 class="h2 {{selector}} a-h2">{{text|safe}}</h2>
-    <div class="h2__line h2__line--after a-line"></div>
+    <div class="h2__line h2__line--after {% if selector !== 'a-cancel' %}a-line{% endif %}"></div>
   </div>
 {% endmacro %}
 
@@ -16,3 +16,6 @@
     <div class="btn__overlay"></div>
   </button>
 {% endmacro %}
+
+
+  
