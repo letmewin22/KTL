@@ -52,7 +52,7 @@ export default class Loader {
       this.percentHTML.parentNode.insertBefore(this.clone, this.percentHTML)
       this.percentHTML.parentNode.removeChild(this.percentHTML)
 
-      Splitting({ target: this.clone, by: 'chars' })
+      const bla = Splitting({ target: this.clone, by: 'chars' })
       this.animation()
     }
   }

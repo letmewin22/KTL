@@ -53,6 +53,7 @@ class Rewealers extends Highway.Transition {
         onComplete: () => {
           document.querySelectorAll('.a-transition').forEach(el => document.body.removeChild(el))
           document.body.style.cursor = 'auto'
+          document.querySelector('.navbar').classList.remove('remove-bg')
           done()
         }
       })

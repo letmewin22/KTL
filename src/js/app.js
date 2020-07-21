@@ -11,19 +11,20 @@ import { ScrollBar, Sticky, repeatedText, Links, ParallaxScroller } from '@/comp
 import FormSubmit from '@/form/FormSubmit.js'
 import { cntBtn, footer, Dropdown, NavbarPos, Nav, CntPopup, btnSound, activeLink } from '@/ui'
 import ScrollAnimations from '@/scroll/ScrollAnimations'
-import { detectRouter } from '@/helpers'
+import { detectRouter, Resize } from '@/helpers'
 
-import { Home, Service, Services } from '@/renderers'
+import { Home, Service, Services, About } from '@/renderers'
 import { Rewealers } from '@/transitions'
 
 
 
-cssWebP()
+// cssWebP()
 const H = new Highway.Core({
   renderers: {
     home: Home,
     service: Service,
-    services: Services
+    services: Services,
+    about: About
   },
   transitions: {
     default: Rewealers
@@ -55,7 +56,6 @@ window.addEventListener('load', () => {
   new Links(document.querySelectorAll('.menu__link'))
 
   document.querySelectorAll('.form').forEach(el => new FormSubmit(el))
-  footer()
   cntBtn()
   new ScrollAnimations()
   new Nav()
@@ -72,7 +72,13 @@ window.addEventListener('load', () => {
   const navbarPos = new NavbarPos()
   navbarPos.init()
 
-  winH()
+  
+  const resize = new Resize(() => {
+    winH()
+    footer()
+  })
+  resize.init()
+
   moveEl()
 
   document.querySelectorAll('.a-sticky').forEach(el => {
@@ -87,11 +93,6 @@ window.addEventListener('load', () => {
     parralax.footer()
   })
 })
-
-
-window.addEventListener('resize', footer)
-window.addEventListener('resize', winH)
-
 
 
 
@@ -122,7 +123,9 @@ H.on('NAVIGATE_END', () => {
   })
 
   document.querySelectorAll('.form:not(.activated)').forEach(el => new FormSubmit(el))
+
   btnSound()
+  
   repeatedText('btn:not(.repeat-activated)', 'btn__text-wrapper', 8)
 
   document.querySelectorAll('.a-sticky').forEach(el => {

@@ -22,7 +22,17 @@ export default class ParallaxScroller {
       this.raf = window.requestAnimationFrame(this.rafhandler.bind(this))
     }
 
+    this.init()
+  }
+
+  init() {
+    cancelAnimationFrame(this.raf)
     this.rafhandler()
+  }
+
+  destroy() {
+    this.callbacks = []
+    cancelAnimationFrame(this.raf)
   }
 
   looper(selector, mini) {

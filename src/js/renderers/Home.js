@@ -25,9 +25,9 @@ class Home extends Highway.Renderer {
 
     repeatedText('transition-rails', 'transition-rails__items', 20)
 
-    const parralax = new ParallaxScroller()
-    parralax.looper('.main-header__scroller')
-    screen.width > 1024 && parralax.scroller('.full-screen-img__img-wrapper')
+    this.parralax = new ParallaxScroller()
+    this.parralax.looper('.main-header__scroller')
+    screen.width > 1024 && this.parralax.scroller('.full-screen-img__img-wrapper')
 
     new MouseParallax({
       el: document.querySelector('.main-header__train'),
@@ -39,6 +39,7 @@ class Home extends Highway.Renderer {
   }
   
   onLeave() {
+    this.parralax.destroy()
     window.removeEventListener('resize', this.resizeHandler)
   }
 }

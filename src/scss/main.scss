@@ -132,7 +132,7 @@ body {
   height: 100%;
 }
 .form-section__v-line {
-  @include media('>=960px') {
+  @include media('>=#{$br1}') {
     width: 1px;
     height: 100%;
     background-color: $accent;

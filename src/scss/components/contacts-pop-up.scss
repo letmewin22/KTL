@@ -55,7 +55,7 @@
   align-items: center;
   padding-right: size(196, 40);
   padding-left: size(196, 40);
-  @include media('<=960px') {
+  @include media('<=#{$br1}') {
     padding-right: size(146, 20);
     padding-left: size(146, 20);
   }
@@ -90,7 +90,7 @@
 
 .contacts-pop-up-section__right-content {
   margin-top: 7vh;
-  @include media('<=960px') {
+  @include media('<=#{$br1}') {
     margin-top: 0px;
   }
 }

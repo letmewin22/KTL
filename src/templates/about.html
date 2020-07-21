@@ -1,0 +1,227 @@
+{% set title = "About" %}
+{% set route = "about" %}
+
+{% extends "layouts/_layout.html" %}
+{% import "data/data.html" as items %}
+
+{% block content %}
+  <header class="about-header">
+    <div class="container about-header__container">
+      <div class="about-header__content-wrapper">
+        <div class="about-header__train">
+          {% include "partials/svg/_train.html" %}
+        </div>
+        <h1 class="about-header__h1">Мы — КТЛ, компания-экспедитор в сфере грузовых железнодорожных перевозок</h1>
+        <div class="about-header__line"></div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="section default-section">
+      <div class="container section__container">
+        {{mixins.h2('В Украине нет альтернативы ЖД-транспорту, если нужно перевезти большое количество груза.')}}
+        <div class="container__cols">
+          <div class="container__l-col"></div>
+          <div class="container__r-col">
+            <p class="section__text a-p">Перевозка грузов железнодорожным транспортом — эффективный, безопасный и экономически выгодный вид сухопутной транспортировки. Мы перевозим любое количество груза, избегая перегрузок в пути следования.</p>
+            <div class="section__after-line a-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="full-screen-img">
+      <div class="full-screen-img__img-wrapper">
+        <div class="full-screen-img__img pli" data-bg="./img/services/1-big.jpg"></div>
+      </div>
+    </div>
+    <section class="section steps-section">
+      <div class="container section__container">
+        {{mixins.h2('Как заказать перевозку?')}}
+        <p class="section__bold-text a-p steps-section__bold-text">Мы перевозим строительные материалы, металлы, насыпные и пищевые грузы.</p>
+        <div class="steps-section__draggable">
+          <div class="steps-section__items">
+            <div class="steps-section__item a-item">
+              <h4 class="h4 steps-section__h">Шаг №1</h4>
+              <div class="steps-section__line"></div>
+              <p class="steps-section__text">Вы оставляете заявку, где указываете вид груза, сроки перевозки, а также станции отправления-назначения.</p>
+            </div>
+            <div class="steps-section__item a-item">
+              <h4 class="h4 steps-section__h">Шаг №2</h4>
+              <div class="steps-section__line"></div>
+              <p class="steps-section__text">Заключаем договор: согласно утверждённого графика предоставляем вагоны для вывоза груза.</p>
+            </div>
+            <div class="steps-section__item a-item">
+              <h4 class="h4 steps-section__h">Шаг №3</h4>
+              <div class="steps-section__line"></div>
+              <p class="steps-section__text">Отправляем вагоны на станцию назначения и через программное обеспечение отслеживаем их в пути следования.</p>
+            </div>
+          </div>
+        </div>
+        <div class="steps-section__big-line a-line">
+          <div class="steps-section__rail">
+            <div class="steps-section__scrollthumb"></div>
+          </div>
+        </div>
+        <div class="container__cols steps-section__cols">
+          <div class="container__l-col">
+            <p class="section__bold-text a-p steps-section__med-text">В договоре мы закрепляем свои обязанности обеспечить вас подвижным составом согласно предоставленной заявки. </p>
+          </div>
+          <div class="container__r-col">{{mixins.btn('Заявка на перевозку', '', 'default-section__btn c-btn a-btn')}}</div>
+        </div>
+        <div class="steps-section__after-line a-line"></div>
+      </div>
+    </section>
+    <div class="transition-rails">
+      <div class="transition-rails__items">
+        <div class="transition-rails__item">&nbsp;— Организация перевозок&nbsp;</div>
+        <div class="transition-rails__item">&nbsp;— Организация перевозок&nbsp;</div>
+      </div>
+    </div>
+    <section class="section accordeon-section dark-section">
+      <div class="container section__container accordeon-section__container">
+        {{mixins.h2('Дополнительные услуги')}}
+        <div class="accordeon-section__items">
+          <div class="accordeon-section__line a-line"></div>
+          <div class="accordeon-section__item">
+            <div class="accordeon-section__overlay"></div>
+            <div class="container__cols accordeon-section__cols a-item">
+              <div class="container__l-col accordeon-section__l-col">
+                <div class="h3 accordeon-section__num">01</div>
+              </div>
+              <div class="container__r-col accordeon-section__r-col">
+                <h4 class="h4 accordeon-section__h4">Ускорение вагонов</h4>
+                <div class="accordeon-section__arrow">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </div>
+            <div class="accordeon-section__text">
+                Ускоряем продвижение состава в пути следования, если возникает такая необходимость. Эта услуга нужна для случаев, когда меняется станция назначения, лицо получателя или возникают другие, форс-мажорные обстоятельства, требующие более быстрой транспортировки. 
+              </div>
+            <div class="accordeon-section__line a-line"></div>
+          </div>
+          <div class="accordeon-section__item">
+            <div class="accordeon-section__overlay"></div>
+            <div class="container__cols accordeon-section__cols a-item">
+              <div class="container__l-col accordeon-section__l-col">
+                <div class="h3 accordeon-section__num">02</div>
+              </div>
+              <div class="container__r-col accordeon-section__r-col">
+                <h4 class="h4 accordeon-section__h4">Переадресация вагонов</h4>
+                <div class="accordeon-section__arrow">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </div>
+            <div class="accordeon-section__text">
+                Если вы уже отгрузили груз, и в пути следования нужно изменить станцию назначения — мы сделаем это. Быстро подготовим документы для переадресации, а также изменим маршрут, чтобы ваш груз был доставлен точно в срок. 
+              </div>
+            <div class="accordeon-section__line a-line"></div>
+          </div>
+          <div class="accordeon-section__item">
+            <div class="accordeon-section__overlay"></div>
+            <div class="container__cols accordeon-section__cols a-item">
+              <div class="container__l-col accordeon-section__l-col">
+                <div class="h3 accordeon-section__num">03</div>
+              </div>
+              <div class="container__r-col accordeon-section__r-col">
+                <h4 class="h4 accordeon-section__h4">Расчёт стоимости</h4>
+                <div class="accordeon-section__arrow">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </div>
+
+            <div class="accordeon-section__text">
+              <p>Оставьте свои контактные данные в форме обратной связи, чтобы мы просчитали стоимость транспортировки груза. С вами свяжется наш экспедитор и вы вместе заполните заявку на перевозку. В заявке на перевозку отражается станция отправления груза, станция назначения груза, необходимое количество вагонов, планируемая дата перевозки.</p>
+              <p>Конечная стоимость зависит от дальности перевозки, количества груза, технических особенностей на местах погрузки/выгрузки груза, а также вагонов — они могут быть нашими или от УЗ.</p>
+            </div>
+            <div class="accordeon-section__line a-line"></div>
+          </div>
+          <div class="accordeon-section__item">
+            <div class="accordeon-section__overlay"></div>
+            <div class="container__cols accordeon-section__cols a-item">
+              <div class="container__l-col accordeon-section__l-col">
+                <div class="h3 accordeon-section__num">04</div>
+              </div>
+              <div class="container__r-col accordeon-section__r-col">
+                <h4 class="h4 accordeon-section__h4">Поиск вагонов</h4>
+                <div class="accordeon-section__arrow">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </div>
+            <div class="accordeon-section__text">
+                Если вагоны потерялись в пути следования — обращайтесь к нам. Мы найдем станцию, где они были последний раз, а затем отследим их текущее местоположение. Проверку осуществляем с помощью диспетчерских центров, документации и программного обеспечения.  
+              </div>
+            <div class="accordeon-section__line a-line"></div>
+          </div>
+          <div class="accordeon-section__item">
+            <div class="accordeon-section__overlay"></div>
+            <div class="container__cols accordeon-section__cols a-item">
+              <div class="container__l-col accordeon-section__l-col">
+                <div class="h3 accordeon-section__num">05</div>
+              </div>
+              <div class="container__r-col accordeon-section__r-col">
+                <h4 class="h4 accordeon-section__h4">Данные о вагонах</h4>
+                <div class="accordeon-section__arrow">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </div>
+            <div class="accordeon-section__text">
+                У нас есть собственные и арендованные вагоны. Для насыпных грузов используем полувагоны, а для грузов, нуждающихся в защите от атмосферных осадков — крытые вагоны. Если нужного типа вагона нет в нашем парке, мы используем вагоны ЧАО «Украинская железная дорога». Предоставляем данные о доступных видах и количестве свободных вагонов.
+              </div>
+            <div class="accordeon-section__line a-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section v-list-section">
+      <div class="container section__container v-list-section__container">
+        {{mixins.h2('Особенности перевозок', 'v-list-section__h2 half-size-h2')}}
+        <div class="container__cols">
+          <div class="container__l-col"></div>
+          <div class="container__r-col">
+            <div class="v-list-section__items">
+              {% for item in items.serviceItems %}
+                <div class="v-list-section__item a-item">
+                  <h4 class="h4 v-list-section__h">{{item.heading}}</h4>
+                  <div class="v-list-section__line"></div>
+                  <p class="v-list-section__text a-p">{{item.desc}}</p>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section default-section relative-section">
+      <div class="container section__container">
+        {{mixins.h2('Другие услуги')}}
+        <div class="container__cols relative-section__cols">
+          <div class="container__l-col">
+            <p class="section__bold-text a-p a-sticky">Предоставляем комплекс услуг по транспортировке грузов и обслуживанию подвижного состава</p>
+          </div>
+          <div class="container__r-col">
+            <div class="relative-section__items">
+              <a href="#" class="relative-section__item">
+                <div class="relative-section__line a-line"></div>
+                <div class="relative-section__overlay"></div>
+                <div class="relative-section__content a-item">
+                  <h4 class="h4">Аренда вагонов</h4>
+                  <div class="relative-section__arrow">
+                    {% include "partials/svg/_arrow.html" %}
+                  </div>
+                </div>
+              </a>
+              <a href="./carriage-repairs.html" class="relative-section__item">
+                <div class="relative-section__line a-line"></div>
+                <div class="relative-section__overlay"></div>
+                <div class="relative-section__content a-item">
+                  <h4 class="h4">Ремонт вагонов</h4>
+                  <div class="relative-section__arrow">
+                    {% include "partials/svg/_arrow.html" %}
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="section__after-line relative-section__after-line a-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% include "partials/components/_form.html" %}
+  </main>
+  {% include "partials/components/_footer.html" %}
+{% endblock %}

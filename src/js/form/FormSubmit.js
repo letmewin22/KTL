@@ -57,6 +57,7 @@ export default class FormSubmit extends FormInputs {
         })
       ])
         .then(responses => {
+          console.log(responses[0], responses[1])
           if(responses[0].status >= 200 && responses[0].status < 400) {
             this.requestLoad()
             return

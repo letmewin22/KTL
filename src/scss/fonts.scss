@@ -46,7 +46,7 @@ h1 {
   font-size: size(24, 16);
   width: size(394, 335);
   // position: absolute;
-  @include media('<=960px') {
+  @include media('<=#{$br1}') {
     width: 100%;
     padding-bottom: 50px;
   }

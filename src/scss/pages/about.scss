@@ -1,0 +1,38 @@
+.about-header {
+  min-height: 100vh;
+  background: white;
+}
+
+.about-header__container {
+}
+.about-header__content-wrapper {
+  height: 100%;
+  padding-top: 17vh;
+}
+.about-header__train {
+}
+.about-header__h1 {
+  font-size: size(160, 32);
+  line-height: 1.1em;
+  .word {
+    display: inline-block;
+    line-height: 1em;
+  }
+  &.done {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.about-header__line {
+  height: 1px;
+  width: 100%;
+  background: $accent;
+}
+
+.h1-span-line {
+  height: 1px;
+  width: 100%;
+  background: $accent;
+  display: block;
+}

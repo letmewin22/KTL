@@ -29,7 +29,7 @@ if (isset($_POST['company'])) {
   }
 }
 $token = "1122766282:AAGRTG_WQczl5eT2-wreG2CBzOFjwX1brns";
-$chat_id = "-453712541";
+$chat_id = "-1001217822136";
 $arr = array(
   $nameFieldset => $name,
   $phoneFieldset => $phone,
