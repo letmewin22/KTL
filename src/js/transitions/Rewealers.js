@@ -54,6 +54,7 @@ class Rewealers extends Highway.Transition {
           document.querySelectorAll('.a-transition').forEach(el => document.body.removeChild(el))
           document.body.style.cursor = 'auto'
           document.querySelector('.navbar').classList.remove('remove-bg')
+          overlay.style.visibility = 'hidden'
           done()
         }
       })
@@ -67,8 +68,7 @@ class Rewealers extends Highway.Transition {
       tl.to(overlay, { duration: 1, y: '-100%', ease: 'expo.inOut' }, '+=0.2')
 
       tl.fromTo(to, { opacity: 0 }, {
-        duration: 0.7, opacity: 1,
-        onComplete: () => overlay.style.visibility = 'hidden'
+        duration: 0.7, opacity: 1
       }, 1)
     })
 

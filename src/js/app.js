@@ -1,4 +1,5 @@
 import '@/libs/ie-detect'
+import '@/libs/sayHello'
 
 import Highway from '@dogstudio/highway'
 
@@ -18,7 +19,7 @@ import { Rewealers } from '@/transitions'
 
 
 
-// cssWebP()
+cssWebP()
 const H = new Highway.Core({
   renderers: {
     home: Home,
@@ -72,7 +73,7 @@ window.addEventListener('load', () => {
   const navbarPos = new NavbarPos()
   navbarPos.init()
 
-  
+
   const resize = new Resize(() => {
     winH()
     footer()
@@ -125,7 +126,7 @@ H.on('NAVIGATE_END', () => {
   document.querySelectorAll('.form:not(.activated)').forEach(el => new FormSubmit(el))
 
   btnSound()
-  
+
   repeatedText('btn:not(.repeat-activated)', 'btn__text-wrapper', 8)
 
   document.querySelectorAll('.a-sticky').forEach(el => {
@@ -139,3 +140,7 @@ H.on('NAVIGATE_END', () => {
   })
 
 })
+
+
+
+

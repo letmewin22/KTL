@@ -8,73 +8,67 @@
   <header class="about-header">
     <div class="container about-header__container">
       <div class="about-header__content-wrapper">
-        <div class="about-header__train">
+        <div class="about-header__train transition-other">
           {% include "partials/svg/_train.html" %}
         </div>
         <h1 class="about-header__h1">Мы — КТЛ, компания-экспедитор в сфере грузовых железнодорожных перевозок</h1>
-        <div class="about-header__line"></div>
+        <div class="about-header__line transition-line"></div>
       </div>
     </div>
   </header>
   <main>
-    <section class="section default-section">
-      <div class="container section__container">
-        {{mixins.h2('В Украине нет альтернативы ЖД-транспорту, если нужно перевезти большое количество груза.')}}
+    <div class="section default-section no-margin transition-other">
+      <div class="container section__container no-margin__container">
         <div class="container__cols">
           <div class="container__l-col"></div>
           <div class="container__r-col">
-            <p class="section__text a-p">Перевозка грузов железнодорожным транспортом — эффективный, безопасный и экономически выгодный вид сухопутной транспортировки. Мы перевозим любое количество груза, избегая перегрузок в пути следования.</p>
-            <div class="section__after-line a-line"></div>
+            <p class="section__text ">Решаем любые проблемы клиента, связанные с транспортировкой грузов в пределах территории Украины, а также при перевозке экспортно-импортных грузов.</p>
+            <p class="section__text">Оказываем полное сопровождение любого процесса, связанного с грузовой ЖД-перевозкой: от сбора и оформления документов до продажи вагонов.</p>
+            <div class="section__after-line"></div>
           </div>
         </div>
-      </div>
-    </section>
-    <div class="full-screen-img">
-      <div class="full-screen-img__img-wrapper">
-        <div class="full-screen-img__img pli" data-bg="./img/services/1-big.jpg"></div>
       </div>
     </div>
-    <section class="section steps-section">
-      <div class="container section__container">
-        {{mixins.h2('Как заказать перевозку?')}}
-        <p class="section__bold-text a-p steps-section__bold-text">Мы перевозим строительные материалы, металлы, насыпные и пищевые грузы.</p>
-        <div class="steps-section__draggable">
-          <div class="steps-section__items">
-            <div class="steps-section__item a-item">
-              <h4 class="h4 steps-section__h">Шаг №1</h4>
-              <div class="steps-section__line"></div>
-              <p class="steps-section__text">Вы оставляете заявку, где указываете вид груза, сроки перевозки, а также станции отправления-назначения.</p>
+    <section class="section list-section team">
+      <div class="container section__container list-section__container">
+        {{mixins.h2('Команда')}}
+        <div class="list-section__list-items team__items">
+          <div class="list-section__list-item a-item">
+            <div class="list-section__line"></div>
+            <div class="list-section__list-item-content">
+              <div class="list-section__left">
+                <div class="list-section__img">
+                  <div class="list-section__img-pic pli" data-bg="../img/about/1.jpg"></div>
+                </div>
+                <div class="list-section__text">
+                  <h3 class="h3 list-section__h">Коваленко Инна Витальевна</h3>
+                  <p class="list-section__d a-p">Директор КТЛ</p>
+                </div>
+              </div>
             </div>
-            <div class="steps-section__item a-item">
-              <h4 class="h4 steps-section__h">Шаг №2</h4>
-              <div class="steps-section__line"></div>
-              <p class="steps-section__text">Заключаем договор: согласно утверждённого графика предоставляем вагоны для вывоза груза.</p>
-            </div>
-            <div class="steps-section__item a-item">
-              <h4 class="h4 steps-section__h">Шаг №3</h4>
-              <div class="steps-section__line"></div>
-              <p class="steps-section__text">Отправляем вагоны на станцию назначения и через программное обеспечение отслеживаем их в пути следования.</p>
+          </div>
+          <div class="list-section__list-item a-item">
+            <div class="list-section__line"></div>
+            <div class="list-section__list-item-content">
+              <div class="list-section__left">
+                <div class="list-section__img">
+                  <div class="list-section__img-pic pli" data-bg="../img/about/2.jpg"></div>
+                </div>
+                <div class="list-section__text">
+                  <h3 class="h3 list-section__h">Коваленко Инна Витальевна</h3>
+                  <p class="list-section__d a-p">Директор КТЛ</p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
-        <div class="steps-section__big-line a-line">
-          <div class="steps-section__rail">
-            <div class="steps-section__scrollthumb"></div>
-          </div>
-        </div>
-        <div class="container__cols steps-section__cols">
-          <div class="container__l-col">
-            <p class="section__bold-text a-p steps-section__med-text">В договоре мы закрепляем свои обязанности обеспечить вас подвижным составом согласно предоставленной заявки. </p>
-          </div>
-          <div class="container__r-col">{{mixins.btn('Заявка на перевозку', '', 'default-section__btn c-btn a-btn')}}</div>
-        </div>
-        <div class="steps-section__after-line a-line"></div>
       </div>
     </section>
     <div class="transition-rails">
       <div class="transition-rails__items">
-        <div class="transition-rails__item">&nbsp;— Организация перевозок&nbsp;</div>
-        <div class="transition-rails__item">&nbsp;— Организация перевозок&nbsp;</div>
+        <div class="transition-rails__item">&nbsp;— KargoTransLogistic — KargoTransLogistic&nbsp;</div>
+        <div class="transition-rails__item">&nbsp;— KargoTransLogistic — KargoTransLogistic&nbsp;</div>
       </div>
     </div>
     <section class="section accordeon-section dark-section">

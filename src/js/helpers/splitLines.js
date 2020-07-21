@@ -35,9 +35,10 @@ const splitLines = (elem) => {
   elem.innerHTML = ''
   for (let i = 0; i < showLine.length; i++) {
 
-    elem.innerHTML += `<span class="line-wrapper"><span class="splitted-line">${showLine[i]}</span></span>`
+    elem.innerHTML += `<span class="line-wrapper"><span class="splitted-line"><span class="line-text">${showLine[i]}</span></span></span>`
   }
   elem.classList.add('done')
 }
 
 export default splitLines
+

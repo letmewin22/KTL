@@ -2,7 +2,7 @@ export default class ParallaxScroller {
 
   constructor(speedIndex) {
 
-    this.speed = [speedIndex || 15, 25, 12, 7]
+    this.speed = [speedIndex || 15, 25, 12, 17, 10]
 
     this.looperState = false
     this.scrollerState = false
