@@ -10,11 +10,13 @@
     <div class="container main-header__container">
       <div class="main-header__content">
         <div class="main-header__top">
-          <span class="main-header__scroller"><span class='transition-span'>Kargo</span></span>
+          <span class="main-header__scroller">
+            <span class='transition-span'>Kargo</span></span>
           <h1 data-move="main-header__m-h1-wrapper,1,560" class="main-header__h1 scroller-parallax transition-text">Грузовые ЖД-перевозки. Быстро. Надёжно. Без сложностей.</h1>
         </div>
         <div class="main-header__bottom">
-          <span class="main-header__scroller"><span class='transition-span'>TransLogistic</span></span></div>
+          <span class="main-header__scroller">
+            <span class='transition-span'>TransLogistic</span></span></div>
       </div>
       <div class="main-header__line-wrapper">
         <div class="main-header__train transition-other">
@@ -34,7 +36,16 @@
       <div class="container section__container default-section__container">
         {{mixins.h2('Мы перевозим любые грузы ЖД-транспортом', 'half-size-h2')}}
         <div class="container__cols">
-          <div class="container__l-col">{{mixins.btn('Больше о компании', '', 'a-btn a-sticky default-section__btn')}}</div>
+          <div class="container__l-col">
+            <a href="./about.html" class="btn a-btn a-sticky default-section__btn">
+              <div class="btn__text-wrapper">
+                {% for i in range(0, 4) -%}
+                  <span class="btn__text">Больше о компании</span>
+                {% endfor %}
+              </div>
+              <div class="btn__overlay"></div>
+            </a>
+          </div>
           <div class="container__r-col">
             <p class="section__text a-p">КАРГОТРАНСЛОДЖИСТИК — компания-экспедитор в сфере грузовых железнодорожных перевозок. Предоставляем полный комплекс услуг с информационным сопровождением: от организации перевозок до ремонта и продажи вагонов.</p>
             <p class="section__text a-p">Помогаем компаниям быстро, надёжно и без проблем доставить груз из точки А в точку Б. Сопровождаем любой процесс, связанный с грузовыми ЖД-перевозками.</p>
@@ -84,7 +95,7 @@
         {{mixins.h2('Преимущества', 'v-list-section__h2-arrow')}}
         <div class="container__cols">
           <div class="container__l-col">
-              <p class="section__bold-text a-p a-sticky">Мы берём на себя ответственность доставить ваш груз точно в срок. Работаем круглосуточно, 365 дней в году.</p>
+            <p class="section__bold-text a-p a-sticky">Мы берём на себя ответственность доставить ваш груз точно в срок. Работаем круглосуточно, 365 дней в году.</p>
           </div>
           <div class="container__r-col">
             <div class="v-list-section__items">

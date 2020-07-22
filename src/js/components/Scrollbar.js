@@ -127,7 +127,6 @@ export default class ScrollBar {
       this.scrollbar.classList.remove('hidden')
       this.thumb = this.scrollbar.querySelector('.scrollbar__thumb')
       this.setHeight()
-      window.addEventListener('resize', this.setHeight.bind(this))
       document.getElementById('scroller').addEventListener('resize', this.setHeight.bind(this))
 
       mutationObserver(document.getElementById('scroll-container'), this.setHeight.bind(this))

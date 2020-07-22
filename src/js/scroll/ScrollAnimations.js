@@ -7,7 +7,7 @@ class ScrollAnimations extends ScrollInView {
 
     super()
 
-    NodeList.prototype.animation = function(options) {
+    NodeList.prototype.animation = function (options) {
       this.length > 0 && gsap.to(this, options)
     }
 
@@ -31,6 +31,9 @@ class ScrollAnimations extends ScrollInView {
       .animation({ duration: 1, delay: 0.5, opacity: 1, y: 0, ease: 'power1.out', stagger: 0.2 })
 
     elem.querySelectorAll('.a-item')
+      .animation({ duration: 1, delay: 0.4, opacity: 1, y: 0, ease: 'power1.out', stagger: 0.2 })
+
+    elem.querySelectorAll('.a-titem')
       .animation({ duration: 1, delay: 0.4, opacity: 1, y: 0, ease: 'power1.out', stagger: 0.2 })
   }
 

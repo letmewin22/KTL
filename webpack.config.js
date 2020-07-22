@@ -27,17 +27,17 @@ function createConfig(env) {
     },
     module: {
       rules: [
-        {
-          enforce: 'pre',
-          test: /\.js$/,
-          exclude: '/node_modules/',
-          loader: 'eslint-loader',
-          options: {
-            fix: true,
-            cache: true,
-            ignorePattern: __dirname + '/src/js/libs/'
-          }
-        },
+        // {
+        //   enforce: 'pre',
+        //   test: /\.js$/,
+        //   exclude: '/node_modules/',
+        //   loader: 'eslint-loader',
+        //   options: {
+        //     fix: true,
+        //     cache: true,
+        //     ignorePattern: __dirname + '/src/js/libs/'
+        //   }
+        // },
         {
           test: /\.js$/,
           loader: 'babel-loader',
