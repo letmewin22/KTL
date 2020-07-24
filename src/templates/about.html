@@ -15,6 +15,7 @@
         <div class="about-header__line transition-line"></div>
       </div>
     </div>
+    <div class="about-header__arrow">{% include "partials/svg/_down-arrow.html" %}</div>
   </header>
   <main>
     <div class="section default-section no-margin transition-other">
@@ -22,6 +23,7 @@
         <div class="container__cols">
           <div class="container__l-col"></div>
           <div class="container__r-col">
+            <div class="section__before-line"></div>
             <p class="section__text ">Решаем любые проблемы клиента, связанные с транспортировкой грузов в пределах территории Украины, а также при перевозке экспортно-импортных грузов.</p>
             <p class="section__text">Оказываем полное сопровождение любого процесса, связанного с грузовой ЖД-перевозкой: от сбора и оформления документов до продажи вагонов.</p>
             <div class="section__after-line"></div>
@@ -99,18 +101,18 @@
         </div>
       </div>
     </section>
-    <section class="section default-section">
-      <div class="container section__container default-section__container last">
+    <section class="section default-section cooperation-section">
+      <div class="container section__container default-section__container cooperation-section__container last">
         {{mixins.h2('Принципы сотрудничества', 'half-size-h2')}}
         <div class="container__cols">
           <div class="container__l-col">{{mixins.btn('Обсудить сотрудничество', '', 'a-btn c-btn a-sticky default-section__btn')}}</div>
           <div class="container__r-col">
             <p class="section__text a-p">Мы предлагаем комплексное решение задачи по транспортировке груза. </p>
             <p class="section__text a-p">Клиент рассказывает о своих целях, а мы подбираем оптимальный вариант в разрезе «цена-качество-надёжность».</p>
-            <div class="default-section-img a-item">
+            <div class="default-section-img a-titem">
               <img src="./img/about/3.jpg" alt="KTL team">
             </div>
-            <h3 class="h3 default-section__h3">Если мы не можем решить задачу в необходимый Вам срок — говорим об этом сразу и помогаем найти альтернативные варианты.</h3>
+            <h3 class="h3 default-section__h3 a-titem">Если мы не можем решить задачу в необходимый Вам срок — говорим об этом сразу и помогаем найти альтернативные варианты.</h3>
             <div class="section__after-line a-line"></div>
           </div>
         </div>

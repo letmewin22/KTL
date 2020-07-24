@@ -1,6 +1,6 @@
 import Highway from '@dogstudio/highway'
 
-import { footerScrollbar, blackBg } from '@/ui'
+import { footerScrollbar, blackBg, scrollTo } from '@/ui'
 import transitionLoader from '@/loaders/transitionLoader'
 import Loader from '@/loaders/Loader'
 import { splitLines, Resize } from '@/helpers'
@@ -53,6 +53,8 @@ class About extends Highway.Renderer {
     repeatedText('transition-rails', 'transition-rails__items', 20)
 
     blackBg()
+
+    scrollTo(document.querySelector('.about-header__arrow'))
   }
 
   onLeave() {

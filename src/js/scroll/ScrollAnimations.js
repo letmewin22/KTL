@@ -7,7 +7,7 @@ class ScrollAnimations extends ScrollInView {
 
     super()
 
-    NodeList.prototype.animation = function (options) {
+    NodeList.prototype.animation = function(options) {
       this.length > 0 && gsap.to(this, options)
     }
 

@@ -1,0 +1,38 @@
+{% set title = "Partners" %}
+{% set route = "partners" %}
+
+{% extends "layouts/_layout.html" %}
+{% import "data/data.html" as items %}
+
+{% block content %}
+  <header class="partners-header">
+
+    <div class="partners-header__content-wrapper">
+      <div class="container partners-header__line-container">
+        <div class="partners-header__line transition-line"></div>
+      </div>
+      <div class="transition-rails partners-header__transition-rails">
+        <div class="transition-rails__items">
+          <h1 class="h1 partners-header__h1 transition-rails__item">&nbsp;— Наши партнёры&nbsp;</h1>
+          <div class="transition-rails__item">&nbsp;— Наши партнёры&nbsp;</div>
+        </div>
+      </div>
+      <div class="container partners-header__line-container">
+        <div class="partners-header__line transition-line"></div>
+      </div>
+    </div>
+    <div class="container partners-header__container">
+      <div class="container__cols">
+        <div class="container__l-col"></div>
+        <div class="container__r-col">
+        <p class="partners-header__text">Мы работаем с предприятиями добывающей промышленности, горно-металлургическими комбинатами, компаниями энергетической отрасли, торговыми и трейдерными представителями. Перевозим любые насыпные грузы, металлопрокат и другие виды промышленных грузов.</p>
+        <div class="partners-header__line"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    {% include "partials/components/_form.html" %}
+  </main>
+  {% include "partials/components/_footer.html" %}
+{% endblock %}

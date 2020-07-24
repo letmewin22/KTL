@@ -32,15 +32,19 @@ export default class Loader {
     document.body.style.cursor = 'wait'
     document.documentElement.classList.remove('loading')
     document.body.classList.add('e-fixed')
-    this.imgLoad = imagesLoaded(document.querySelectorAll('.pli'), { background: true })
+    if (this.pli.length > 0) {
+      this.imgLoad = imagesLoaded(document.querySelectorAll('.pli'), { background: true })
 
-    this.imgLoad.on('progress', (instance, image) => this.onProgress(image))
-    this.imgLoad.on('fail', () => {
-      setTimeout(() => {
-        this.counter(100)
-      }, 650)
+      this.imgLoad.on('progress', (instance, image) => this.onProgress(image))
+      this.imgLoad.on('fail', () => {
+        setTimeout(() => {
+          this.counter(100)
+        }, 650)
+      })
+    } else {
+      this.counter(100)
+    }
 
-    })
   }
 
   afterLoad() {
@@ -52,7 +56,7 @@ export default class Loader {
       this.percentHTML.parentNode.insertBefore(this.clone, this.percentHTML)
       this.percentHTML.parentNode.removeChild(this.percentHTML)
 
-      const bla = Splitting({ target: this.clone, by: 'chars' })
+      Splitting({ target: this.clone, by: 'chars' })
       this.animation()
     }
   }

@@ -2,7 +2,7 @@ export default class Resize {
 
   constructor(cb) {
 
-    this.cb = cb || function() {} 
+    this.cb = cb ?? function() {} 
   }
 
   init() {

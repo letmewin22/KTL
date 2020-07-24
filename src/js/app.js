@@ -14,7 +14,7 @@ import { cntBtn, footer, Dropdown, NavbarPos, Nav, CntPopup, btnSound, activeLin
 import ScrollAnimations from '@/scroll/ScrollAnimations'
 import { detectRouter, Resize } from '@/helpers'
 
-import { Home, Service, Services, About } from '@/renderers'
+import { Home, Service, Services, About, Partners } from '@/renderers'
 import { Rewealers } from '@/transitions'
 
 
@@ -26,7 +26,8 @@ const H = new Highway.Core({
     home: Home,
     service: Service,
     services: Services,
-    about: About
+    about: About,
+    partners: Partners
   },
   transitions: {
     default: Rewealers
