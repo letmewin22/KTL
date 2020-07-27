@@ -14,7 +14,7 @@ import { cntBtn, footer, Dropdown, NavbarPos, Nav, CntPopup, btnSound, activeLin
 import ScrollAnimations from '@/scroll/ScrollAnimations'
 import { detectRouter, Resize } from '@/helpers'
 
-import { Home, Service, Services, About, Partners } from '@/renderers'
+import { Home, Service, Services, About, Partners, Documents, Error } from '@/renderers'
 import { Rewealers } from '@/transitions'
 
 
@@ -27,7 +27,9 @@ const H = new Highway.Core({
     service: Service,
     services: Services,
     about: About,
-    partners: Partners
+    partners: Partners,
+    documents: Documents,
+    error: Error
   },
   transitions: {
     default: Rewealers
@@ -145,4 +147,6 @@ H.on('NAVIGATE_END', () => {
 
 
 
-
+// const getExtension = (str) => {
+//   return str.match(/\..(?!.{5}).+/gm)[0].replace(/./, '')
+// }

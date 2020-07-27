@@ -51,11 +51,15 @@ export default class NavbarPos {
     }
     else if (document.getElementById('scroller').getBoundingClientRect().top < this.scrollPos && this.scrollPos <= 0) {
       document.body.classList.add('nav-hidden')
+      document.querySelector('.navbar').classList.remove('remove-bg')
       document.addEventListener('mousemove', this.mouseFunc)
       window.innerWidth > 960 && this.showBurger()
     }
-    else if (this.scrollPos === 0)
+    else if (this.scrollPos === 0) {
       window.innerWidth > 960 && this.hideBurger()
+      document.querySelector('.navbar').classList.add('remove-bg')
+    }
+      
 
     this.scrollPos = document.getElementById('scroller').getBoundingClientRect().top
 

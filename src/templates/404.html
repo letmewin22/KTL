@@ -1,0 +1,43 @@
+{% set title = "Error" %}
+{% set route = "error" %}
+
+{% extends "layouts/_layout.html" %}
+{% import "data/data.html" as items %}
+
+{% block content %}
+  <header class="partners-header">
+
+    <div class="partners-header__content-wrapper">
+      <div class="container partners-header__line-container">
+        <div class="partners-header__line transition-line"></div>
+      </div>
+      <div class="transition-rails partners-header__transition-rails">
+        <div class="transition-rails__items">
+          <h1 class="h1 partners-header__h1 transition-rails__item">&nbsp;— 404 Страница не найдена</h1>
+          <div class="transition-rails__item">&nbsp;— 404 Страница не найдена</div>
+        </div>
+      </div>
+      <div class="container partners-header__line-container">
+        <div class="partners-header__line transition-line"></div>
+      </div>
+    </div>
+    <div class="container partners-header__container">
+      <div class="container__cols">
+        <div class="container__l-col"></div>
+        <div class="container__r-col">
+          <p class="partners-header__text error-text transition-other">Упс...похоже, что вы перешли по неправильной ссылке или страница, которую вы ищете была удалена. Рекомендуем вернуться на главную или написать нам на почту тех. поддержки сайта: <a href="#">hello@emotion-agency.com</a>
+          </p>
+          <a href="./" class="btn default-section__btn error-btn">
+            <div class="btn__text-wrapper">
+              {% for i in range(0, 4) -%}
+                <span class="btn__text">Вернуться на главную</span>
+              {% endfor %}
+            </div>
+            <div class="btn__overlay"></div>
+          </a>
+          <div class="partners-header__line transition-other"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}

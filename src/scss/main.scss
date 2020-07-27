@@ -234,3 +234,20 @@ header, main {
   position: relative;
   z-index: 1;
 }
+
+.error-text {
+  padding-bottom: size(52, 40) !important;
+  a {
+    border-bottom: 1px solid $black;
+    transition: color .3s ease, border-color .3s ease;
+    &:hover {
+      color: $accent;
+      border-color: $accent;
+    }
+  }
+}
+
+.error-btn {
+  margin-top: 0px !important;
+  margin-bottom: size(72, 24);
+}

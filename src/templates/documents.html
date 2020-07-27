@@ -1,0 +1,125 @@
+{% set title = "Documents" %}
+{% set route = "documents" %}
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  <main>
+    <section class="section c-list dark-section">
+      <div class="container section__container c-list__container">
+        <div class="h2-wrapper">
+          <div class="h2__line services-h2__line transition-line"></div>
+          <h2 class="h2 services-h2">
+            <span class="transition-span">Типовые договоры</span></h2>
+          <div class="h2__line services-h2__line transition-line"></div>
+        </div>
+        <div class="c-list__items transition-other">
+          <div class="c-list__line"></div>
+          <a href="https://tek.energy/wp-content/uploads/2020/07/2020.06_TSiny-RDN.pdf" class="c-list__item">
+            <div class="c-list__overlay"></div>
+            <div class="container__cols c-list__cols">
+              <div class="container__l-col c-list__l-col">
+                <div class="c-list__left-item">
+                  <img class="doc-icon" data-src="./img/docicons/" alt="icon">
+                </div>
+              </div>
+              <div class="container__r-col c-list__r-col">
+                <h4 class="h4 c-list__h4">Правила планирования перевозок грузов</h4>
+                <div class="c-list__arrow">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </div>
+            <div class="c-list__line"></div>
+          </a>
+          <a href="https://tek.energy/wp-content/uploads/2020/07/2020.06_TSiny-RDN.doc" class="c-list__item">
+            <div class="c-list__overlay"></div>
+            <div class="container__cols c-list__cols">
+              <div class="container__l-col c-list__l-col">
+                <div class="c-list__left-item">
+                  <img class="doc-icon" data-src="./img/docicons/" alt="icon">
+                </div>
+              </div>
+              <div class="container__r-col c-list__r-col">
+                <h4 class="h4 c-list__h4">Правила приема грузов к перевозкев</h4>
+                <div class="c-list__arrow">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </div>
+            <div class="c-list__line"></div>
+          </a>
+          <a href="https://tek.energy/wp-content/uploads/2020/07/2020.06_TSiny-RDN.xlsh" class="c-list__item">
+            <div class="c-list__overlay"></div>
+            <div class="container__cols c-list__cols">
+              <div class="container__l-col c-list__l-col">
+                <div class="c-list__left-item">
+                  <img class="doc-icon" data-src="./img/docicons/" alt="icon">
+                </div>
+              </div>
+              <div class="container__r-col c-list__r-col">
+                <h4 class="h4 c-list__h4">Правила пломбирования вагонов и контейнеров</h4>
+                <div class="c-list__arrow">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </div>
+            <div class="c-list__line"></div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="section c-list dark-section">
+      <div class="container section__container c-list__container last">
+        <div class="h2-wrapper">
+          <div class="h2__line services-h2__line "></div>
+          <h2 class="h2 services-h2">Справочники</h2>
+          <div class="h2__line services-h2__line"></div>
+        </div>
+        <div class="c-list__items">
+          <div class="c-list__line"></div>
+          <a href="#" class="c-list__item">
+            <div class="c-list__overlay"></div>
+            <div class="container__cols c-list__cols">
+              <div class="container__l-col c-list__l-col">
+                <div class="c-list__left-item">
+                  <img class="doc-icon" data-src="./img/docicons/" alt="icon">
+                </div>
+              </div>
+              <div class="container__r-col c-list__r-col">
+                <h4 class="h4 c-list__h4">Список ЖД-станций</h4>
+                <div class="c-list__arrow">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </div>
+            <div class="c-list__line"></div>
+          </a>
+          <a href="#" class="c-list__item">
+            <div class="c-list__overlay"></div>
+            <div class="container__cols c-list__cols">
+              <div class="container__l-col c-list__l-col">
+                <div class="c-list__left-item">
+                  <img class="doc-icon" data-src="./img/docicons/" alt="icon">
+                </div>
+              </div>
+              <div class="container__r-col c-list__r-col">
+                <h4 class="h4 c-list__h4">Проверка номера вагона</h4>
+                <div class="c-list__arrow">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </div>
+            <div class="c-list__line"></div>
+          </a>
+          <a href="#" class="c-list__item">
+            <div class="c-list__overlay"></div>
+            <div class="container__cols c-list__cols">
+              <div class="container__l-col c-list__l-col">
+                <div class="c-list__left-item">
+                  <img class="doc-icon" data-src="./img/docicons/" alt="icon">
+                </div>
+              </div>
+              <div class="container__r-col c-list__r-col">
+                <h4 class="h4 c-list__h4">Коды ЕТСНГ</h4>
+                <div class="c-list__arrow">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </div>
+            <div class="c-list__line"></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  {% include "partials/components/_footer.html" %}
+{% endblock %}
