@@ -1,10 +1,9 @@
 const detectRouter = (router, cb) => {
+  const isEqual = (element) => {
+    return document.querySelector('[data-router-view]').getAttribute('data-router-view') !== element
+  }
   if (router.length > 0) {
-    router.forEach(el => {
-      if (document.querySelector('[data-router-view]').getAttribute('data-router-view') !== el) {
-        cb()
-      }
-    })
+    router.every(isEqual) ? cb() : () => {}
   }
 }
 

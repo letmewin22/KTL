@@ -1,0 +1,26 @@
+.news {
+  background: white;
+  position: relative;
+  z-index: 2;
+  padding-bottom: size(200, 100);
+}
+
+.news__list-items {
+  margin-top: size(150, 52);
+}
+
+.news-h2 {
+  padding-top: size(72, 24);
+  padding-bottom: size(72, 24);
+  overflow: hidden;
+}
+
+.news-section__img-pic {
+  min-height: 326px;
+  @include media('<=1024px') {
+    min-height: 500px;
+  }
+  @include media('<=460px') {
+    min-height: 200px;
+  }
+}

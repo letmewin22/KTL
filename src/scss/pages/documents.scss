@@ -17,19 +17,6 @@
     position: absolute;
     bottom: 0;
   }
-  &.opened {
-    .c-list__text {
-      height: calc( var(--h, 1vh) * 100);
-      margin-top: size(48, 24);
-      margin-bottom: size(48, 24);
-    }
-    .c-list__arrow {
-      transform: rotate(-90deg);
-    }
-    .c-list__overlay {
-      height: 0px;
-    }
-  }
 }
 
 .c-list__cols {
@@ -44,7 +31,7 @@
   align-items: center;
 }
 .c-list__arrow {
-  transform: rotate(90deg);
+  // transform: rotate(90deg);
   transform-origin: center;
   transition: transform .45s $easing;
   width: size(36, 16);

@@ -244,6 +244,7 @@
   justify-content: space-between;
   @include media('<=#{$br1}') {
     margin-top: 20px;
+    position: static;
   }
 }
 .list-section__left {
@@ -290,6 +291,17 @@
   }
   @include media('<=#{$br1}') {
     display: none;
+  }
+}
+
+.list-section__date {
+  display: block;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  line-height: 1em;
+  @include media('<=#{$br1}') {
+    bottom: 10px;
   }
 }
 

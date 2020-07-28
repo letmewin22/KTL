@@ -1,0 +1,98 @@
+{% set title = "News" %}
+{% set route = "news" %}
+
+{% extends "layouts/_layout.html" %}
+{% import "data/data.html" as items %}
+
+{% block content %}
+  <main class="news">
+    <section class="section list-section news-section">
+      <div class="container section__container list-section__container">
+        <div class="h2-wrapper">
+          <div class="h2__line services-h2__line transition-line"></div>
+          <h2 class="h2 news-h2"><span class="transition-span">Корпоративные новости</span></h2>
+          <div class="h2__line services-h2__line transition-line"></div>
+        </div>
+        <div class="list-section__list-items news__list-items transition-other">
+            <a href="#" class="list-section__list-item">
+              <div class="list-section__line"></div>
+              <div class="list-section__overlay"></div>
+              <div class="list-section__list-item-content">
+                <div class="list-section__left">
+                  <div class="list-section__img">
+                    <div class="list-section__img-pic news-section__img-pic pli" data-bg="../img/news/1.jpg"></div>
+                  </div>
+                  <div class="list-section__text">
+                    <h3 class="h3 list-section__h">Для грузоотправителей действует Telegram канал</h3>
+                    <p class="list-section__d">Для коммуникации с грузоотправителями и информирование о действии долгосрочных договоров работает Telegram-канал. Здесь содержатся ответы на вопросы о долгосрочных контрактов ...</p>
+                    <span class="list-section__date">19.06.2020</span>
+                  </div>
+                </div>
+                <div class="list-section__right">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </a>
+                        <a href="#" class="list-section__list-item">
+              <div class="list-section__line"></div>
+              <div class="list-section__overlay"></div>
+              <div class="list-section__list-item-content">
+                <div class="list-section__left">
+                  <div class="list-section__img">
+                    <div class="list-section__img-pic news-section__img-pic pli" data-bg="../img/news/1.jpg"></div>
+                  </div>
+                  <div class="list-section__text">
+                    <h3 class="h3 list-section__h">Для грузоотправителей действует Telegram канал</h3>
+                    <p class="list-section__d">Для коммуникации с грузоотправителями и информирование о действии долгосрочных договоров работает Telegram-канал. Здесь содержатся ответы на вопросы о долгосрочных контрактов ...</p>
+                    <span class="list-section__date">19.06.2020</span>
+                  </div>
+                </div>
+                <div class="list-section__right">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </a>
+        </div>
+      </div>
+    </section>
+        <section class="section c-list">
+      <div class="container section__container c-list__container">
+        <div class="h2-wrapper">
+          <div class="h2__line services-h2__line"></div>
+          <h2 class="h2 services-h2">Новости партнёров</h2>
+          <div class="h2__line services-h2__line"></div>
+        </div>
+        <div class="c-list__items">
+          <div class="c-list__line"></div>
+          <a target='_blank' rel='noreferer noopener' href="https://tek.energy/wp-content/uploads/2020/07/2020.06_TSiny-RDN.pdf" class="c-list__item">
+            <div class="c-list__overlay"></div>
+            <div class="container__cols c-list__cols">
+              <div class="container__l-col c-list__l-col">
+                <div class="c-list__left-item">
+                 <div class="h3 c-list__num">01</div>
+                </div>
+              </div>
+              <div class="container__r-col c-list__r-col">
+                <h4 class="h4 c-list__h4">Новости ЦТЛ</h4>
+                <div class="c-list__arrow">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </div>
+            <div class="c-list__line"></div>
+          </a>
+          <a target='_blank' rel='noreferer noopener' href="https://tek.energy/wp-content/uploads/2020/07/2020.06_TSiny-RDN.doc" class="c-list__item">
+            <div class="c-list__overlay"></div>
+            <div class="container__cols c-list__cols">
+              <div class="container__l-col c-list__l-col">
+                <div class="c-list__left-item">
+                  <div class="h3 c-list__num">02</div>
+                </div>
+              </div>
+              <div class="container__r-col c-list__r-col">
+                <h4 class="h4 c-list__h4">Новости УЗ</h4>
+                <div class="c-list__arrow">{% include "partials/svg/_arrow.html" %}</div>
+              </div>
+            </div>
+            <div class="c-list__line"></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  {% include "partials/components/_footer.html" %}
+{% endblock %}
