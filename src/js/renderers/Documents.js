@@ -18,13 +18,13 @@ class Documents extends Highway.Renderer {
 
       switch (itemLink) {
         case 'pdf':
-          itemImg.setAttribute('src', `${itemImg.getAttribute('data-src')}pdf.svg`)
+          itemImg.style.backgroundImage = `url(${itemImg.getAttribute('data-src')}pdf.svg)`
           break
         case 'doc':
-          itemImg.setAttribute('src', `${itemImg.getAttribute('data-src')}doc.svg`)
+          itemImg.style.backgroundImage = `url(${itemImg.getAttribute('data-src')}doc.svg)`
           break
         default:
-          itemImg.setAttribute('src', `${itemImg.getAttribute('data-src')}other.svg`)
+          itemImg.style.backgroundImage = `url(${itemImg.getAttribute('data-src')}other.svg)`
           break
       }
 

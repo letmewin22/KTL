@@ -1,4 +1,5 @@
 import { Resize } from '@/helpers/index'
+import swipedetect from '@/libs/swipe'
 
 export default class Slider {
 
@@ -18,7 +19,6 @@ export default class Slider {
     this.counter = 0
 
     this.render()
-    console.log(this.slide.length)
   }
 
   render() {
@@ -36,6 +36,10 @@ export default class Slider {
     this.nav.right.addEventListener('click', this.moveR)
     this.nav.counterTotal.innerHTML = this.slide.length
 
+    swipedetect(this.el, 20, (swipedir) => {
+      swipedir === 'left' && this.moveL()
+      swipedir === 'right' && this.moveR()
+    })
   }
 
   calculate() {

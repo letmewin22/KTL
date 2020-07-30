@@ -19,7 +19,7 @@ import { Rewealers, Default } from '@/transitions'
 
 
 
-// cssWebP()
+cssWebP()
 
 const H = new Highway.Core({
   renderers: {
@@ -150,9 +150,3 @@ H.on('NAVIGATE_END', () => {
   })
 
 })
-
-
-
-// const getExtension = (str) => {
-//   return str.match(/\..(?!.{5}).+/gm)[0].replace(/./, '')
-// }

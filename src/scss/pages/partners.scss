@@ -66,24 +66,38 @@
   .container__r-col {
     height: 100%;
   }
+  @include media('<=460px') {
+    margin-top: 20px;
+  }
 }
 
 .partners-section__line {
   height: 1px;
   width: 100%;
   background: $accent;
+  @include media('<=#{$br1}') {
+    display: none;
+  }
 }
 .partners-section__partners {
   height: 415px;
-}
-.partners-slider {
+  @include media('<=#{$br1}') {
+    height: 623px;
+  }
+  @include media('<=560px') {
+    height: 485px;
+  }
 }
 .partners-slider__ui {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: size(72, 52) 0;
+  padding: size(72, 16) 0;
+  width: 100%;
+  @include media('<=#{$br1}') {
+    flex-direction: row;
+  }
 }
 .partners-slider__counter {
   @include medium;
@@ -93,10 +107,13 @@
 .partners-slider__nav {
   display: flex;
   align-items: center;
+  // @include media('<=#{$br1}') {
+  //   justify-content: space-between;
+  // }
 }
 .partners-slider__nav-item {
-  height: 29px;
-  width: 33px;
+  height: size(29, 14);
+  width: size(33, 15);
   cursor: pointer;
   svg {
     display: block;
@@ -118,13 +135,16 @@
   transform: rotate(-180deg);
 }
 .partners-slider__nav-item--right {
-  margin-left: 46px;
+  margin-left: size(46, 22);
 }
 .partners-slider__slides-wrapper {
   overflow: hidden;
   height: 100%;
   border-left: 1px solid $accent;
   border-right: 1px solid $accent;
+  @include media('<=#{$br1}') {
+    border-top: 1px solid $accent;
+  }
 }
 .partners-slider__slides {
   height: 100%;
@@ -152,7 +172,11 @@
     path {
       transition: fill .45s $easing;
     }
+    @include media('<=560px') {
+      width: 70%;
+    }
   }
+  @include media('>=#{$br1}') {
   &:nth-child(1) {
     &:after {
       content: '';
@@ -193,6 +217,7 @@
   &:nth-child(6) {
     border: none;
   }
+}
   &.disabled {
     svg {
       path:not(.white) {
@@ -203,6 +228,14 @@
   &.big-svg {
     svg {
       height: 60px;
+    }
+  }
+  @include media('<=#{$br1}') {
+    flex: 0 0 50%;
+    height: calc(100% / 3);
+    border-bottom: 1px solid $accent;
+    &:nth-child(2n+2) {
+      border-right: none;
     }
   }
 }
