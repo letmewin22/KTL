@@ -14,7 +14,7 @@ import { cntBtn, footer, Dropdown, NavbarPos, Nav, CntPopup, btnSound, activeLin
 import ScrollAnimations from '@/scroll/ScrollAnimations'
 import { detectRouter, Resize } from '@/helpers'
 
-import { Home, Service, Services, About, Partners, Documents, Error, News, Contacts } from '@/renderers'
+import { Home, Service, Services, About, Partners, Documents, Error, News, Post, Contacts } from '@/renderers'
 import { Rewealers, Default } from '@/transitions'
 
 
@@ -31,6 +31,7 @@ const H = new Highway.Core({
     documents: Documents,
     error: Error,
     news: News,
+    post: Post,
     contacts: Contacts
   },
   transitions: {

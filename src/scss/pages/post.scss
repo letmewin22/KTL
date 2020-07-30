@@ -1,0 +1,45 @@
+.post {
+  background: white;
+  position: relative;
+  z-index: 2;
+  padding-bottom: size(200, 100);
+  padding-top: size(100, 50);
+}
+
+.post-h2 {
+  padding-top: size(72, 24);
+  padding-bottom: size(72, 24);
+  overflow: hidden;
+}
+
+.post {
+  .container__cols {
+    @include media('<=#{$br1}') {
+      flex-direction: column;
+    }
+  }
+  .container__r-col {
+    @include media('<=#{$br1}') {
+      margin-top: 52px;
+     }
+    p + p {
+      margin-top: size(32, 24);
+    }
+    blockquote {
+      @include italic;
+      font-size: size(28, 18);
+      line-height: 1.4em;
+    }
+  }
+}
+
+.post__img {
+  width: 70%;
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  @include media('<=660px') {
+    width: 100%;
+  }
+}

@@ -1,20 +1,44 @@
-{% set title = "News" %}
-{% set route = "news" %}
+{% set title = "Post" %}
+{% set route = "post" %}
 
 {% extends "layouts/_layout.html" %}
 {% import "data/data.html" as items %}
 
 {% block content %}
-  <main class="news">
-    <section class="section list-section news-section">
-      <div class="container section__container list-section__container">
+  <main class="post">
+    <section class="section default-section">
+      <div class="container section__container default-section__container">
         <div class="h2-wrapper">
           <div class="h2__line services-h2__line transition-line"></div>
-          <h2 class="h2 news-h2">
-            <span class="transition-span">Корпоративные новости</span></h2>
+          <h2 class="h2 post-h2">
+            <span class="transition-span">Для грузоотпра&shy;вителей действует Telegram канал</span></h2>
           <div class="h2__line services-h2__line transition-line"></div>
         </div>
-        <div class="list-section__list-items news__list-items transition-other">
+        <div class="container__cols">
+          <div class="container__l-col">
+            <div class="post__img">
+              <img src="./img/news/1.jpg" alt="news-img">
+            </div>
+          </div>
+          <div class="container__r-col">
+            <p>
+              <strong>Для коммуникации с грузоотправителями и информирование о действии долгосрочных договоров работает Telegram-канал. Здесь содержатся ответы на вопросы о долгосрочных контрактов, руководство пользователя для осуществления заказов в АС «Клиент-УЗ» и другая полезная информация.</strong>
+            </p>
+            <p>Укрзализныця до 19 июня 2020 включительно принимает заказы на долгосрочные контракты, которые будут действовать с июля. Пилотный проект актуален для полувагонов и зерновозов. Заказ подается через личный кабинет в АС «Клиент-УЗ».</p>
+            <p><blockquote>«Клиенты, которые подписывают такие договоры, могут гарантированно розпланнирывать свою нагрузку в течение всего срока действия договора.»</blockquote></p>
+            <div class="section__after-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+        <section class="section list-section news-section">
+      <div class="container section__container list-section__container">
+        <div class="h2-wrapper">
+          <div class="h2__line services-h2__line"></div>
+          <h2 class="h2 news-h2">Другие новости</h2>
+          <div class="h2__line services-h2__line"></div>
+        </div>
+        <div class="list-section__list-items news__list-items">
           <a href="./post.html" class="list-section__list-item">
             <div class="list-section__line"></div>
             <div class="list-section__overlay"></div>
@@ -51,48 +75,6 @@
           </a>
         </div>
         {{mixins.btn('Показать больше новостей', '', 'news-btn')}}
-      </div>
-    </section>
-    <section class="section c-list">
-      <div class="container section__container c-list__container">
-        <div class="h2-wrapper">
-          <div class="h2__line services-h2__line"></div>
-          <h2 class="h2 services-h2">Новости партнёров</h2>
-          <div class="h2__line services-h2__line"></div>
-        </div>
-        <div class="c-list__items">
-          <div class="c-list__line"></div>
-          <a target='_blank' rel='noreferer noopener' href="https://tek.energy/wp-content/uploads/2020/07/2020.06_TSiny-RDN.pdf" class="c-list__item">
-            <div class="c-list__overlay"></div>
-            <div class="container__cols c-list__cols">
-              <div class="container__l-col c-list__l-col">
-                <div class="c-list__left-item">
-                  <div class="h3 c-list__num">01</div>
-                </div>
-              </div>
-              <div class="container__r-col c-list__r-col">
-                <h4 class="h4 c-list__h4">Новости ЦТЛ</h4>
-                <div class="c-list__arrow">{% include "partials/svg/_arrow.html" %}</div>
-              </div>
-            </div>
-            <div class="c-list__line"></div>
-          </a>
-          <a target='_blank' rel='noreferer noopener' href="https://tek.energy/wp-content/uploads/2020/07/2020.06_TSiny-RDN.doc" class="c-list__item">
-            <div class="c-list__overlay"></div>
-            <div class="container__cols c-list__cols">
-              <div class="container__l-col c-list__l-col">
-                <div class="c-list__left-item">
-                  <div class="h3 c-list__num">02</div>
-                </div>
-              </div>
-              <div class="container__r-col c-list__r-col">
-                <h4 class="h4 c-list__h4">Новости УЗ</h4>
-                <div class="c-list__arrow">{% include "partials/svg/_arrow.html" %}</div>
-              </div>
-            </div>
-            <div class="c-list__line"></div>
-          </a>
-        </div>
       </div>
     </section>
   </main>

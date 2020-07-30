@@ -4,6 +4,7 @@ import { footerScrollbar } from '@/ui'
 import transitionLoader from '@/loaders/transitionLoader'
 import Loader from '@/loaders/Loader'
 import { repeatedText } from '@/components'
+import Slider from '../ui/Slider'
 
 
 class Partners extends Highway.Renderer {
@@ -14,6 +15,17 @@ class Partners extends Highway.Renderer {
 
   onEnterCompleted() {
 
+    const items = [...document.querySelectorAll('.partners-slider__slide-item')]
+
+    items.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        el.classList.remove('disabled')
+      })
+      el.addEventListener('mouseleave', () => {
+        el.classList.add('disabled')
+      })
+    })
+    new Slider(document.querySelector('.slider'))
     window.addEventListener('load', () => new Loader(transitionLoader))
     footerScrollbar()
   }

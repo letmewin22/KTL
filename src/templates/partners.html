@@ -25,13 +25,60 @@
       <div class="container__cols">
         <div class="container__l-col"></div>
         <div class="container__r-col">
-        <p class="partners-header__text transition-other">Мы работаем с предприятиями добывающей промышленности, горно-металлургическими комбинатами, компаниями энергетической отрасли, торговыми и трейдерными представителями. Перевозим любые насыпные грузы, металлопрокат и другие виды промышленных грузов.</p>
-        <div class="partners-header__line transition-other"></div>
+          <p class="partners-header__text transition-other">Мы работаем с предприятиями добывающей промышленности, горно-металлургическими комбинатами, компаниями энергетической отрасли, торговыми и трейдерными представителями. Перевозим любые насыпные грузы, металлопрокат и другие виды промышленных грузов.</p>
+          <div class="partners-header__line transition-other"></div>
         </div>
       </div>
     </div>
   </header>
   <main>
+    <section class="section partners-section">
+      <div class="container">
+        <div class="partners-section__line"></div>
+        <div class="partners-section__partners slider partners-slider">
+          <div class="container__cols">
+            <div class="container__l-col">
+              <div class="partners-slider__ui">
+                <div class="slider__counter partners-slider__counter">
+                  <span class="slider__counter-cur partners-slider__counter-cur">1</span>/<span class="slider__counter-total partners-slider__counter-total">2</span>
+                </div>
+                <nav class="slider__nav-item partners-slider__nav">
+                  <div class="slider__nav-item--left partners-slider__nav-item partners-slider__nav-item--left">
+                    {% include "partials/svg/_arrow.html" %}
+                  </div>
+                  <div class="slider__nav-item--right partners-slider__nav-item partners-slider__nav-item--right">
+                    {% include "partials/svg/_arrow.html" %}
+                  </div>
+                </nav>
+              </div>
+            </div>
+            <div class="container__r-col">
+              <div class="partners-slider__slides-wrapper">
+                <div class="slider__slides partners-slider__slides">
+                  <div class="slider__slide partners-slider__slide">
+                    <div class="partners-slider__slide-item disabled">{% include "partials/logos/_1.html" %}</div>
+                    <div class="partners-slider__slide-item disabled">{% include "partials/logos/_2.html" %}</div>
+                    <div class="partners-slider__slide-item disabled big-svg">{% include "partials/logos/_3.html" %}</div>
+                    <div class="partners-slider__slide-item disabled">{% include "partials/logos/_4.html" %}</div>
+                    <div class="partners-slider__slide-item disabled big-svg">{% include "partials/logos/_5.html" %}</div>
+                    <div class="partners-slider__slide-item disabled">{% include "partials/logos/_6.html" %}</div>
+                  </div>
+                  <div class="slider__slide partners-slider__slide">
+                    <div class="partners-slider__slide-item disabled">{% include "partials/logos/_7.html" %}</div>
+                    <div class="partners-slider__slide-item disabled big-svg">{% include "partials/logos/_8.html" %}</div>
+                    <div class="partners-slider__slide-item disabled big-svg">{% include "partials/logos/_9.html" %}</div>
+                    <div class="partners-slider__slide-item disabled">{% include "partials/logos/_10.html" %}</div>
+                    <div class="partners-slider__slide-item disabled big-svg">{% include "partials/logos/_11.html" %}</div>
+                    <div class="partners-slider__slide-item disabled">{% include "partials/logos/_12.html" %}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="partners-section__line"></div>
+      </div>
+    </section>
     {% include "partials/components/_form.html" %}
   </main>
   {% include "partials/components/_footer.html" %}

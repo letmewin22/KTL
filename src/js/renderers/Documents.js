@@ -8,8 +8,8 @@ import { getExtension } from '@/helpers'
 
 class Documents extends Highway.Renderer {
 
-  onEnter() {
-    
+  onEnterCompleted() {
+
     const items = document.querySelectorAll('.c-list__item')
 
     items.forEach(el => {
@@ -29,9 +29,6 @@ class Documents extends Highway.Renderer {
       }
 
     })
-  }
-
-  onEnterCompleted() {
 
     window.addEventListener('load', () => new Loader(transitionLoader))
     footerScrollbar()

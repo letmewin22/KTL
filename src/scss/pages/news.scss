@@ -24,3 +24,11 @@
     min-height: 200px;
   }
 }
+
+.news-btn {
+  margin: size(72, 52) auto 0;
+  display: none;
+  &.news-visible {
+    display: block;
+  }
+}
