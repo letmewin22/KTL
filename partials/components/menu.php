@@ -8,7 +8,7 @@
             <h3 class="h3 menu__h3">Меню</h3>
             <div class="lang menu__lang">
               <div class="menu__lang-list dropdown">
-                <a href="#" class="menu__link dropdown__btn">Ru {% include "partials/svg/_dropdown.html" %}</a>
+                <a href="#" class="menu__link dropdown__btn">Ru <?php include get_theme_file_path( 'partials/svg/dropdown.php' ); ?></a>
                 <div class="dropdown__content menu__dropdown-content">
                   <a href="#" class="menu__link dropdown__link">Ua</a>
                   <a href="#" class="menu__link dropdown__link">En</a>
@@ -16,7 +16,7 @@
               </div>
             </div>
           </div>
-          <div class="menu__close">{% include "partials/svg/_close.html" %}</div>
+          <div class="menu__close"><?php include get_theme_file_path( 'partials/svg/close.php' ); ?></div>
         </div>
         <div class="menu__line"></div>
       </div>

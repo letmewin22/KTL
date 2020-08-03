@@ -50,7 +50,7 @@
           <div class="form-section__right-content">
             <h2 class="h2 form-section__h2">Мы просчитаем стоимость и сроки перевозки вашего груза.</h2>
             <div class="form-section__form-wrapper">
-              <form data-url="./mail.php" class="form" name="form" novalidate>
+              <form data-url="<?php echo get_template_directory_uri()?>/" class="form" name="form" novalidate>
                 <!-- Hidden Required Fields -->
                 <input type="hidden" name="project_name" value="KTL">
                 <input type="hidden" name="admin_email" value="hello@emotion-agency.com">

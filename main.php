@@ -68,24 +68,38 @@ get_header();
     <div class="container section__container list-section__container">
       <h2 class="h2 a-h2">Услуги</h2>
       <div class="list-section__list-items">
-        {% for item in items.services %}
-        <a href="{{item.link}}" class="list-section__list-item a-item">
+        <?php   
+          $args = array(
+            'post_type' => 'services',
+            'posts_per_page' => 5,
+            'order' => 'ASC'
+          );    
+          $my_query = new WP_Query( $args ); 
+            if ( $my_query->have_posts() ) {
+              while ( $my_query->have_posts() ) {
+                  $my_query->the_post();
+          ?>
+        <a href="<?php the_permalink() ?>" class="list-section__list-item a-item">
           <div class="list-section__line"></div>
           <div class="list-section__overlay"></div>
           <div class="list-section__list-item-content">
             <div class="list-section__left">
               <div class="list-section__img">
-                <div class="list-section__img-pic pli" data-bg="{{item.img}}"></div>
+                <div class="list-section__img-pic pli" data-bg="<?php echo get_field('изображение')['sizes']['large']; ?>"></div>
               </div>
               <div class="list-section__text">
-                <h3 class="h3 list-section__h">{{item.heading}}</h3>
-                <p class="list-section__d a-p">{{item.desc}}</p>
+                <h3 class="h3 list-section__h"><?php the_title(); ?></h3>
+                <p class="list-section__d a-p"><?php echo get_field('описание_услуги'); ?></p>
               </div>
             </div>
             <div class="list-section__right"><?php include get_theme_file_path('partials/svg/arrow.php' ); ?></div>
           </div>
         </a>
-        {% endfor %}
+        <?php             
+        }  
+      }       
+      wp_reset_postdata(); 
+    ?>
       </div>
     </div>
   </section>
