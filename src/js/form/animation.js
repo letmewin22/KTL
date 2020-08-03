@@ -3,9 +3,10 @@ import gsap from 'gsap'
 const animation = (el) => {
 
   const btn = el 
+  const href = window.location.origin + '/ktl/wp-content/themes/ktl/'
 
-  const audio = new Audio('./audio/success.mp3')
-  const audioEnd = new Audio('./audio/success_end.mp3')
+  const audio = new Audio(href + 'audio/success.mp3')
+  const audioEnd = new Audio(href + 'audio/success_end.mp3')
   audio.volume = 0.5
   audioEnd.volume = 0.5
 

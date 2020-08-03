@@ -37,11 +37,12 @@ export default class FormSubmit extends FormInputs {
   async requestSend() {
 
     const URL = this.form.getAttribute('data-url')
-    const tURL = './telegram.php'
+    const tURL = URL + 'telegram.php'
+    const mURL = URL + 'mail.php'
 
     try {
       await Promise.all([
-        fetch(URL, {
+        fetch(mURL, {
           method: 'POST',
           body: serialize(this.form),
           headers: {
