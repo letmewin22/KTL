@@ -1,0 +1,43 @@
+<footer class="footer">
+  <div class="container footer__container">
+    <div class="footer__line"></div>
+    <div class="container__cols">
+      <div class="container__l-col">
+        <h2 class="h2 footer__h2">Меню</h2>
+      </div>
+      <div class="container__r-col">
+        <nav class="footer__nav">
+          <ul class="footer__nav-items">
+            <li class="h3 footer__nav-item">
+              <a href="./services.html" class="footer__nav-link">Услуги</a>
+            </li>
+            <li class="h3 footer__nav-item">
+              <a href="./documents.html" class="footer__nav-link">Документы</a>
+            </li>
+            <li class="h3 footer__nav-item">
+              <a href="./news.html" class="footer__nav-link">Новости</a>
+            </li>
+            <li class="h3 footer__nav-item">
+              <a href="./about.html" class="footer__nav-link">О нас</a>
+            </li>
+            <li class="h3 footer__nav-item">
+              <a href="./partners.html" class="footer__nav-link">Партнёры</a>
+            </li>
+            <li class="h3 footer__nav-item">
+              <a href="./contacts.html" data-transition="contacts" class="footer__nav-link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__line footer__line--after"><div class="footer__scrollthumb"></div></div>
+    <div class="footer__bottom">
+      <div class="footer__copyright">Copyright © 2020. Все права защищены.</div>
+      <a href="https://emotion-agency.com" target='_blank' rel='noreferer noopener' class="footer__e">made by <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="20" fill="white"/>
+          <path d="M25.4534 19.4015C25.4036 16.5296 22.5514 14.1085 19.7489 14.5093C18.472 14.6929 17.3941 15.2273 16.4655 16.1289C16.2001 16.3794 15.9514 16.4795 15.6695 16.179C15.2217 15.7282 15.1057 15.3107 15.3876 15.0269C16.7142 13.7913 18.2232 12.9731 20.0639 12.9064C22.5016 12.8396 24.4087 13.8748 25.8016 15.845C27.6755 18.5166 27.4931 22.2567 25.4036 24.7613C22.2695 28.5014 16.6976 27.6165 14.7574 23.0582C14.3926 22.1732 14.1936 21.2549 14.1936 20.3032C14.1936 19.7188 14.376 19.485 14.9564 19.4182C15.172 19.3848 15.3876 19.4015 15.6031 19.4015C18.7207 19.4015 21.8383 19.4015 24.9559 19.4015C25.1217 19.4015 25.271 19.4015 25.4534 19.4015ZM15.8187 20.8208C16.0509 23.4422 18.2896 25.5794 20.7107 25.546C22.9825 25.4959 25.2378 23.2251 25.387 20.8208C22.2031 20.8208 19.0358 20.8208 15.8187 20.8208Z" fill="#242424"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
