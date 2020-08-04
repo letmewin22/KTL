@@ -6,10 +6,16 @@
       </a>
       <div class="lang navbar__lang">
         <div class="navbar__lang-list dropdown">
-          <a href="#" class="navbar__link dropdown__btn">Ru <?php include get_theme_file_path( 'partials/svg/dropdown.php' ); ?></a>
+          <a data-router-disabled href="<?php echo showCurrentLangAtt('url',false);?>" class="navbar__link dropdown__btn">
+          <?php echo translateRusUaEn('Ru', 'Ua', 'En') ?> <?php include get_theme_file_path( 'partials/svg/dropdown.php' ); ?>
+          </a>
           <div class="dropdown__content">
-            <a href="#" class="navbar__link dropdown__link">Ua</a>
-            <a href="#" class="navbar__link dropdown__link">En</a>
+            <a data-router-disabled href="<?php echo showCurrentLangAtt('url',true);?>" class="navbar__link dropdown__link">
+            <?php echo translateRusUaEn('Ua', 'En', 'Ru') ?>
+            </a>
+            <a data-router-disabled href="<?php echo showCurrentLangAtt('url',true);?>" class="navbar__link dropdown__link">
+            <?php echo translateRusUaEn('En', 'Ru', 'Ua') ?>
+            </a>
           </div>
         </div>
       </div>

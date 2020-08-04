@@ -3,9 +3,9 @@
 Template Name: Main
 */
 get_header();
-?>
-<?php router('home'); ?>
 
+get_router('home');
+?>
 <header class="main-header">
   <div class="container main-header__container">
     <div class="main-header__content">
@@ -13,7 +13,7 @@ get_header();
         <span class="main-header__scroller">
           <span class='transition-span'>Kargo</span></span>
         <h1 data-move="main-header__m-h1-wrapper,1,560" class="main-header__h1 scroller-parallax transition-text">
-          Грузовые ЖД-перевозки. Быстро. Надёжно. Без сложностей.</h1>
+          <?php echo get_field('заголовок_первый_экран'); ?></h1>
       </div>
       <div class="main-header__bottom">
         <span class="main-header__scroller">
@@ -34,14 +34,14 @@ get_header();
 <main>
   <section class="section default-section">
     <div class="container section__container default-section__container">
-      <?php h2('Мы перевозим любые грузы ЖД-транспортом', 'half-size-h2') ?>
+      <?php h2(get_field('заголовок_второй_экран'), 'half-size-h2') ?>
       <div class="container__cols">
         <div class="container__l-col">
           <a href="./about.html" class="btn a-btn a-sticky default-section__btn">
             <div class="btn__text-wrapper">
               <?php for ($i = 0; $i < 4; $i++) { 
                 ?>
-              <span class="btn__text">Больше о компании</span>
+              <span class="btn__text"><?php echo translateRusUaEn('Больше о компании', 'Більше про компанію', 'More about company') ?> </span>
               <?php
               } ?>
             </div>
@@ -50,8 +50,7 @@ get_header();
         </div>
         <div class="container__r-col">
           <p class="section__text a-p">КАРГОТРАНСЛОДЖИСТИК — компания-экспедитор в сфере грузовых железнодорожных
-            перевозок. Предоставляем полный комплекс услуг с информационным сопровождением: от организации перевозок до
-            ремонта и продажи вагонов.</p>
+            перевозок. Предоставляем полный комплекс услуг с информационным сопровождением: от организации перевозок до ремонта и продажи вагонов.</p>
           <p class="section__text a-p">Помогаем компаниям быстро, надёжно и без проблем доставить груз из точки А в
             точку Б. Сопровождаем любой процесс, связанный с грузовыми ЖД-перевозками.</p>
           <div class="section__after-line a-line"></div>
@@ -66,7 +65,7 @@ get_header();
   </div>
   <section class="section list-section">
     <div class="container section__container list-section__container">
-      <h2 class="h2 a-h2">Услуги</h2>
+      <h2 class="h2 a-h2"><?php echo translateRusUaEn('Услуги', 'Послуги', 'Services') ?></h2>
       <div class="list-section__list-items">
         <?php   
           $args = array(
@@ -114,8 +113,7 @@ get_header();
       <?php h2('Преимущества', 'v-list-section__h2-arrow') ?>
       <div class="container__cols">
         <div class="container__l-col">
-          <p class="section__bold-text a-p a-sticky">Мы берём на себя ответственность доставить ваш груз точно в срок.
-            Работаем круглосуточно, 365 дней в году.</p>
+          <p class="section__bold-text a-p a-sticky">Мы берём на себя ответственность доставить ваш груз точно в срок. Работаем круглосуточно, 365 дней в году.</p>
         </div>
         <div class="container__r-col">
           <div class="v-list-section__items">
@@ -188,7 +186,10 @@ get_header();
       </div>
     </div>
   </section>
-  <?php include get_theme_file_path('partials/components/form.php' ); ?>
+  <?php
+    $header = translateRusUaEn('Мы просчитаем стоимость и сроки перевозки вашего груза.', 'Ми прорахуємо вартість та сроки транспортування вашого грузу', 'We will calculate the cost and terms of transportation of your cargo.');
+
+  form($header) ?>
 </main>
 <?php include get_theme_file_path('partials/components/footer.php' ); ?>
 

@@ -36,23 +36,41 @@ function mytheme_customize_register( $wp_customize ) {
 		)
 	);
 
-	
 	$wp_customize->add_setting(
-		'site_contact',
+		'company_adress',
 		array(
 			'default' => '',
 			'type' => 'option'
 		)
 	);
 	$wp_customize->add_control(
-		'site_contact_control',
+		'company_adress_control',
 		array(
 			'type' => 'text',
-			'label' => "Контакт для связи",
+			'label' => "Адресс компании",
 			'section' => 'data_site_section',
-			'settings' => 'site_contact'
+			'settings' => 'company_adress'
 		)
 	);
+	
+	$wp_customize->add_setting(
+		'company_map_link',
+		array(
+			'default' => '',
+			'type' => 'option'
+		)
+	);
+	$wp_customize->add_control(
+		'company_map_link_control',
+		array(
+			'type' => 'text',
+			'label' => "Ссылка на гугл картах",
+			'section' => 'data_site_section',
+			'settings' => 'company_map_link'
+		)
+	);
+
+
 
 	}
 	add_action( 'customize_register', 'mytheme_customize_register' );
@@ -85,5 +103,37 @@ function remove_admin_menu() {
 	remove_menu_page('edit.php'); // Посты блога
 	remove_menu_page('edit-comments.php'); // Комментарии	
 
+}
+
+
+function showCurrentLangAtt($langVal, $currentSwitch){
+	$translations = pll_the_languages(array('raw'=>1)); 
+	if (!$currentSwitch){
+			if ($translations['uk']['current_lang']){
+					return $translations['uk'][$langVal];
+			} elseif ($translations['en']['current_lang']){
+					return $translations['en'][$langVal];
+			} elseif ($translations['ru']['current_lang']){
+				return $translations['ru'][$langVal];
+		}; 
+	} else {
+			if (!$translations['uk']['current_lang']){
+					return $translations['uk'][$langVal];
+			} elseif (!$translations['en']['current_lang']){
+					return $translations['en'][$langVal]; 
+				} elseif (!$translations['ru']['current_lang']){
+						return $translations['ru'][$langVal];
+			};   
+	}
+}
+function translateRusUaEn($rus, $ua, $en){
+$translations = pll_the_languages(array('raw'=>1)); 
+if ($translations['uk']['current_lang']){
+	return $ua;
+} elseif ($translations['en']['current_lang']){
+	 return $en;
+} elseif ($translations['ru']['current_lang']){
+	return $rus;
+};  
 }
 ?>
