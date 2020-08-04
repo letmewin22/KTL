@@ -12,7 +12,7 @@ import { ScrollBar, Sticky, repeatedText, Links, ParallaxScroller } from '@/comp
 import FormSubmit from '@/form/FormSubmit.js'
 import { cntBtn, footer, Dropdown, NavbarPos, Nav, CntPopup, btnSound, activeLink } from '@/ui'
 import ScrollAnimations from '@/scroll/ScrollAnimations'
-import { detectRouter, Resize } from '@/helpers'
+import { detectRouter, Resize, langCurrentPage } from '@/helpers'
 
 import { Home, Service, Services, About, Partners, Documents, Error, News, Post, Contacts } from '@/renderers'
 import { Rewealers, Default } from '@/transitions'
@@ -59,7 +59,7 @@ window.addEventListener('beforeunload', () => {
 })
 
 window.addEventListener('load', () => {
-
+  langCurrentPage()
   bgWebP()
   activeLink()
   new Links(document.querySelectorAll('.navbar__link'))

@@ -23,6 +23,9 @@ class Documents extends Highway.Renderer {
         case 'doc':
           itemImg.style.backgroundImage = `url(${itemImg.getAttribute('data-src')}doc.svg)`
           break
+        case 'docx':
+          itemImg.style.backgroundImage = `url(${itemImg.getAttribute('data-src')}doc.svg)`
+          break
         default:
           itemImg.style.backgroundImage = `url(${itemImg.getAttribute('data-src')}other.svg)`
           break
