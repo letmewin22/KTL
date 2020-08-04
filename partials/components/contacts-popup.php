@@ -2,8 +2,11 @@
   <div class="container section__container form-section__container contacts-pop-up-section__container custom">
     <div class="contacts-pop-up-section__header">
       <div class="contacts-pop-up-section__header-content">
-        <h3 class="h3 contacts-pop-up-section__h3">Контакты</h3>
-        <div class="contacts-pop-up-section__close"><?php include get_theme_file_path( 'partials/svg/close.php' ); ?></div>
+        <h3 class="h3 contacts-pop-up-section__h3">
+        <?php echo translateRusUaEn('Контакты', 'Контакти', 'Contacts') ?>
+        </h3>
+        <div class="contacts-pop-up-section__close"><?php include get_theme_file_path( 'partials/svg/close.php' ); ?>
+        </div>
       </div>
       <div class="contacts-pop-up-section__line contacts-pop-up-section__line"></div>
     </div>
@@ -13,39 +16,61 @@
           <div class="form-section__v-line contacts-pop-up-section__v-line"></div>
           <div class="form-section__contacts-wrapper contacts-pop-up-section__contacts-wrapper">
             <div class="form-section__sticky-wrapper">
+              <?php   
+                $args = array(
+                  'post_type' => 'contacts',
+                  'posts_per_page' => 1,
+                  'order' => 'ASC'
+                );    
+                $my_query = new WP_Query( $args ); 
+                  if ( $my_query->have_posts() ) {
+                    while ( $my_query->have_posts() ) {
+                        $my_query->the_post();
+                ?>
               <div class="form-section__contact contacts-pop-up-section__contact">
-                <h4 class="h4 form-section__contact-h">Адрес</h4>
-                <a target='_blank' rel='noreferer noopener' href="" class="form-section__contact-link">
-               01133, г. Киев, Генерала Алмазова 18/7 - В
-              </a>
+                <h4 class="h4 form-section__contact-h">
+                <?php echo translateRusUaEn('Адрес', 'Адреса', 'Adress') ?>
+                </h4>
+                <a target='_blank' rel='noreferer noopener' href="<?php echo get_field('ссылка_на_гугл_карты'); ?>" class="form-section__contact-link">
+                  <?php echo get_field('адрес_компании'); ?>
+                </a>
               </div>
               <div class="form-section__contact contacts-pop-up-section__contact">
-                <h4 class="h4 form-section__contact-h">Директор</h4>
+                <h4 class="h4 form-section__contact-h">
+                <?php echo translateRusUaEn('Директор', 'Директор', 'CEO') ?>
+                </h4>
                 <div class="form-section__contact-link">
-                Коваленко Инна Витальевна
-              </div>
-                <a href="" class="form-section__contact-link">
-                (066) 409 33 33
-              </a>
+                <?php echo get_field('имя_директора'); ?>
+                </div>
+                <a target='_blank' rel='noreferer noopener' href="tel:<?php echo preg_replace('/\D+/', '', get_field('телефон_директора'));?>" class="form-section__contact-link">
+                <?php echo get_field('телефон_директора'); ?> 
+                </a>
               </div>
               <div class="form-section__contact contacts-pop-up-section__contact">
-                <h4 class="h4 form-section__contact-h">Телефоны</h4>
-                <a href="" class="form-section__contact-link">
-                (044) 228 30 31 
-              </a>
-                <a href="" class="form-section__contact-link">
-                (094) 926 37 65 (тел./факс)
-              </a>
+                <h4 class="h4 form-section__contact-h">
+                <?php echo translateRusUaEn('Телефоны', 'Телефони', 'Phones') ?>
+                </h4>
+                <a target='_blank' rel='noreferer noopener' href="tel:<?php echo preg_replace('/\D+/', '', get_field('телефон_компании'));?>" class="form-section__contact-link">
+                <?php echo get_field('телефон_компании'); ?> 
+                </a>
+                <a target='_blank' rel='noreferer noopener' href="tel:<?php echo preg_replace('/\D+/', '', get_field('факс_компании'));?>" class="form-section__contact-link">
+                <?php echo get_field('факс_компании'); ?> (<?php echo translateRusUaEn('факс', 'факс', 'fax') ?>)
+                </a>
               </div>
               <div class="form-section__contact contacts-pop-up-section__contact">
                 <h4 class="h4 form-section__contact-h">E-mail</h4>
-                <a href="" class="form-section__contact-link">
-                ktl.disp@gmail.com
-              </a>
-                <a href="" class="form-section__contact-link">
-                ktl.kovalenko.inna@gmail.com
-              </a>
+                <a target='_blank' rel='noreferer noopener' href="mailto:<?php echo get_field('почта_компании'); ?>" class="form-section__contact-link">
+                <?php echo get_field('почта_компании'); ?>
+                </a>
+                <a target='_blank' rel='noreferer noopener' href="mailto:<?php echo get_field('почта_директора'); ?>" class="form-section__contact-link">
+                <?php echo get_field('почта_директора'); ?>
+                </a>
               </div>
+              <?php             
+                  }  
+                }       
+                wp_reset_postdata(); 
+              ?>
             </div>
           </div>
         </div>
@@ -87,7 +112,8 @@
                     <label for="phone2" class="form__label">
                       <span class="form__label-content required">Телефон *</span>
                     </label>
-                    <span data-value="3" class="form__validate-text">минимум <span class="koef-inp"></span> цифры. Осталось: <span class="koef-outp"></span></span>
+                    <span data-value="3" class="form__validate-text">минимум <span class="koef-inp"></span> цифры.
+                      Осталось: <span class="koef-outp"></span></span>
                   </div>
                 </div>
                 <?php btn('Отправить заявку', 'submit', 'btn--white') ?>

@@ -36,23 +36,41 @@ function mytheme_customize_register( $wp_customize ) {
 		)
 	);
 
-	
 	$wp_customize->add_setting(
-		'site_contact',
+		'company_adress',
 		array(
 			'default' => '',
 			'type' => 'option'
 		)
 	);
 	$wp_customize->add_control(
-		'site_contact_control',
+		'company_adress_control',
 		array(
 			'type' => 'text',
-			'label' => "Контакт для связи",
+			'label' => "Адресс компании",
 			'section' => 'data_site_section',
-			'settings' => 'site_contact'
+			'settings' => 'company_adress'
 		)
 	);
+	
+	$wp_customize->add_setting(
+		'company_map_link',
+		array(
+			'default' => '',
+			'type' => 'option'
+		)
+	);
+	$wp_customize->add_control(
+		'company_map_link_control',
+		array(
+			'type' => 'text',
+			'label' => "Ссылка на гугл картах",
+			'section' => 'data_site_section',
+			'settings' => 'company_map_link'
+		)
+	);
+
+
 
 	}
 	add_action( 'customize_register', 'mytheme_customize_register' );
@@ -86,4 +104,66 @@ function remove_admin_menu() {
 	remove_menu_page('edit-comments.php'); // Комментарии	
 
 }
+
+
+function showCurrentLangAtt($langVal, $currentSwitch){
+	$translations = pll_the_languages(array('raw'=>1)); 
+	if (!$currentSwitch){
+			if ($translations['uk']['current_lang']){
+					return $translations['uk'][$langVal];
+			} elseif ($translations['en']['current_lang']){
+					return $translations['en'][$langVal];
+			} elseif ($translations['ru']['current_lang']){
+				return $translations['ru'][$langVal];
+		}; 
+	} else {
+			if (!$translations['uk']['current_lang']){
+					return $translations['uk'][$langVal];
+			} elseif (!$translations['en']['current_lang']){
+					return $translations['en'][$langVal]; 
+				} elseif (!$translations['ru']['current_lang']){
+						return $translations['ru'][$langVal];
+			};   
+	}
+}
+function translateRusUaEn($rus, $ua, $en){
+$translations = pll_the_languages(array('raw'=>1)); 
+if ($translations['uk']['current_lang']){
+	return $ua;
+} elseif ($translations['en']['current_lang']){
+	 return $en;
+} elseif ($translations['ru']['current_lang']){
+	return $rus;
+};  
+}
+
+function wpb_mce_buttons_2($buttons) {
+	array_unshift($buttons, 'styleselect');
+	return $buttons;
+}
+add_filter('mce_buttons_2', 'wpb_mce_buttons_2');
+
+
+function my_mce_before_init_insert_formats( $init_array ) {
+
+	// Определяем массив style_formats
+	
+		$style_formats = array(
+			// Каждый дочерний элемент  - формат со своими собственными настройками
+			array(
+				'title' => 'Текст секции',
+				'block' => 'p',
+				'classes' => array('section__text', 'a-p'),
+				'wrapper' => false,
+	
+			)
+		);
+		// Вставляем массив, JSON ENCODED, в 'style_formats'
+		$init_array['style_formats'] = json_encode( $style_formats );
+	
+		return $init_array;
+	
+	}
+	// Прикрепляем вызов к 'tiny_mce_before_init'
+	add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
 ?>

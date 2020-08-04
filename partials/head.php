@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk" class="custom loading">
-
+<html lang="<?php echo translateRusUaEn('ru', 'uk', 'en') ?>" class="custom loading">
 <head>
     <meta charset="utf-8">
     <title><?php echo get_field('title'); ?></title>
@@ -12,7 +11,7 @@
     <meta property="og:title" content="<?php echo get_field('title'); ?>">
     <meta property="og:description" content="<?php echo get_field('description'); ?>">
     <!-- BEGIN styles -->
- <link rel="stylesheet" media="all" href="<?php echo get_template_directory_uri()?>/css/app.e1596448154191.css">
+ <link rel="stylesheet" media="all" href="<?php echo get_template_directory_uri()?>/css/app.e1596541147557.css">
     <!-- END styles -->
 </head>
 
