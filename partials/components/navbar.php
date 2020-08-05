@@ -1,19 +1,19 @@
 <div class="navbar">
   <div class="container navbar__container">
     <div class="navbar__left">
-      <a href="./" aria-label="KTL logo" class="navbar__logo">
+      <a href="<?php $link = translateRusUaEn('/', '/uk/', '/en/'); echo get_site_url().$link?>" aria-label="KTL logo" class="navbar__logo">
         <?php include get_theme_file_path( 'partials/svg/logo.php' ); ?>
       </a>
       <div class="lang navbar__lang">
         <div class="navbar__lang-list dropdown">
-          <a hreflang="<?php echo translateRusUaEn('ru', 'uk', 'en') ?>" data-router-disabled href="<?php echo showCurrentLangAtt('url',false);?>" class="navbar__link dropdown__btn">
+          <a hreflang="<?php echo translateRusUaEn('ru', 'uk', 'en') ?>" data-router-disabled href="#" class="navbar__link dropdown__btn">
           <?php echo translateRusUaEn('Ru', 'Ua', 'En') ?> <?php include get_theme_file_path( 'partials/svg/dropdown.php' ); ?>
           </a>
           <div class="dropdown__content">
-            <a hreflang="<?php echo translateRusUaEn('uk', 'en', 'ru') ?>" data-router-disabled href="<?php echo showCurrentLangAtt('url',true);?>" class="navbar__link dropdown__link">
+            <a hreflang="<?php echo translateRusUaEn('uk', 'en', 'ru') ?>" data-router-disabled href="#" class="navbar__link dropdown__link">
             <?php echo translateRusUaEn('Ua', 'En', 'Ru') ?>
             </a>
-            <a hreflang="<?php echo translateRusUaEn('en', 'ru', 'uk') ?>" data-router-disabled href="<?php echo showCurrentLangAtt('url',true);?>" class="navbar__link dropdown__link">
+            <a hreflang="<?php echo translateRusUaEn('en', 'ru', 'uk') ?>" data-router-disabled href="#" class="navbar__link dropdown__link">
             <?php echo translateRusUaEn('En', 'Ru', 'Ua') ?>
             </a>
           </div>
@@ -24,7 +24,7 @@
       <nav class="navbar__nav">
         <ul class="navbar__list">
           <li class="navbar__list-item dropdown">
-            <a href="services.html" class="navbar__link dropdown__btn">
+            <a href="<?php $link = translateRusUaEn('services', 'services-uk', 'services-en'); echo get_site_url().'/'.$link?>" class="navbar__link dropdown__btn">
             <?php echo translateRusUaEn('Услуги', 'Послуги', 'Services') ?> 
             <?php include get_theme_file_path( 'partials/svg/dropdown.php' ); ?>
             </a>

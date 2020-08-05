@@ -89,11 +89,14 @@ function onwp_disable_content_editor() {
 				remove_post_type_support( 'page', 'editor' );
 			} elseif ( $template_file == 'review.php' ){
 				remove_post_type_support( 'page', 'editor' );
-			} elseif ( $template_file == 'tour.php' ){
+			} elseif ( $template_file == 'services.php' ){
 				remove_post_type_support( 'page', 'editor' );
 			} elseif($template_file == 'singular.php'){
 				remove_post_type_support( 'page', 'editor' );
+			} elseif($template_file == 'single-services.php'){
+				remove_post_type_support( 'page', 'editor' );
 			}
+			
 	}
 add_action( 'admin_init', 'onwp_disable_content_editor' );
 
@@ -154,8 +157,13 @@ function my_mce_before_init_insert_formats( $init_array ) {
 				'title' => 'Текст секции',
 				'block' => 'p',
 				'classes' => array('section__text', 'a-p'),
-				'wrapper' => false,
-	
+				'wrapper' => false
+			),
+			array(
+				'title' => 'Цитата',
+				'block' => 'blockquote',
+				'classes' => array('review__quote', 'a-p'),
+				'wrapper' => false
 			)
 		);
 		// Вставляем массив, JSON ENCODED, в 'style_formats'

@@ -9,7 +9,7 @@
         <nav class="footer__nav">
           <ul class="footer__nav-items">
             <li class="h3 footer__nav-item">
-              <a href="./services.html" class="footer__nav-link">
+              <a href="<?php $link = translateRusUaEn('services', 'services-uk', 'services-en'); echo get_site_url().'/'.$link?>" class="footer__nav-link">
               <?php echo translateRusUaEn('Услуги', 'Послуги', 'Services') ?>
               </a>
             </li>

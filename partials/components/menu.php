@@ -29,7 +29,7 @@
       <div class="menu__v-line"></div>
       <ul class="menu__items">
         <li class="menu__item">
-          <a href="services.html" class="menu__link">
+          <a href="<?php $link = translateRusUaEn('services', 'services-uk', 'services-en'); echo get_site_url().'/'.$link?>" class="menu__link">
           <?php echo translateRusUaEn('Услуги', 'Послуги', 'Services') ?>
           </a>
         </li>

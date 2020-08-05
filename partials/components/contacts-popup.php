@@ -80,9 +80,11 @@
         <div class="form-section__right">
           <div class="form-section__v-line contacts-pop-up-section__v-line"></div>
           <div class="form-section__right-content contacts-pop-up-section__right-content">
-            <h2 class="h2 form-section__h2 contacts-pop-up-section__h2">Будем рады ответить на ваши вопросы</h2>
+            <h2 class="h2 form-section__h2 contacts-pop-up-section__h2">
+            <?php echo translateRusUaEn('Будем рады ответить на ваши вопросы', 'Будемо раді відповісти на ваші питання', 'We will be glad to answer your questions') ?>
+            </h2>
             <div class="form-section__form-wrapper">
-              <form data-url="./mail.php" class="form" name="form" novalidate>
+              <form data-url="<?php echo get_template_directory_uri()?>/" class="form" name="form" novalidate>
                 <!-- Hidden Required Fields -->
                 <input type="hidden" name="project_name" value="KTL">
                 <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
@@ -92,13 +94,17 @@
                   <div class="form__input-wrapper">
                     <input type="text" class="form__text-field" maxlength="256" name="name" id="name2">
                     <label for="name2" class="form__label">
-                      <span class="form__label-content">Имя</span>
+                      <span class="form__label-content">
+                      <?php echo translateRusUaEn('Имя', 'Ім\'я', 'Name') ?>
+                      </span>
                     </label>
                   </div>
                   <div class="form__input-wrapper">
                     <input type="text" class="form__text-field" maxlength="256" name="company" id="company2">
                     <label for="company2" class="form__label">
-                      <span class="form__label-content">Компания</span>
+                      <span class="form__label-content">
+                      <?php echo translateRusUaEn('Компания', 'Компанія', 'Company') ?>
+                      </span>
                     </label>
                   </div>
                   <div class="form__input-wrapper">
@@ -110,13 +116,17 @@
                   <div class="form__input-wrapper">
                     <input type="tel" class="form__text-field" maxlength="256" name="phone" id="phone2">
                     <label for="phone2" class="form__label">
-                      <span class="form__label-content required">Телефон *</span>
+                      <span class="form__label-content required">
+                      <?php echo translateRusUaEn('Телефон', 'Телефон', 'Phone') ?> *
+                       </span>
                     </label>
-                    <span data-value="3" class="form__validate-text">минимум <span class="koef-inp"></span> цифры.
-                      Осталось: <span class="koef-outp"></span></span>
+                    <span data-value="3" class="form__validate-text"><?php echo translateRusUaEn('минимум', 'мінімум', 'at least') ?> <span class="koef-inp"></span> <?php echo translateRusUaEn('цифры', 'цифри', 'numbers') ?>.
+                    <?php echo translateRusUaEn('Осталось', 'Ще', 'Left') ?>: <span class="koef-outp"></span></span>
                   </div>
                 </div>
-                <?php btn('Отправить заявку', 'submit', 'btn--white') ?>
+                <?php
+                $btn_text = translateRusUaEn('Отправить заявку', 'Надіслати заявку', 'Send request');
+                btn($btn_text, 'submit', 'btn--white') ?>
               </form>
             </div>
           </div>

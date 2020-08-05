@@ -150,11 +150,12 @@ get_router('home');
   </section>
   <section class="section default-section review-section">
     <div class="container section__container">
-      <?php h2('Наши партнёры — промышленные предприятия, торговые компании и другие виды бизнеса.') ?>
+      <?php
+        $text = get_field('партнёры_заголовок');
+        h2($text) ?>
       <div class="container__cols">
         <div class="container__l-col">
-          <p class="section__bold-text a-p a-sticky">Гарантия вывоза груза — залог успеха долгосрочных партнерских
-            отношений.</p>
+          <p class="section__bold-text a-p a-sticky"><?php echo get_field('партнёры_текст'); ?></p>
         </div>
         <div class="container__r-col">
           <a href="#" class="default-section__review review">
@@ -162,19 +163,20 @@ get_router('home');
             <div class="review__top">
               <div class="review__left">
                 <div class="review__logo a-p">
-                  <img class="pli" src="<?php echo get_template_directory_uri();?>/img/clients/1.png"
-                    alt="clients__logo">
+                  <picture>
+                    <source srcset="<?php echo get_template_directory_uri();?>/img/clients/1.webp" type="image/webp">
+                    <img class="pli loaded" src="<?php echo get_template_directory_uri();?>/img/clients/1.png"
+                      alt="clients__logo"></picture>
                 </div>
                 <div class="review__info">
-                  <h3 class="h3 review__name a-p">Ринат Ахметов</h3>
-                  <div class="review__company a-p">ООО МЕТИНВЕСТ</div>
+                  <h3 class="h3 review__name a-p"><?php echo get_field('партнёры_имя_цитируемого'); ?></h3>
+                  <div class="review__company a-p"><?php echo get_field('партнёры_компания_цитируемого'); ?></div>
                 </div>
               </div>
               <div class="review__right"><?php include get_theme_file_path('partials/svg/arrow.php' ); ?></div>
             </div>
             <div class="review__bottom">
-              <div class="review__quote a-p">«Перевозка грузов железнодорожным транспортом — это один из наиболее
-                эффективных, безопасных и экономически выгодных видов перевозок грузов для сухопутного сообщения».</div>
+              <?php echo get_field('партнёры_цитата'); ?>
             </div>
           </a>
           <div class="section__after-line a-line"></div>
