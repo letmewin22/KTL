@@ -89,8 +89,7 @@ get_header();
       </div>
       <div class="container__cols steps-section__cols">
         <div class="container__l-col">
-          <p class="section__bold-text a-p steps-section__med-text">В договоре мы закрепляем свои обязанности обеспечить
-            вас подвижным составом согласно предоставленной заявки. </p>
+          <p class="section__bold-text a-p steps-section__med-text">В договоре мы закрепляем свои обязанности обеспечить вас подвижным составом согласно предоставленной заявки. </p>
         </div>
         <div class="container__r-col">
         <?php btn('Заявка на перевозку', '', 'default-section__btn c-btn a-btn') ?>
@@ -101,112 +100,62 @@ get_header();
   </section>
   <div class="transition-rails">
     <div class="transition-rails__items">
-      <div class="transition-rails__item">&nbsp;— Организация перевозок</div>
-      <div class="transition-rails__item">&nbsp;— Организация перевозок</div>
+    <?php for ($i=0; $i < 2; $i++) { 
+      ?>
+      <div class="transition-rails__item">&nbsp;— <?php echo get_field('первая_строка_заголовка').'&nbsp;'; echo get_field('вторая_строка_заголовка'); ?></div>
+    <?php } ?>
     </div>
   </div>
+  <?php
+    $terms = get_terms(['taxonomy' => 'ads_tax', 'name' => get_the_title() , 'pad_counts' => 1, 'parent' => 0, 'hide_empty' => false, 'post_per_page' => 125 ]);
+        foreach ($terms as $term):
+          $args = ['post_type' => 'sa', 'posts_per_page' => 20, 'orderby' => 'id', 'order' => 'ASC', 'tax_query' => [['taxonomy' => 'ads_tax', 'field' => 'term_id', 'terms' => $term->term_id, 'include_children' => false, ], ], ];
+            $posts_with_term = new WP_Query($args);
+              if ( $posts_with_term->have_posts() ) {
+  ?>
   <section class="section accordeon-section dark-section">
     <div class="container section__container accordeon-section__container">
-      <?php h2('Дополнительные услуги') ?>
+      <?php h2(translateRusUaEn('Дополнительные услуги', 'Додаткові послуги', 'Additional services')) ?>
       <div class="accordeon-section__items">
         <div class="accordeon-section__line a-line"></div>
+        <?php
+          $terms = get_terms(['taxonomy' => 'ads_tax', 'name' => get_the_title() , 'pad_counts' => 1, 'parent' => 0, 'hide_empty' => false, 'post_per_page' => 125 ]);
+              foreach ($terms as $term):
+                $args = ['post_type' => 'sa', 'posts_per_page' => 20, 'orderby' => 'id', 'order' => 'ASC', 'tax_query' => [['taxonomy' => 'ads_tax', 'field' => 'term_id', 'terms' => $term->term_id, 'include_children' => false, ], ], ];
+                    $posts_with_term = new WP_Query($args);
+                      while ($posts_with_term->have_posts()):
+                          $posts_with_term->the_post();
+                          $counter++;
+                          ?>
         <div class="accordeon-section__item">
           <div class="accordeon-section__overlay"></div>
           <div class="container__cols accordeon-section__cols a-item">
             <div class="container__l-col accordeon-section__l-col">
-              <div class="h3 accordeon-section__num">01</div>
+              <div class="h3 accordeon-section__num">0<?php echo $counter ?></div>
             </div>
             <div class="container__r-col accordeon-section__r-col">
-              <h4 class="h4 accordeon-section__h4">Ускорение вагонов</h4>
+              <h4 class="h4 accordeon-section__h4"><?php echo get_field('название_услуги'); ?></h4>
               <div class="accordeon-section__arrow"><?php include get_theme_file_path('partials/svg/arrow.php' ); ?></div>
             </div>
           </div>
           <div class="accordeon-section__text">
-            Ускоряем продвижение состава в пути следования, если возникает такая необходимость. Эта услуга нужна для
-            случаев, когда меняется станция назначения, лицо получателя или возникают другие, форс-мажорные
-            обстоятельства, требующие более быстрой транспортировки.
+          <?php echo get_field('описание_услуги'); ?>
           </div>
           <div class="accordeon-section__line a-line"></div>
         </div>
-        <div class="accordeon-section__item">
-          <div class="accordeon-section__overlay"></div>
-          <div class="container__cols accordeon-section__cols a-item">
-            <div class="container__l-col accordeon-section__l-col">
-              <div class="h3 accordeon-section__num">02</div>
-            </div>
-            <div class="container__r-col accordeon-section__r-col">
-              <h4 class="h4 accordeon-section__h4">Переадресация вагонов</h4>
-              <div class="accordeon-section__arrow"><?php include get_theme_file_path('partials/svg/arrow.php' ); ?></div>
-            </div>
-          </div>
-          <div class="accordeon-section__text">
-            Если вы уже отгрузили груз, и в пути следования нужно изменить станцию назначения — мы сделаем это. Быстро
-            подготовим документы для переадресации, а также изменим маршрут, чтобы ваш груз был доставлен точно в срок.
-          </div>
-          <div class="accordeon-section__line a-line"></div>
-        </div>
-        <div class="accordeon-section__item">
-          <div class="accordeon-section__overlay"></div>
-          <div class="container__cols accordeon-section__cols a-item">
-            <div class="container__l-col accordeon-section__l-col">
-              <div class="h3 accordeon-section__num">03</div>
-            </div>
-            <div class="container__r-col accordeon-section__r-col">
-              <h4 class="h4 accordeon-section__h4">Расчёт стоимости</h4>
-              <div class="accordeon-section__arrow"><?php include get_theme_file_path('partials/svg/arrow.php' ); ?></div>
-            </div>
-          </div>
-
-          <div class="accordeon-section__text">
-            <p>Оставьте свои контактные данные в форме обратной связи, чтобы мы просчитали стоимость транспортировки
-              груза. С вами свяжется наш экспедитор и вы вместе заполните заявку на перевозку. В заявке на перевозку
-              отражается станция отправления груза, станция назначения груза, необходимое количество вагонов,
-              планируемая дата перевозки.</p>
-            <p>Конечная стоимость зависит от дальности перевозки, количества груза, технических особенностей на местах
-              погрузки/выгрузки груза, а также вагонов — они могут быть нашими или от УЗ.</p>
-          </div>
-          <div class="accordeon-section__line a-line"></div>
-        </div>
-        <div class="accordeon-section__item">
-          <div class="accordeon-section__overlay"></div>
-          <div class="container__cols accordeon-section__cols a-item">
-            <div class="container__l-col accordeon-section__l-col">
-              <div class="h3 accordeon-section__num">04</div>
-            </div>
-            <div class="container__r-col accordeon-section__r-col">
-              <h4 class="h4 accordeon-section__h4">Поиск вагонов</h4>
-              <div class="accordeon-section__arrow"><?php include get_theme_file_path('partials/svg/arrow.php' ); ?></div>
-            </div>
-          </div>
-          <div class="accordeon-section__text">
-            Если вагоны потерялись в пути следования — обращайтесь к нам. Мы найдем станцию, где они были последний раз,
-            а затем отследим их текущее местоположение. Проверку осуществляем с помощью диспетчерских центров,
-            документации и программного обеспечения.
-          </div>
-          <div class="accordeon-section__line a-line"></div>
-        </div>
-        <div class="accordeon-section__item">
-          <div class="accordeon-section__overlay"></div>
-          <div class="container__cols accordeon-section__cols a-item">
-            <div class="container__l-col accordeon-section__l-col">
-              <div class="h3 accordeon-section__num">05</div>
-            </div>
-            <div class="container__r-col accordeon-section__r-col">
-              <h4 class="h4 accordeon-section__h4">Данные о вагонах</h4>
-              <div class="accordeon-section__arrow"><?php include get_theme_file_path('partials/svg/arrow.php' ); ?></div>
-            </div>
-          </div>
-          <div class="accordeon-section__text">
-            У нас есть собственные и арендованные вагоны. Для насыпных грузов используем полувагоны, а для грузов,
-            нуждающихся в защите от атмосферных осадков — крытые вагоны. Если нужного типа вагона нет в нашем парке, мы
-            используем вагоны ЧАО «Украинская железная дорога». Предоставляем данные о доступных видах и количестве
-            свободных вагонов.
-          </div>
-          <div class="accordeon-section__line a-line"></div>
-        </div>
+        <?php
+          endwhile;
+            wp_reset_postdata();
+            endforeach;
+        ?>
       </div>
     </div>
   </section>
+  <?php             
+        }      
+      wp_reset_postdata(); 
+    endforeach;
+    ?>
   <section class="section v-list-section">
     <div class="container section__container v-list-section__container">
     <?php h2('Особенности перевозок', 'v-list-section__h2 half-size-h2') ?>
@@ -228,11 +177,12 @@ get_header();
   </section>
   <section class="section default-section relative-section">
     <div class="container section__container">
-      <?php h2('Другие услуги') ?>
+      <?php h2(translateRusUaEn('Другие услуги', 'Інші послуги', 'Other services')) ?>
       <div class="container__cols relative-section__cols">
         <div class="container__l-col">
-          <p class="section__bold-text a-p a-sticky">Предоставляем комплекс услуг по транспортировке грузов и
-            обслуживанию подвижного состава</p>
+          <p class="section__bold-text a-p a-sticky">
+          <?php echo translateRusUaEn('Предоставляем комплекс услуг по транспортировке грузов и обслуживанию подвижного состава', 'Надаємо комплекс послуг з транспортування вантажів та обсулговуванню рухомого складу', 'We provide a range of services for the transportation of goods and maintenance of rolling stock') ?>
+         </p>
         </div>
         <div class="container__r-col">
           <div class="relative-section__items">
