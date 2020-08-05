@@ -60,7 +60,9 @@
   }
   &.is-current {
     color: $accent;
-    pointer-events: none;
+    svg {
+      fill: $accent;
+    }
   }
 }
 

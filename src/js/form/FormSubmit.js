@@ -58,7 +58,6 @@ export default class FormSubmit extends FormInputs {
         })
       ])
         .then(responses => {
-          console.log(responses[0], responses[1])
           if(responses[0].status >= 200 && responses[0].status < 400) {
             this.requestLoad()
             return
@@ -66,11 +65,9 @@ export default class FormSubmit extends FormInputs {
             this.requestLoad()
             return
           } else {
-            alert('При отправке произошла ошибка:(')
+            alert(this.form.getAttribute('data-error'))
           }
         })
-      // this.requestLoad() : this.requestLoad())
-
     } catch (e) {
       console.log(e)
     }

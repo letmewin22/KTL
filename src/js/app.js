@@ -59,7 +59,17 @@ window.addEventListener('beforeunload', () => {
 })
 
 window.addEventListener('load', () => {
-  langCurrentPage()
+
+  langCurrentPage({
+    curLang: document.querySelector('.navbar__lang-list a'),
+    links: document.querySelectorAll('.navbar__lang-list .dropdown__content a')
+  })
+
+  langCurrentPage({
+    curLang: document.querySelector('.menu__lang-list a'),
+    links: document.querySelectorAll('.menu__lang-list .dropdown__content a')
+  })
+
   bgWebP()
   activeLink()
   new Links(document.querySelectorAll('.navbar__link'))
@@ -119,6 +129,16 @@ H.on('NAVIGATE_END', () => {
   navbarPos.destroy()
   navbarPos.init()
 
+  langCurrentPage({
+    curLang: document.querySelector('.navbar__lang-list a'),
+    links: document.querySelectorAll('.navbar__lang-list .dropdown__content a')
+  })
+
+  langCurrentPage({
+    curLang: document.querySelector('.menu__lang-list a'),
+    links: document.querySelectorAll('.menu__lang-list .dropdown__content a')
+  })
+  
   footer()
 
   const dropdown = new Dropdown({ btn: '.dropdown__btn', items: '.dropdown__content', parent: '.dropdown' })

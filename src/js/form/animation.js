@@ -21,7 +21,7 @@ const animation = (el) => {
   const duplicate = document.createElement('div')
   const thanksText = document.createElement('span')
 
-  thanksText.innerHTML = '<span>Заявка успешно отправлена</span>'
+  thanksText.innerHTML = `<span>${btn.closest('form').getAttribute('data-success')}</span>`
 
   duplicate.classList.add('btn__suc')
   thanksText.classList.add('btn__thanks-text')

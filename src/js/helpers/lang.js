@@ -1,58 +1,41 @@
-const langCurrentPage = () => {
+const langCurrentPage = (DOM) => {
 
-  const curLang = document.querySelector('.navbar__lang-list a').innerText.replace(/\s/g, '').toLowerCase()
-  
-  let otherLinks
-  let getLink = function() { }
+  const curLang = DOM.curLang.innerText.replace(/\s/g, '').toLowerCase()
+  const links = DOM.links
+
+  const siteUrl = document.documentElement.getAttribute('data-site-url')
+
+  const getLink = (lang, sufix = '') => {
+    return document.querySelector('[data-router-view]').getAttribute('data-router-view') === 'home'
+      ? '/'
+      : location.pathname.replace(`/${lang}`, '').slice(0, -1).replace(`-${lang}`, '').replace('/ktl', '') + sufix
+  }
 
   switch (curLang) {
+
     case 'ru':
 
-      otherLinks = document.querySelectorAll('.navbar__lang-list .dropdown__content a')
+      DOM.curLang.setAttribute('href', window.location.href)
 
-      document.querySelector('.navbar__lang-list a').setAttribute('href', window.location.href)
-
-      getLink = (sufix) => {
-        return document.querySelector('[data-router-view]').getAttribute('data-router-view') === 'home'
-          ? '/'
-          : location.pathname.replace(/\/ru/gi, '') + '-' + sufix
-      }
-
-
-      otherLinks[0].setAttribute('href', location.origin + '/ktl' + '/uk' + getLink('uk'))
-      otherLinks[1].setAttribute('href', location.origin + '/ktl' + '/en' + getLink('en'))
-      // langBtn.setAttribute('hreflang', 'ua')
+      links[0].setAttribute('href', siteUrl + '/uk' + getLink('ru', '-uk'))
+      links[1].setAttribute('href', siteUrl + '/en' + getLink('ru', '-en'))
       break
 
     case 'ua':
 
-      otherLinks = document.querySelectorAll('.navbar__lang-list .dropdown__content a')
+      DOM.curLang.setAttribute('href', window.location.href)
 
-      document.querySelector('.navbar__lang-list a').setAttribute('href', window.location.href)
-
-      getLink = (sufix) => {
-        return document.querySelector('[data-router-view]').getAttribute('data-router-view') === 'home'
-          ? '/'
-          : location.pathname.replace(/\/uk/gi, '') + '-' + sufix
-      }
-
-      otherLinks[0].setAttribute('href', location.origin + '/ktl' + '/en' + getLink('en'))
-      otherLinks[1].setAttribute('href', location.origin + '/ktl' + getLink('ru'))
+      links[0].setAttribute('href', siteUrl + '/en' + getLink('uk', '-en'))
+      links[1].setAttribute('href', siteUrl + getLink('uk'))
 
       break
+
     case 'en':
 
-      otherLinks = document.querySelectorAll('.navbar__lang-list .dropdown__content a')
-      document.querySelector('.navbar__lang-list a').setAttribute('href', window.location.href)
+      DOM.curLang.setAttribute('href', window.location.href)
 
-      getLink = (sufix) => {
-        return document.querySelector('[data-router-view]').getAttribute('data-router-view') === 'home'
-          ? '/'
-          : location.pathname.replace(/\/en/gi, '') + '-' + sufix
-      }
-
-      otherLinks[0].setAttribute('href', location.origin + '/ktl' + getLink('ru'))
-      otherLinks[1].setAttribute('href', location.origin + '/ktl' + '/uk' + getLink('uk'))
+      links[0].setAttribute('href', siteUrl + getLink('en'))
+      links[1].setAttribute('href', siteUrl + '/uk' + getLink('en', '-uk'))
 
       break
   }
