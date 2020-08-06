@@ -164,6 +164,12 @@ function my_mce_before_init_insert_formats( $init_array ) {
 				'wrapper' => false
 			),
 			array(
+				'title' => 'Текст секции без анимации',
+				'block' => 'p',
+				'classes' => 'section__text',
+				'wrapper' => false
+			),
+			array(
 				'title' => 'Цитата',
 				'block' => 'blockquote',
 				'classes' => array('review__quote', 'a-p'),

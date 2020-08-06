@@ -10,7 +10,7 @@
     <div class="page-transition__item"></div>
   </div>
   <!-- BEGIN scripts -->
-<script src="<?php echo get_template_directory_uri()?>/js/app.e1596699338875.js"></script>
+<script src="<?php echo get_template_directory_uri()?>/js/app.e1596707194794.js"></script>
   <!-- END scripts -->
 </body>
 
