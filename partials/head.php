@@ -11,7 +11,7 @@
     <meta property="og:title" content="<?php echo get_field('title'); ?>">
     <meta property="og:description" content="<?php echo get_field('description'); ?>">
     <!-- BEGIN styles -->
- <link rel="stylesheet" media="all" href="<?php echo get_template_directory_uri()?>/css/app.e1596621976328.css">
+ <link rel="stylesheet" media="all" href="<?php echo get_template_directory_uri()?>/css/app.e1596699338875.css">
     <!-- END styles -->
 </head>
 

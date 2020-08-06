@@ -84,7 +84,10 @@
             <?php echo translateRusUaEn('Будем рады ответить на ваши вопросы', 'Будемо раді відповісти на ваші питання', 'We will be glad to answer your questions') ?>
             </h2>
             <div class="form-section__form-wrapper">
-              <form data-url="<?php echo get_template_directory_uri()?>/" class="form" name="form" novalidate>
+              <form 
+              data-success="<?php echo translateRusUaEn('Заявка успешно отправлена', 'Заявка успішно надіслана', 'Application has been sent') ?>" 
+              data-error="<?php echo translateRusUaEn('При отправке произошла ошибка:(', 'При відправці виникла помилка:(', 'An error occurred while sending :(') ?>" 
+              data-url="<?php echo get_template_directory_uri()?>/" class="form" name="form" novalidate>
                 <!-- Hidden Required Fields -->
                 <input type="hidden" name="project_name" value="KTL">
                 <input type="hidden" name="admin_email" value="hello@emotion-agency.com">

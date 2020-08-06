@@ -29,32 +29,32 @@
       <div class="menu__v-line"></div>
       <ul class="menu__items">
         <li class="menu__item">
-          <a href="<?php $link = translateRusUaEn('services', 'services-uk', 'services-en'); echo get_site_url().'/'.$link?>" class="menu__link">
+          <a href="<?php echo get_nav_link('services') ?>" class="menu__link">
           <?php echo translateRusUaEn('Услуги', 'Послуги', 'Services') ?>
           </a>
         </li>
         <li class="menu__item">
-          <a href="./about.html" class="menu__link">
+          <a href="<?php echo get_nav_link('about') ?>>" class="menu__link">
           <?php echo translateRusUaEn('О нас', 'Про нас', 'About') ?>
           </a>
         </li>
         <li class="menu__item">
-          <a href="./documents.html" class="menu__link">
+          <a href="<?php echo get_nav_link('documents') ?>" class="menu__link">
           <?php echo translateRusUaEn('Документы', 'Документи', 'Documents') ?>
           </a>
         </li>
         <li class="menu__item">
           <a href="./partners.html" class="menu__link">
-          <?php echo translateRusUaEn('Партнёры', 'Партнери', 'Partners') ?>
+          <?php echo get_nav_link('partners') ?>
           </a>
         </li>
         <li class="menu__item">
-          <a href="./news.html" class="menu__link">
+          <a href="<?php echo get_nav_link('news') ?>" class="menu__link">
           <?php echo translateRusUaEn('Новости', 'Новини', 'News') ?>
           </a>
         </li>
         <li class="menu__item">
-          <a href="./contacts.html" data-transition="contacts" class="menu__link">
+          <a href="<?php echo get_nav_link('contacts') ?>" data-transition="contacts" class="menu__link">
           <?php echo translateRusUaEn('Контакты', 'Контакти', 'Contacts') ?>
           </a>
         </li>

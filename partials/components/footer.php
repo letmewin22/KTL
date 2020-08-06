@@ -9,32 +9,32 @@
         <nav class="footer__nav">
           <ul class="footer__nav-items">
             <li class="h3 footer__nav-item">
-              <a href="<?php $link = translateRusUaEn('services', 'services-uk', 'services-en'); echo get_site_url().'/'.$link?>" class="footer__nav-link">
+              <a href="<?php echo get_nav_link('services') ?>" class="footer__nav-link">
               <?php echo translateRusUaEn('Услуги', 'Послуги', 'Services') ?>
               </a>
             </li>
             <li class="h3 footer__nav-item">
-              <a href="./documents.html" class="footer__nav-link">
+              <a href="<?php echo get_nav_link('documents') ?>" class="footer__nav-link">
               <?php echo translateRusUaEn('Документы', 'Документи', 'Documents') ?>
               </a>
             </li>
             <li class="h3 footer__nav-item">
-              <a href="./news.html" class="footer__nav-link">
+              <a href="<?php echo get_nav_link('news') ?>" class="footer__nav-link">
               <?php echo translateRusUaEn('Новости', 'Новини', 'News') ?>
               </a>
             </li>
             <li class="h3 footer__nav-item">
-              <a href="./about.html" class="footer__nav-link">
+              <a href="<?php echo get_nav_link('about') ?>" class="footer__nav-link">
               <?php echo translateRusUaEn('О нас', 'Про нас', 'About') ?>
               </a>
             </li>
             <li class="h3 footer__nav-item">
-              <a href="./partners.html" class="footer__nav-link">
+              <a href="<?php echo get_nav_link('partners') ?>" class="footer__nav-link">
               <?php echo translateRusUaEn('Партнёры', 'Партнери', 'Partners') ?>
               </a>
             </li>
             <li class="h3 footer__nav-item">
-              <a href="./contacts.html" data-transition="contacts" class="footer__nav-link">
+              <a href="<?php echo get_nav_link('contacts') ?>" data-transition="contacts" class="footer__nav-link">
               <?php echo translateRusUaEn('Контакты', 'Контакти', 'Contacts') ?>
               </a>
             </li>

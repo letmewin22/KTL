@@ -87,13 +87,17 @@ function onwp_disable_content_editor() {
 				remove_post_type_support( 'page', 'editor' );
 			} elseif ( $template_file == 'contacts.php' ){
 				remove_post_type_support( 'page', 'editor' );
-			} elseif ( $template_file == 'review.php' ){
+			} elseif ( $template_file == 'news.php' ){
 				remove_post_type_support( 'page', 'editor' );
 			} elseif ( $template_file == 'services.php' ){
 				remove_post_type_support( 'page', 'editor' );
 			} elseif($template_file == 'singular.php'){
 				remove_post_type_support( 'page', 'editor' );
 			} elseif($template_file == 'single-services.php'){
+				remove_post_type_support( 'page', 'editor' );
+			} elseif($template_file == 'documents.php'){
+				remove_post_type_support( 'page', 'editor' );
+			} elseif($template_file == 'partners.php'){
 				remove_post_type_support( 'page', 'editor' );
 			}
 			
@@ -174,4 +178,18 @@ function my_mce_before_init_insert_formats( $init_array ) {
 	}
 	// Прикрепляем вызов к 'tiny_mce_before_init'
 	add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
+
+	add_filter( 'excerpt_length', function(){
+		return 19;
+	} );
+	
+	add_filter( 'excerpt_more', 'new_excerpt_more' );
+	function new_excerpt_more( $more ){
+		global $post;
+		return '<span>...</span>';
+	};
+
+	function get_nav_link($link) {
+		return get_site_url().'/'.translateRusUaEn($link, 'uk/'.$link.'-uk', 'en/'.$link.'-en').'/';
+	};
 ?>

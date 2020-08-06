@@ -1,7 +1,7 @@
-<?php function form($h)
+<?php function form($h, $ss = null)
 {
   ?>
-<section class="section form-section">
+<section class="section form-section <?php if($ss) echo $ss ?>">
   <div class="container section__container form-section__container">
     <div class="container__cols">
       <div class="container__l-col">
@@ -84,7 +84,7 @@
           <div class="form-section__right-content">
             <h2 class="h2 form-section__h2"><?php echo $h ?></h2>
             <div class="form-section__form-wrapper">
-              <form data-url="<?php echo get_template_directory_uri()?>/" class="form" name="form" novalidate>
+              <form data-success="<?php echo translateRusUaEn('Заявка успешно отправлена', 'Заявка успішно надіслана', 'Application has been sent') ?>" data-error="<?php echo translateRusUaEn('При отправке произошла ошибка:(', 'При відправці виникла помилка:(', 'An error occurred while sending :(') ?>" data-url="<?php echo get_template_directory_uri()?>/" class="form" name="form" novalidate>
                 <!-- Hidden Required Fields -->
                 <input type="hidden" name="project_name" value="KTL">
                 <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
