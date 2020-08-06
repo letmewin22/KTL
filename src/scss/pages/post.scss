@@ -22,7 +22,7 @@
     @include media('<=#{$br1}') {
       margin-top: 52px;
      }
-    p + p {
+    p + p, blockquote {
       margin-top: size(32, 24);
     }
     blockquote {

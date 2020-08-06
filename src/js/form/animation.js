@@ -3,7 +3,7 @@ import gsap from 'gsap'
 const animation = (el) => {
 
   const btn = el 
-  const href = window.location.origin + '/ktl/wp-content/themes/ktl/'
+  const href = document.documentElement.getAttribute('data-site-url') + '/wp-content/themes/ktl/'
 
   const audio = new Audio(href + 'audio/success.mp3')
   const audioEnd = new Audio(href + 'audio/success_end.mp3')

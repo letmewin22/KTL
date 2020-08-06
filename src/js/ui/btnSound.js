@@ -1,5 +1,5 @@
 const btnSound = () => {
-  const href = window.location.origin + '/ktl/wp-content/themes/ktl/'
+  const href = document.documentElement.getAttribute('data-site-url') + '/wp-content/themes/ktl/'
   const audio = new Audio(href + 'audio/btn.mp3')
 
   const btn = [...document.querySelectorAll('.btn:not(.activated)')]

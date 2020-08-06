@@ -130,6 +130,13 @@
         }
       }
     }
+    > .section__before-line ~ p {
+      &:nth-child(2) {
+        &::first-line {
+          text-indent: size(248, 0);
+        }
+      }
+    }
   }
 }
 
