@@ -44,8 +44,8 @@
           </a>
         </li>
         <li class="menu__item">
-          <a href="./partners.html" class="menu__link">
-          <?php echo get_nav_link('partners') ?>
+          <a href="<?php echo get_nav_link('partners') ?>" class="menu__link">
+          <?php echo translateRusUaEn('Партнёры', 'Партнери', 'Partners') ?>
           </a>
         </li>
         <li class="menu__item">

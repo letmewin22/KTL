@@ -38,7 +38,7 @@ get_header();
       <?php   
           $args = array(
             'post_type' => 'team',
-            'posts_per_page' => 5,
+            'posts_per_page' => 12,
             'order' => 'ASC'
           );    
           $my_query = new WP_Query( $args ); 

@@ -22,7 +22,7 @@ get_header();
         </div>
       </div>
       <div class="service-header__medium">
-        <h1 class="h1 service-header__h1">
+        <h1 class="h1 service-header__h1 <?php echo translateRusUaEn('', '', 'en') ?>">
           <span class="service-header__h1-text service-header__scroller">
             <span class='transition-span'><?php echo get_field('первая_строка_заголовка'); ?></span>
           </span>
@@ -58,27 +58,24 @@ get_header();
   </div>
   <section class="section steps-section">
     <div class="container section__container">
-      <?php h2('Как заказать перевозку?') ?>
-      <p class="section__bold-text a-p steps-section__bold-text">Мы перевозим строительные материалы, металлы, насыпные и пищевые грузы.</p>
+      <?php h2(get_field('третий_экран_заголовок')) ?>
+      <p class="section__bold-text a-p steps-section__bold-text"><?php echo get_field('третий_экран_жирный_текст'); ?></p>
       <div class="steps-section__draggable">
         <div class="steps-section__items">
           <div class="steps-section__item a-item">
-            <h4 class="h4 steps-section__h">Шаг №1</h4>
+            <h4 class="h4 steps-section__h"><?php echo translateRusUaEn('Шаг', 'Крок', 'Step') ?> №1</h4>
             <div class="steps-section__line"></div>
-            <p class="steps-section__text">Вы оставляете заявку, где указываете вид груза, сроки перевозки, а также
-              станции отправления-назначения.</p>
+            <p class="steps-section__text"><?php echo get_field('шаг_1_текст'); ?></p>
           </div>
           <div class="steps-section__item a-item">
-            <h4 class="h4 steps-section__h">Шаг №2</h4>
+            <h4 class="h4 steps-section__h"><?php echo translateRusUaEn('Шаг', 'Крок', 'Step') ?> №2</h4>
             <div class="steps-section__line"></div>
-            <p class="steps-section__text">Заключаем договор: согласно утверждённого графика предоставляем вагоны для
-              вывоза груза.</p>
+            <p class="steps-section__text"><?php echo get_field('шаг_2_текст'); ?></p>
           </div>
           <div class="steps-section__item a-item">
-            <h4 class="h4 steps-section__h">Шаг №3</h4>
+            <h4 class="h4 steps-section__h"><?php echo translateRusUaEn('Шаг', 'Крок', 'Step') ?> №3</h4>
             <div class="steps-section__line"></div>
-            <p class="steps-section__text">Отправляем вагоны на станцию назначения и через программное обеспечение
-              отслеживаем их в пути следования.</p>
+            <p class="steps-section__text"><?php echo get_field('шаг_3_текст'); ?></p>
           </div>
         </div>
       </div>
@@ -89,10 +86,10 @@ get_header();
       </div>
       <div class="container__cols steps-section__cols">
         <div class="container__l-col">
-          <p class="section__bold-text a-p steps-section__med-text">В договоре мы закрепляем свои обязанности обеспечить вас подвижным составом согласно предоставленной заявки. </p>
+          <p class="section__bold-text a-p steps-section__med-text"><?php echo get_field('третий_экран_текст_после_шагов'); ?></p>
         </div>
         <div class="container__r-col">
-        <?php btn('Заявка на перевозку', '', 'default-section__btn c-btn a-btn') ?>
+        <?php btn(get_field('третий_экран_текст_кнопки'), '', 'default-section__btn c-btn a-btn') ?>
         </div>
       </div>
       <div class="steps-section__after-line a-line"></div>
@@ -107,7 +104,7 @@ get_header();
     </div>
   </div>
   <?php
-    $terms = get_terms(['taxonomy' => 'ads_tax', 'name' => get_the_title() , 'pad_counts' => 1, 'parent' => 0, 'hide_empty' => false, 'post_per_page' => 125 ]);
+    $terms = get_terms(['taxonomy' => 'ads_tax', 'name' => 'Организация перевозок' , 'pad_counts' => 1, 'parent' => 0, 'hide_empty' => false, 'post_per_page' => 125 ]);
         foreach ($terms as $term):
           $args = ['post_type' => 'sa', 'posts_per_page' => 20, 'orderby' => 'id', 'order' => 'ASC', 'tax_query' => [['taxonomy' => 'ads_tax', 'field' => 'term_id', 'terms' => $term->term_id, 'include_children' => false, ], ], ];
             $posts_with_term = new WP_Query($args);
@@ -119,7 +116,7 @@ get_header();
       <div class="accordeon-section__items">
         <div class="accordeon-section__line a-line"></div>
         <?php
-          $terms = get_terms(['taxonomy' => 'ads_tax', 'name' => get_the_title() , 'pad_counts' => 1, 'parent' => 0, 'hide_empty' => false, 'post_per_page' => 125 ]);
+          $terms = get_terms(['taxonomy' => 'ads_tax', 'name' => 'Организация перевозок' , 'pad_counts' => 1, 'parent' => 0, 'hide_empty' => false, 'post_per_page' => 125 ]);
               foreach ($terms as $term):
                 $args = ['post_type' => 'sa', 'posts_per_page' => 20, 'orderby' => 'id', 'order' => 'ASC', 'tax_query' => [['taxonomy' => 'ads_tax', 'field' => 'term_id', 'terms' => $term->term_id, 'include_children' => false, ], ], ];
                     $posts_with_term = new WP_Query($args);
@@ -158,18 +155,26 @@ get_header();
     ?>
   <section class="section v-list-section">
     <div class="container section__container v-list-section__container">
-    <?php h2('Особенности перевозок', 'v-list-section__h2 half-size-h2') ?>
+    <?php h2(get_field('особенности_заголовок'), 'v-list-section__h2 half-size-h2') ?>
       <div class="container__cols">
         <div class="container__l-col"></div>
         <div class="container__r-col">
           <div class="v-list-section__items">
-            {% for item in items.serviceItems %}
             <div class="v-list-section__item a-item">
-              <h4 class="h4 v-list-section__h">{{item.heading}}</h4>
+              <h4 class="h4 v-list-section__h">01</h4>
               <div class="v-list-section__line"></div>
-              <p class="v-list-section__text a-p">{{item.desc}}</p>
+              <p class="v-list-section__text a-p"><?php echo get_field('первая_особенность_текст'); ?></p>
             </div>
-            {% endfor %}
+            <div class="v-list-section__item a-item">
+              <h4 class="h4 v-list-section__h">02</h4>
+              <div class="v-list-section__line"></div>
+              <p class="v-list-section__text a-p"><?php echo get_field('вторая_особенность_текст'); ?></p>
+            </div>
+            <div class="v-list-section__item a-item">
+              <h4 class="h4 v-list-section__h">03</h4>
+              <div class="v-list-section__line"></div>
+              <p class="v-list-section__text a-p"><?php echo get_field('третья_особенность_текст'); ?></p>
+            </div>
           </div>
         </div>
       </div>
@@ -222,9 +227,7 @@ get_header();
     </div>
   </section>
   <?php
-    $header = translateRusUaEn('Мы просчитаем стоимость и сроки перевозки вашего груза.', 'Ми прорахуємо вартість та сроки транспортування вашого грузу', 'We will calculate the cost and terms of transportation of your cargo.');
-
-  form($header) ?>
+  form(get_field('forma_zagolovok')) ?>
 </main>
 <?php include get_theme_file_path('partials/components/footer.php' ); ?>
 

@@ -158,14 +158,13 @@ get_router('home');
           <p class="section__bold-text a-p a-sticky"><?php echo get_field('партнёры_текст'); ?></p>
         </div>
         <div class="container__r-col">
-          <a href="#" class="default-section__review review">
-            <div class="review__overlay"></div>
+          <div class="default-section__review review">
             <div class="review__top">
               <div class="review__left">
                 <div class="review__logo a-p">
                   <picture>
-                    <source srcset="<?php echo get_template_directory_uri();?>/img/clients/1.webp" type="image/webp">
-                    <img class="pli loaded" src="<?php echo get_template_directory_uri();?>/img/clients/1.png"
+                    <source srcset="<?php echo preg_replace('/\.+jpg|\.png/m', '.webp', get_field('partnjory_foto'));  ?>" type="image/webp">
+                    <img class="pli loaded" src="<?php echo get_field('partnjory_foto');?>"
                       alt="clients__logo"></picture>
                 </div>
                 <div class="review__info">
@@ -173,12 +172,12 @@ get_router('home');
                   <div class="review__company a-p"><?php echo get_field('партнёры_компания_цитируемого'); ?></div>
                 </div>
               </div>
-              <div class="review__right"><?php include get_theme_file_path('partials/svg/arrow.php' ); ?></div>
+              <div class="review__right"></div>
             </div>
             <div class="review__bottom">
               <?php echo get_field('партнёры_цитата'); ?>
             </div>
-          </a>
+          </div>
           <div class="section__after-line a-line"></div>
         </div>
       </div>
