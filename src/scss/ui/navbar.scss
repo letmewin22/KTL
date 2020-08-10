@@ -48,6 +48,7 @@
 }
 
 .navbar__lang {
+  cursor: pointer;
   @include media('<=960px') {
     display: none;
   }
@@ -55,8 +56,6 @@
     margin-left: 27px;
   }
 }
-
-
 .navbar__right {
   display: flex;
   align-items: center;

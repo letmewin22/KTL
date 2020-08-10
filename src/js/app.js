@@ -12,7 +12,7 @@ import { ScrollBar, Sticky, repeatedText, Links, ParallaxScroller } from '@/comp
 import FormSubmit from '@/form/FormSubmit.js'
 import { cntBtn, footer, Dropdown, NavbarPos, Nav, CntPopup, btnSound, activeLink } from '@/ui'
 import ScrollAnimations from '@/scroll/ScrollAnimations'
-import { detectRouter, Resize, langCurrentPage } from '@/helpers'
+import { detectRouter, Resize, langCurrentPage, hideLangToogle } from '@/helpers'
 
 import { Home, Service, Services, About, Partners, Documents, Error, News, Post, Contacts } from '@/renderers'
 import { Rewealers, Default } from '@/transitions'
@@ -61,14 +61,16 @@ window.addEventListener('beforeunload', () => {
 window.addEventListener('load', () => {
 
   langCurrentPage({
-    curLang: document.querySelector('.navbar__lang-list a'),
+    curLang: document.querySelector('.navbar__lang-list .dropdown__btn'),
     links: document.querySelectorAll('.navbar__lang-list .dropdown__content a')
   })
 
   langCurrentPage({
-    curLang: document.querySelector('.menu__lang-list a'),
+    curLang: document.querySelector('.menu__lang-list .dropdown__btn'),
     links: document.querySelectorAll('.menu__lang-list .dropdown__content a')
   })
+
+  hideLangToogle()
 
   bgWebP()
   activeLink()
@@ -128,16 +130,19 @@ H.on('NAVIGATE_END', () => {
   const navbarPos = new NavbarPos()
   navbarPos.destroy()
   navbarPos.init()
+  
 
   langCurrentPage({
-    curLang: document.querySelector('.navbar__lang-list a'),
+    curLang: document.querySelector('.navbar__lang-list .dropdown__btn'),
     links: document.querySelectorAll('.navbar__lang-list .dropdown__content a')
   })
 
   langCurrentPage({
-    curLang: document.querySelector('.menu__lang-list a'),
+    curLang: document.querySelector('.menu__lang-list .dropdown__btn'),
     links: document.querySelectorAll('.menu__lang-list .dropdown__content a')
   })
+
+  hideLangToogle()
   
   footer()
 

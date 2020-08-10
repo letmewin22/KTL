@@ -15,15 +15,11 @@ const langCurrentPage = (DOM) => {
 
     case 'ru':
 
-      DOM.curLang.setAttribute('href', window.location.href)
-
       links[0].setAttribute('href', siteUrl + '/uk' + getLink('ru', '-uk'))
       links[1].setAttribute('href', siteUrl + '/en' + getLink('ru', '-en'))
       break
 
     case 'ua':
-
-      DOM.curLang.setAttribute('href', window.location.href)
 
       links[0].setAttribute('href', siteUrl + '/en' + getLink('uk', '-en'))
       links[1].setAttribute('href', siteUrl + getLink('uk'))
@@ -31,8 +27,6 @@ const langCurrentPage = (DOM) => {
       break
 
     case 'en':
-
-      DOM.curLang.setAttribute('href', window.location.href)
 
       links[0].setAttribute('href', siteUrl + getLink('en'))
       links[1].setAttribute('href', siteUrl + '/uk' + getLink('en', '-uk'))

@@ -258,3 +258,13 @@ header, main {
     padding-top: 40px;
   }
 }
+
+.inline {
+  display: inline;
+}
+
+.lang {
+  &.hidden {
+    display: none !important;
+  }
+}

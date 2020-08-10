@@ -34,11 +34,18 @@
   @media screen and (max-height: 660px) {
     font-size: size(150, 52);
   }
+  &.en {
+    font-size: size(170, 36);
+  }
+  &.ua {
+    font-size: size(200, 48);
+  }
 }
 
 .service-header__h1-text {
   display: inline-block;
   overflow: hidden;
+  line-height: 1.15em;
 }
 
 .service-header__h1-text--second {
