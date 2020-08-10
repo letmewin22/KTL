@@ -70,7 +70,9 @@ get_header();
         </a>
         <?php             
         }  
-      }       
+      }  else {
+        echo  translateRusUaEn('Других новостей пока нет', 'Інших новин поки не має', 'Other news doesn\'t exist');
+      }   
       wp_reset_postdata(); 
     ?>
       </div>

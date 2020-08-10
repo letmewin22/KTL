@@ -13,7 +13,7 @@ get_header();
           <div class="h2__line services-h2__line transition-line"></div>
           <h2 class="h2 services-h2">
             <span class="transition-span">
-            <?php echo translateRusUaEn('Типовые договоры', 'Типові договори', 'Model contracts') ?>
+            <?php echo translateRusUaEn('Типовые договоры', 'Типові договори', 'Standard contracts') ?>
             </span></h2>
           <div class="h2__line services-h2__line transition-line"></div>
         </div>
@@ -57,7 +57,7 @@ get_header();
       <div class="container section__container c-list__container last">
         <div class="h2-wrapper">
           <div class="h2__line services-h2__line "></div>
-          <h2 class="h2 services-h2"><?php echo translateRusUaEn('Справочники', 'Довідники', 'Catalogs') ?></h2>
+          <h2 class="h2 services-h2"><?php echo translateRusUaEn('Справочники', 'Довідники', 'Directories') ?></h2>
           <div class="h2__line services-h2__line"></div>
         </div>
         <div class="c-list__items">

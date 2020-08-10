@@ -8,9 +8,9 @@
             <h3 class="h3 menu__h3"><?php echo translateRusUaEn('Меню', 'Меню', 'Menu') ?></h3>
             <div class="lang menu__lang">
               <div class="menu__lang-list dropdown">
-                <a hreflang="<?php echo translateRusUaEn('ru', 'uk', 'en') ?>" data-router-disabled href="<?php echo showCurrentLangAtt('url',false);?>" class="menu__link dropdown__btn">
+                <div class="menu__link dropdown__btn inline">
                 <?php echo translateRusUaEn('Ru', 'Ua', 'En') ?> <?php include get_theme_file_path( 'partials/svg/dropdown.php' ); ?>
-                </a>
+                </div>
                 <div class="dropdown__content menu__dropdown-content">
                   <a hreflang="<?php echo translateRusUaEn('uk', 'en', 'ru') ?>" data-router-disabled href="<?php echo showCurrentLangAtt('url',true);?>" class="menu__link dropdown__link">
                   <?php echo translateRusUaEn('Ua', 'En', 'Ru') ?>

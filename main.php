@@ -37,7 +37,7 @@ get_router('home');
       <?php h2(get_field('заголовок_второй_экран'), 'half-size-h2') ?>
       <div class="container__cols">
         <div class="container__l-col">
-          <a href="./about.html" class="btn a-btn a-sticky default-section__btn">
+          <a href="<?php echo get_nav_link('about') ?>" class="btn a-btn a-sticky default-section__btn">
             <div class="btn__text-wrapper">
               <?php for ($i = 0; $i < 4; $i++) { 
                 ?>

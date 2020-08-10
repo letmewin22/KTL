@@ -48,7 +48,9 @@ get_header();
           </a>
           <?php             
         }  
-      }       
+      } else {
+        echo  translateRusUaEn('Новостей пока нет', 'Новин поки не має', 'News doesn\'t exist');
+      }   
       wp_reset_postdata(); 
     ?>
         </div>
@@ -59,12 +61,12 @@ get_header();
       <div class="container section__container c-list__container">
         <div class="h2-wrapper">
           <div class="h2__line services-h2__line"></div>
-          <h2 class="h2 services-h2">Новости партнёров</h2>
+          <h2 class="h2 services-h2"><?php echo translateRusUaEn('Новости партнёров', 'Новини партнерів', 'Partners news') ?></h2>
           <div class="h2__line services-h2__line"></div>
         </div>
         <div class="c-list__items">
           <div class="c-list__line"></div>
-          <a target='_blank' rel='noreferer noopener' href="#" class="c-list__item">
+          <a target='_blank' rel='noreferer noopener' href="http://uz-cargo.com/news.html" class="c-list__item">
             <div class="c-list__overlay"></div>
             <div class="container__cols c-list__cols">
               <div class="container__l-col c-list__l-col">
@@ -73,13 +75,13 @@ get_header();
                 </div>
               </div>
               <div class="container__r-col c-list__r-col">
-                <h4 class="h4 c-list__h4">Новости ЦТЛ</h4>
+                <h4 class="h4 c-list__h4"><?php echo translateRusUaEn('Новости ЦТЛ', 'Новини ЦТЛ', 'CTL news') ?></h4>
                 <div class="c-list__arrow"><?php include get_theme_file_path('partials/svg/arrow.php' ); ?></div>
               </div>
             </div>
             <div class="c-list__line"></div>
           </a>
-          <a target='_blank' rel='noreferer noopener' href="#" class="c-list__item">
+          <a target='_blank' rel='noreferer noopener' href="https://www.uz.gov.ua/press_center/up_to_date_topic/" class="c-list__item">
             <div class="c-list__overlay"></div>
             <div class="container__cols c-list__cols">
               <div class="container__l-col c-list__l-col">
@@ -88,7 +90,7 @@ get_header();
                 </div>
               </div>
               <div class="container__r-col c-list__r-col">
-                <h4 class="h4 c-list__h4">Новости УЗ</h4>
+                <h4 class="h4 c-list__h4"> <?php echo translateRusUaEn('Новости УЗ', 'Новини УЗ', 'UZ news') ?></h4>
                 <div class="c-list__arrow"><?php include get_theme_file_path('partials/svg/arrow.php' ); ?></div>
               </div>
             </div>

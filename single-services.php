@@ -22,7 +22,7 @@ get_header();
         </div>
       </div>
       <div class="service-header__medium">
-        <h1 class="h1 service-header__h1 <?php echo translateRusUaEn('', '', 'en') ?>">
+        <h1 class="h1 service-header__h1 <?php echo translateRusUaEn('', 'ua', 'en') ?>">
           <span class="service-header__h1-text service-header__scroller">
             <span class='transition-span'><?php echo get_field('первая_строка_заголовка'); ?></span>
           </span>
@@ -53,7 +53,7 @@ get_header();
   </section>
   <div class="full-screen-img">
     <div class="full-screen-img__img-wrapper">
-      <div class="full-screen-img__img pli" data-bg="<?php echo get_template_directory_uri();?>/img/services/1-big.jpg"></div>
+      <div class="full-screen-img__img pli" data-bg="<?php echo get_field('bolshe_izobrazhenie')['sizes']['2048x2048']; ?>"></div>
     </div>
   </div>
   <section class="section steps-section">
