@@ -9,6 +9,12 @@
   margin-top: size(150, 52);
 }
 
+.news__list-item {
+  &.hidden {
+    display: none;
+  }
+}
+
 .news-h2 {
   padding-top: size(72, 24);
   padding-bottom: size(72, 24);

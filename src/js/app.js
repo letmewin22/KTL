@@ -130,7 +130,6 @@ H.on('NAVIGATE_END', () => {
   const navbarPos = new NavbarPos()
   navbarPos.destroy()
   navbarPos.init()
-  
 
   langCurrentPage({
     curLang: document.querySelector('.navbar__lang-list .dropdown__btn'),

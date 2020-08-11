@@ -59,7 +59,7 @@ export default class NavbarPos {
       window.innerWidth > 960 && this.hideBurger()
       document.querySelector('.navbar').classList.add('remove-bg')
     }
-      
+    window.innerWidth < 960 && this.showBurger()
 
     this.scrollPos = document.getElementById('scroller').getBoundingClientRect().top
 

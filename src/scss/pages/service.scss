@@ -124,6 +124,9 @@
       &:first-child {
         &::first-line {
           text-indent: size(248, 0);
+          @include media('<=375px') {
+            text-indent: 0;
+          }
         }
       }
     }

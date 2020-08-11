@@ -127,6 +127,9 @@
       &:first-child {
         &::first-line {
           text-indent: size(248, 0);
+          @include media('<=375px') {
+            text-indent: 0;
+          }
         }
       }
     }
@@ -134,6 +137,9 @@
       &:nth-child(2) {
         &::first-line {
           text-indent: size(248, 0);
+          @include media('<=375px') {
+            text-indent: 0;
+          }
         }
       }
     }
@@ -158,6 +164,9 @@
   margin-top: size(72, 48);
     &::first-line {
       text-indent: size(248, 0);
+      @include media('<=375px') {
+        text-indent: 0;
+      }
   }
 }
 
