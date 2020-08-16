@@ -60,7 +60,7 @@ export default class ScrollBar {
       const o = event.clientY
       gsap.to(this.el, { duration: 0.3, scrollTop: this.el.scrollHeight * (o / h), ease: 'none' })
 
-      if ('ontouchstart' in document.documentElement || window.DocumentTouch && document instanceof DocumentTouch) {
+      if ('ontouchstart' in document.documentElement || window.DocumentTouch && document instanceof window.DocumentTouch) {
         const h = this.scrollbar.offsetHeight
         const o = event.targetTouches[0].pageY - event.target.getBoundingClientRect().top
 

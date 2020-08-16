@@ -18,8 +18,7 @@ import { Home, Service, Services, About, Partners, Documents, Error, News, Post,
 import { Rewealers, Default } from '@/transitions'
 
 
-
-cssWebP()
+process.env.NODE_ENV === 'production' && cssWebP()
 
 const H = new Highway.Core({
   renderers: {

@@ -8,7 +8,7 @@
     "start": "gulp",
     "ghpages": "git subtree push --prefix build origin gh-pages",
     "precommit": "lint-staged",
-    "lint": "eslint --ignore-pattern 'src/js/lib/' --cache --format=node_modules/eslint-formatter-pretty src/js/",
+    "lint": "eslint --ignore-pattern 'src/js/libs/' --cache --format=node_modules/eslint-formatter-pretty src/js/",
     "lint-fix": "npm run lint -- --fix"
   },
   "lint-staged": {
