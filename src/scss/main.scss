@@ -145,8 +145,15 @@ body {
 }
 .form-section__contact {
   max-width: 247px;
+  height: var(--sh);
+  transition: height .45s $easing, margin-top .45s $easing;
   + .form-section__contact {
     margin-top: size(50, 32);
+  }
+  &.js-hide {
+    height: 0px;
+    overflow: hidden;
+    margin-top: 0;
   }
 }
 .form-section__contact-link {
@@ -179,6 +186,35 @@ a.form-section__contact-link {
 
 .form-section__form-wrapper {
   margin-top: size(80, 50);
+}
+
+.form-section__more-btn {
+  margin-top: size(50, 32);
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  position: relative;
+  display: block;
+  transition: color .45s $easing;
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: $accent;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transition: width .45s $easing;
+  }
+  &:hover {
+    color: $accent;
+    &::after {
+      width: 0;
+      left: auto;
+      right: 0;
+    }
+  }
 }
 
 main {

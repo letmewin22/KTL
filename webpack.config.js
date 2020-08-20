@@ -35,7 +35,7 @@ function createConfig(env) {
           options: {
             fix: true,
             cache: true,
-            ignorePattern: __dirname + '/src/js/libs/'
+            ignorePattern: path.resolve(__dirname, '/src/js/libs/')
           }
         },
         {

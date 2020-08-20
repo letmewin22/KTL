@@ -11,4 +11,5 @@ export {default as btnSound} from './btnSound'
 export {default as scrollTo} from './scrollTo'
 export {default as activeLink} from './activeLink'
 export {default as MoreNews} from './MoreNews'
+export {default as moreBtn} from './moreBtn'
 

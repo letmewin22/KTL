@@ -10,7 +10,7 @@ import bgWebP from '@/bgWebP'
 
 import { ScrollBar, Sticky, repeatedText, Links, ParallaxScroller } from '@/components'
 import FormSubmit from '@/form/FormSubmit.js'
-import { cntBtn, footer, Dropdown, NavbarPos, Nav, CntPopup, btnSound, activeLink } from '@/ui'
+import { cntBtn, footer, Dropdown, NavbarPos, Nav, CntPopup, btnSound, activeLink, moreBtn } from '@/ui'
 import ScrollAnimations from '@/scroll/ScrollAnimations'
 import { detectRouter, Resize, langCurrentPage, hideLangToogle } from '@/helpers'
 
@@ -58,6 +58,8 @@ window.addEventListener('beforeunload', () => {
 })
 
 window.addEventListener('load', () => {
+
+  moreBtn()
 
   langCurrentPage({
     curLang: document.querySelector('.navbar__lang-list .dropdown__btn'),
@@ -125,6 +127,8 @@ H.on('NAVIGATE_IN', () => {
 })
 
 H.on('NAVIGATE_END', () => {
+
+  moreBtn()
 
   const navbarPos = new NavbarPos()
   navbarPos.destroy()
