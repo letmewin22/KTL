@@ -1,5 +1,9 @@
 <?php function form($h, $ss = null)
 {
+
+  function regExpReplace($regExp, $fieldName) {
+    return preg_replace($regExp, '', get_field($fieldName));
+  }
   ?>
 <section class="section form-section <?php if($ss) echo $ss ?>">
   <div class="container section__container form-section__container">
@@ -8,18 +12,17 @@
         <div class="form-section__contacts">
           <div class="form-section__v-line"></div>
           <div class="form-section__contacts-wrapper">
-            <div class="form-section__sticky-wrapper a-sticky">
-              <?php   
-                $args = array(
-                  'post_type' => 'contacts',
-                  'posts_per_page' => 1,
-                  'order' => 'ASC'
-                );    
-                $my_query = new WP_Query( $args ); 
-                  if ( $my_query->have_posts() ) {
-                    while ( $my_query->have_posts() ) {
-                        $my_query->the_post();
-                ?>
+            <?php   
+              $args = array(
+                'post_type' => 'contacts',
+                'posts_per_page' => 1,
+                'order' => 'ASC'
+              );    
+              $my_query = new WP_Query( $args ); 
+                if ( $my_query->have_posts() ) {
+                  while ( $my_query->have_posts() ) {
+                      $my_query->the_post();
+            ?>
               <div class="form-section__contact">
                 <h4 class="h4 form-section__contact-h">
                 <?php echo translateRusUaEn('Адрес', 'Адреса', 'Adress') ?>
@@ -37,7 +40,7 @@
                   <?php echo get_field('имя_директора'); ?>
                 </div>
                 <a target='_blank' rel='noreferer noopener'
-                  href="tel:<?php echo preg_replace('/\D+/', '', get_field('телефон_директора'));?>"
+                  href="tel:<?php echo regExpReplace('/\D+/', 'телефон_директора');?>"
                   class="form-section__contact-link">
                   <?php echo get_field('телефон_директора'); ?>
                 </a>
@@ -47,12 +50,12 @@
                 <?php echo translateRusUaEn('Телефоны', 'Телефони', 'Phones') ?>
                 </h4>
                 <a target='_blank' rel='noreferer noopener'
-                  href="tel:<?php echo preg_replace('/\D+/', '', get_field('телефон_компании'));?>"
+                  href="tel:<?php echo regExpReplace('/\D+/', 'телефон_компании'); ?>"
                   class="form-section__contact-link">
                   <?php echo get_field('телефон_компании'); ?>
                 </a>
                 <a target='_blank' rel='noreferer noopener'
-                  href="tel:<?php echo preg_replace('/\D+/', '', get_field('факс_компании'));?>"
+                  href="tel:<?php echo regExpReplace('/\D+/', 'факс_компании'); ?>"
                   class="form-section__contact-link">
                   <?php echo get_field('факс_компании'); ?> (<?php echo translateRusUaEn('факс', 'факс', 'fax') ?>)
                 </a>
@@ -68,12 +71,49 @@
                   <?php echo get_field('почта_директора'); ?>
                 </a>
               </div>
-              <?php             
-                  }  
-                }       
-                wp_reset_postdata(); 
-              ?>
+              <div class="form-section__contact">
+                <h4 class="h4 form-section__contact-h">
+                  <?php echo get_field('dopolnitelnye_kontakty_dolzhnost_1'); ?>
+                </h4>
+                <div class="form-section__contact-link">
+                  <?php echo get_field('dopolnitelnye_kontakty_imja_1'); ?>
+                </div>
+                <a href="tel:<?php echo regExpReplace('/\D+/', 'dopolnitelnye_kontakty_telefon_1'); ?>" target='_blank' rel='noreferer noopener' class="form-section__contact-link">
+                  <?php echo get_field('dopolnitelnye_kontakty_telefon_1'); ?>
+                </a>
+                <?php if (get_field('dopolnitelnye_kontakty_pochta_1')) {
+                  ?>
+                <a href="mailto:<?php echo get_field('dopolnitelnye_kontakty_pochta_1'); ?>" target='_blank' rel='noreferer noopener' class="form-section__contact-link">
+                  <?php echo get_field('dopolnitelnye_kontakty_pochta_1'); ?>
+                </a>
+                <?php
+                } ?>
             </div>
+            <div class="form-section__contact">
+                <h4 class="h4 form-section__contact-h">
+                  <?php echo get_field('dopolnitelnye_kontakty_dolzhnost_2'); ?>
+                </h4>
+                <div class="form-section__contact-link">
+                  <?php echo get_field('dopolnitelnye_kontakty_imja_2'); ?>
+                </div>
+                <a href="tel:<?php echo regExpReplace('/\D+/', 'dopolnitelnye_kontakty_telefon_2'); ?>" target='_blank' rel='noreferer noopener' class="form-section__contact-link">
+                  <?php echo get_field('dopolnitelnye_kontakty_telefon_2'); ?>
+                </a>
+                <?php if (get_field('dopolnitelnye_kontakty_pochta_2')) {
+                  ?>
+                <a href="mailto:<?php echo get_field('dopolnitelnye_kontakty_pochta_2'); ?>" target='_blank' rel='noreferer noopener' class="form-section__contact-link">
+                  <?php echo get_field('dopolnitelnye_kontakty_pochta_2'); ?>
+                </a>
+                <?php
+                } ?>
+            </div>
+            <?php $moreText = translateRusUaEn('Больше контактов', 'Більше контактів', 'More contacts') ?>
+            <button data-show="<?php echo $moreText ?>" data-hide="<?php echo translateRusUaEn('Свернуть', 'Згорнути', 'Hide') ?>" class="form-section__more-btn"><?php echo $moreText ?></button>
+            <?php             
+                }  
+              }       
+              wp_reset_postdata(); 
+            ?>
           </div>
         </div>
 

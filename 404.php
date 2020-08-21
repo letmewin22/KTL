@@ -13,8 +13,8 @@ get_router('error');
   </div>
   <div class="transition-rails partners-header__transition-rails">
     <div class="transition-rails__items">
-      <h1 class="h1 partners-header__h1 transition-rails__item">&nbsp;— <?php echo translateRusUaEn('404 Страница не найдена', '404 Сторінка не знайдена', 'Page not found') ?></h1>
-      <div class="transition-rails__item">&nbsp;— 404 <?php echo translateRusUaEn('404 Страница не найдена', '404 Сторінка не знайдена', 'Page not found') ?></div>
+      <h1 class="h1 partners-header__h1 transition-rails__item">&nbsp;— <?php echo translateRusUaEn('404 Страница не найдена', '404 Сторінка не знайдена', '404 Page not found') ?></h1>
+      <div class="transition-rails__item">&nbsp;— 404 <?php echo translateRusUaEn('404 Страница не найдена', '404 Сторінка не знайдена', '404 Page not found') ?></div>
     </div>
   </div>
   <div class="container partners-header__line-container">
@@ -30,7 +30,7 @@ get_router('error');
       <?php $text = translateRusUaEn('Упс...похоже, что вы перешли по неправильной ссылке или страница, которую вы ищете была удалена. Рекомендуем вернуться на главную или написать нам на почту', 'Ойой...схоже, що ви перейшли по помилковому посиланню, або сторінка, котру ви шукаєте була видалена. Рекомендуємо повернутися на головну, або написати нам на пошту', 'Oops ... it looks like you followed the wrong link or the page you are looking for has been removed. We recommend that you return to the main page or write to us by mail') ?>
       <?php  echo $text?> <a href="mailto:ktl.disp@gmail.com">ktl.disp@gmail.com</a>
       </p>
-      <a href="<?php echo get_site_url() ?>/ " class="btn default-section__btn error-btn">
+      <a href="<?php $link = translateRusUaEn('/', '/uk/', '/en/'); echo get_site_url().$link?>" class="btn default-section__btn error-btn">
             <div class="btn__text-wrapper">
               <?php for ($i = 0; $i < 4; $i++) { 
                 ?>

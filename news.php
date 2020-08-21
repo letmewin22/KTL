@@ -29,7 +29,7 @@ get_header();
               while ( $my_query->have_posts() ) {
                   $my_query->the_post();
           ?>
-          <a href="<?php the_permalink() ?>" class="list-section__list-item">
+          <a href="<?php the_permalink() ?>" class="list-section__list-item news__list-item">
             <div class="list-section__line"></div>
             <div class="list-section__overlay"></div>
             <div class="list-section__list-item-content">
@@ -49,7 +49,7 @@ get_header();
           <?php             
         }  
       } else {
-        echo  translateRusUaEn('Новостей пока нет', 'Новин поки не має', 'News doesn\'t exist');
+        echo translateRusUaEn('Новостей пока нет', 'Новин поки не має', 'News doesn\'t exist');
       }   
       wp_reset_postdata(); 
     ?>

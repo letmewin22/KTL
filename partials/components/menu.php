@@ -34,7 +34,7 @@
           </a>
         </li>
         <li class="menu__item">
-          <a href="<?php echo get_nav_link('about') ?>>" class="menu__link">
+          <a href="<?php echo get_nav_link('about') ?>" class="menu__link">
           <?php echo translateRusUaEn('О нас', 'Про нас', 'About') ?>
           </a>
         </li>
