@@ -9,7 +9,12 @@ class Default extends Highway.Transition {
     document.body.style.cursor = 'wait'
     const overlay = document.querySelector('.page-transition')
     const rewealers = document.querySelectorAll('.page-transition__item')
-    const tl = gsap.timeline({ onComplete: done })
+    const tl = gsap.timeline({ onComplete: () => {
+      overlay.style.backgroundColor = '#242424'
+      done()
+    }})
+
+    tl.set(overlay, {backgroundColor: 'transparent'})
 
     tl.to(from, { duration: 0.7, opacity: 0 })
     tl.fromTo(overlay, { visibility: 'hidden' }, { duration: 0, y: '0%', visibility: 'visible' }, 0)

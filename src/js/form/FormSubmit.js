@@ -24,13 +24,13 @@ export default class FormSubmit extends FormInputs {
   requestLoad() {
 
     this.form.reset()
+    window.dataLayer.push({'event':'form_sent'})
     document.body.classList.remove('form-focused')
     for (let input of this.input) {
       input.classList.remove('focus')
     }
     animation(this.formButton)
 
-    // dataLayer.push({ 'event': 'otpravka_form' })
   }
 
 

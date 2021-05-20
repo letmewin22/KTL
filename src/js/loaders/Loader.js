@@ -64,7 +64,6 @@ export default class Loader {
   counter(count) {
 
     return new Promise(resolve => {
-
       gsap.to(this.num, {
         duration: 0.3, num: count, ease: 'power1.out', onUpdate: () => {
           this.percentHTML.innerHTML = this.num.num.toFixed(0) + '%'
@@ -85,7 +84,7 @@ export default class Loader {
       image.element ? image.element.classList.add('loaded') : image.img.classList.add('loaded')
       const countLoadedImages = document.querySelectorAll('.pli.loaded').length
 
-      this.width = new Number(100 * (countLoadedImages / this.countImages))
+      this.width = Number(100 * (countLoadedImages / this.countImages))
 
       this.counter(this.width).then(() => {
         this.counter(this.width)

@@ -1,10 +1,10 @@
-const projectName = 'ktl'
+// const projectName = 'ktl'
 
 const foldersName = {
-  // projectFolder: 'build',
+  projectFolder: 'build',
   // projectFolder: projectName,
-  projectFolder: 'C:/MAMP/htdocs/' + projectName + '/wp-content/themes/' + projectName,
-  sourceFolder: 'src'
+  // projectFolder: 'C:/MAMP/htdocs/' + projectName + '/wp-content/themes/' + projectName,
+  sourceFolder: 'src',
 }
 
 module.exports = foldersName

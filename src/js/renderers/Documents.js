@@ -4,39 +4,44 @@ import { footerScrollbar } from '@/ui'
 import transitionLoader from '@/loaders/transitionLoader'
 import Loader from '@/loaders/Loader'
 import { getExtension } from '@/helpers'
-
+import { Accordeon } from '@/components'
 
 class Documents extends Highway.Renderer {
-
   onEnterCompleted() {
-
     const items = document.querySelectorAll('.c-list__item')
 
-    items.forEach(el => {
+    const setBg = (el, path) => {
+      el.style.backgroundImage = `url(${el.getAttribute('data-src')}${path})`
+    }
+
+    items.forEach((el) => {
       const itemImg = el.querySelector('.doc-icon')
-      const itemLink = getExtension(el.getAttribute('href'))
+      const attr = el.getAttribute('href')
+      const itemLink = getExtension(attr) || el.dataset.icon
 
       switch (itemLink) {
         case 'pdf':
-          itemImg.style.backgroundImage = `url(${itemImg.getAttribute('data-src')}pdf.svg)`
+          setBg(itemImg, 'pdf.svg')
           break
         case 'doc':
-          itemImg.style.backgroundImage = `url(${itemImg.getAttribute('data-src')}doc.svg)`
+          setBg(itemImg, 'doc.svg')
           break
         case 'docx':
-          itemImg.style.backgroundImage = `url(${itemImg.getAttribute('data-src')}doc.svg)`
+          setBg(itemImg, 'doc.svg')
+          break
+        case 'dd':
+          setBg(itemImg, 'dd.svg')
           break
         default:
-          itemImg.style.backgroundImage = `url(${itemImg.getAttribute('data-src')}other.svg)`
+          setBg(itemImg, 'other.svg')
           break
       }
-
     })
 
     window.addEventListener('load', () => new Loader(transitionLoader))
     footerScrollbar()
+    new Accordeon('.accordeon-section__item', '.accordeon-section__text')
   }
-
 }
 // Don`t forget to export your renderer
 export default Documents
